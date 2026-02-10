@@ -5,6 +5,7 @@ import type {
   ContentItem,
   ContentReview,
   ContentEdit,
+  ContentComment,
   EffectiveItem,
   ReviewStatus,
   SaveState,
@@ -21,6 +22,7 @@ interface UseContentReviewReturn {
     edits: { title?: string; category?: string; description?: string; link?: string }
   ) => void;
   resetEdits: (itemId: string) => void;
+  saveComment: (itemId: string, comment: string) => void;
   categories: string[];
 }
 
@@ -28,6 +30,7 @@ export function useContentReview(reviewId: string): UseContentReviewReturn {
   const [baseline, setBaseline] = useState<ContentItem[]>([]);
   const [reviews, setReviews] = useState<ContentReview[]>([]);
   const [edits, setEdits] = useState<ContentEdit[]>([]);
+  const [comments, setComments] = useState<ContentComment[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [saveStates, setSaveStates] = useState<Record<string, SaveState>>({});
@@ -71,17 +74,23 @@ export function useContentReview(reviewId: string): UseContentReviewReturn {
         setBaseline(baselineData);
 
         if (supabase) {
-          const [reviewsRes, editsRes] = await Promise.all([
+          const [reviewsRes, editsRes, commentsRes] = await Promise.all([
             supabase.from('content_reviews').select('*').eq('review_id', reviewId),
             supabase.from('content_edits').select('*').eq('review_id', reviewId),
+            supabase.from('content_comments').select('*').eq('review_id', reviewId),
           ]);
 
           if (cancelled) return;
           if (reviewsRes.error) throw new Error(reviewsRes.error.message);
           if (editsRes.error) throw new Error(editsRes.error.message);
+          // Comments table might not exist yet — don't fail on it
+          if (commentsRes.error && !commentsRes.error.message.includes('does not exist')) {
+            throw new Error(commentsRes.error.message);
+          }
 
           setReviews((reviewsRes.data ?? []) as ContentReview[]);
           setEdits((editsRes.data ?? []) as ContentEdit[]);
+          setComments((commentsRes.data ?? []) as ContentComment[]);
         }
       } catch (err) {
         if (!cancelled) {
@@ -98,7 +107,7 @@ export function useContentReview(reviewId: string): UseContentReviewReturn {
     };
   }, [reviewId]);
 
-  const items = mergeItems(baseline, reviews, edits);
+  const items = mergeItems(baseline, reviews, edits, comments);
 
   const categories = Array.from(
     new Set(baseline.map((b) => b.category).filter((c): c is string => !!c))
@@ -235,6 +244,63 @@ export function useContentReview(reviewId: string): UseContentReviewReturn {
     [reviewId, setSaveState]
   );
 
+  const saveComment = useCallback(
+    (itemId: string, comment: string) => {
+      const now = new Date().toISOString();
+      const row: ContentComment = {
+        review_id: reviewId,
+        item_id: itemId,
+        comment,
+        updated_at: now,
+      };
+
+      // Optimistic update
+      setComments((prev) => {
+        const idx = prev.findIndex((c) => c.item_id === itemId);
+        if (comment === '') {
+          // Remove empty comments
+          return idx >= 0 ? prev.filter((c) => c.item_id !== itemId) : prev;
+        }
+        if (idx >= 0) {
+          const next = [...prev];
+          next[idx] = row;
+          return next;
+        }
+        return [...prev, row];
+      });
+
+      if (!supabase) {
+        setSaveState(itemId, 'saved');
+        return;
+      }
+
+      setSaveState(itemId, 'saving');
+
+      if (comment === '') {
+        // Delete empty comment
+        supabase
+          .from('content_comments')
+          .delete()
+          .eq('review_id', reviewId)
+          .eq('item_id', itemId)
+          .then(({ error }) => {
+            setSaveState(itemId, error ? 'error' : 'saved');
+          });
+      } else {
+        supabase
+          .from('content_comments')
+          .upsert(
+            { review_id: reviewId, item_id: itemId, comment },
+            { onConflict: 'review_id,item_id' }
+          )
+          .then(({ error }) => {
+            setSaveState(itemId, error ? 'error' : 'saved');
+          });
+      }
+    },
+    [reviewId, setSaveState]
+  );
+
   return {
     items,
     isLoading,
@@ -243,6 +309,7 @@ export function useContentReview(reviewId: string): UseContentReviewReturn {
     setStatus,
     saveEdits,
     resetEdits,
+    saveComment,
     categories,
   };
 }

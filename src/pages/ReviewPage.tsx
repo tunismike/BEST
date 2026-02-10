@@ -27,6 +27,7 @@ export function ReviewPage() {
     setStatus,
     saveEdits,
     resetEdits,
+    saveComment,
     categories,
   } = useContentReview(reviewId ?? '');
 
@@ -94,6 +95,7 @@ export function ReviewPage() {
         onStatusChange={(itemId, status) => setStatus(itemId, status)}
         onSaveEdits={(itemId, edits) => saveEdits(itemId, edits)}
         onResetEdits={(itemId) => resetEdits(itemId)}
+        onSaveComment={(itemId, comment) => saveComment(itemId, comment)}
         onExitFocus={() => setViewMode('list')}
       />
     );
@@ -145,6 +147,7 @@ export function ReviewPage() {
             onStatusChange={(status) => setStatus(item.id, status)}
             onSaveEdits={(edits) => saveEdits(item.id, edits)}
             onResetEdits={() => resetEdits(item.id)}
+            onSaveComment={(comment) => saveComment(item.id, comment)}
           />
         ))}
       </div>

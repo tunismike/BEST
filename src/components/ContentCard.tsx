@@ -3,6 +3,7 @@ import type { EffectiveItem, ReviewStatus, SaveState } from '../types';
 import { StatusControl } from './StatusControl';
 import { EditForm } from './EditForm';
 import { SaveIndicator } from './SaveIndicator';
+import { CommentBox } from './CommentBox';
 
 interface ContentCardProps {
   item: EffectiveItem;
@@ -15,6 +16,7 @@ interface ContentCardProps {
     link: string;
   }) => void;
   onResetEdits: () => void;
+  onSaveComment: (comment: string) => void;
 }
 
 export function ContentCard({
@@ -23,8 +25,10 @@ export function ContentCard({
   onStatusChange,
   onSaveEdits,
   onResetEdits,
+  onSaveComment,
 }: ContentCardProps) {
   const [editing, setEditing] = useState(false);
+  const [commenting, setCommenting] = useState(false);
 
   const handleSave = (edits: {
     title: string;
@@ -41,7 +45,13 @@ export function ContentCard({
     setEditing(false);
   };
 
+  const handleSaveComment = (comment: string) => {
+    onSaveComment(comment);
+    if (!comment) setCommenting(false);
+  };
+
   const hasImage = !!item.media;
+  const hasComment = !!item.comment;
 
   return (
     <article className={`content-card content-card--${item.status}`}>
@@ -69,6 +79,13 @@ export function ContentCard({
           <span className="card-edited-dot" title="Edited" />
         )}
 
+        {/* Show existing comment inline */}
+        {hasComment && !commenting && (
+          <div className="card-comment-preview" onClick={() => setCommenting(true)}>
+            {item.comment}
+          </div>
+        )}
+
         <div className="card-actions">
           <StatusControl
             status={item.status}
@@ -77,6 +94,16 @@ export function ContentCard({
           />
           <div className="card-actions-right">
             <SaveIndicator state={saveState} />
+            <button
+              type="button"
+              className={`comment-toggle-btn${hasComment ? ' comment-toggle-btn--active' : ''}`}
+              onClick={() => setCommenting((prev) => !prev)}
+              title="Comment"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </button>
             {!editing && (
               <button
                 type="button"
@@ -89,6 +116,14 @@ export function ContentCard({
             )}
           </div>
         </div>
+
+        {commenting && (
+          <CommentBox
+            comment={item.comment}
+            onSave={handleSaveComment}
+            saving={saveState === 'saving'}
+          />
+        )}
 
         {editing && (
           <EditForm

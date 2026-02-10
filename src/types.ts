@@ -26,9 +26,17 @@ export interface ContentEdit {
   updated_at: string;
 }
 
+export interface ContentComment {
+  review_id: string;
+  item_id: string;
+  comment: string;
+  updated_at: string;
+}
+
 export interface EffectiveItem extends ContentItem {
   status: ReviewStatus;
   isEdited: boolean;
+  comment: string;
   statusUpdatedAt?: string;
   editUpdatedAt?: string;
 }

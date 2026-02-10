@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import type { EffectiveItem, ReviewStatus, SaveState } from '../types';
 import { EditForm } from './EditForm';
 import { SaveIndicator } from './SaveIndicator';
+import { CommentBox } from './CommentBox';
 
 interface FocusModeProps {
   items: EffectiveItem[];
@@ -12,6 +13,7 @@ interface FocusModeProps {
     edits: { title: string; category: string; description: string; link: string }
   ) => void;
   onResetEdits: (itemId: string) => void;
+  onSaveComment: (itemId: string, comment: string) => void;
   onExitFocus: () => void;
 }
 
@@ -21,6 +23,7 @@ export function FocusMode({
   onStatusChange,
   onSaveEdits,
   onResetEdits,
+  onSaveComment,
   onExitFocus,
 }: FocusModeProps) {
   const [currentIndex, setCurrentIndex] = useState(() => {
@@ -29,6 +32,7 @@ export function FocusMode({
     return firstUnreviewed >= 0 ? firstUnreviewed : 0;
   });
   const [editing, setEditing] = useState(false);
+  const [commenting, setCommenting] = useState(false);
   const [direction, setDirection] = useState<'next' | 'prev'>('next');
   const [transitioning, setTransitioning] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -44,6 +48,7 @@ export function FocusMode({
       setDirection(dir);
       setTransitioning(true);
       setEditing(false);
+      setCommenting(false);
       setTimeout(() => {
         setCurrentIndex(index);
         setTransitioning(false);
@@ -83,8 +88,8 @@ export function FocusMode({
   // Keyboard shortcuts
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      // Don't handle keys when editing
-      if (editing) return;
+      // Don't handle keys when editing or commenting
+      if (editing || commenting) return;
       // Don't handle if user is typing in an input
       const tag = (e.target as HTMLElement).tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
@@ -114,13 +119,19 @@ export function FocusMode({
           e.preventDefault();
           goNext();
           break;
+        case 'c':
+          e.preventDefault();
+          setCommenting((prev) => !prev);
+          break;
         case 'e':
           e.preventDefault();
           setEditing((prev) => !prev);
           break;
         case 'Escape':
           e.preventDefault();
-          if (editing) {
+          if (commenting) {
+            setCommenting(false);
+          } else if (editing) {
             setEditing(false);
           } else {
             onExitFocus();
@@ -131,7 +142,7 @@ export function FocusMode({
 
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [editing, handleStatus, handleSkip, goPrev, goNext, onExitFocus]);
+  }, [editing, commenting, handleStatus, handleSkip, goPrev, goNext, onExitFocus]);
 
   if (!item) {
     return (
@@ -241,6 +252,27 @@ export function FocusMode({
             </div>
           )}
 
+          {/* Existing comment preview */}
+          {item.comment && !commenting && (
+            <div className="focus-comment-preview" onClick={() => setCommenting(true)}>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+              {item.comment}
+            </div>
+          )}
+
+          {/* Comment box */}
+          {commenting && (
+            <div className="focus-edit-wrap">
+              <CommentBox
+                comment={item.comment}
+                onSave={(c) => { onSaveComment(item.id, c); if (!c) setCommenting(false); }}
+                saving={saveState === 'saving'}
+              />
+            </div>
+          )}
+
           {/* Edit form */}
           {editing && (
             <div className="focus-edit-wrap">
@@ -272,6 +304,16 @@ export function FocusMode({
       {/* Action bar */}
       <div className="focus-actions">
         <div className="focus-actions-left">
+          <button
+            type="button"
+            className={`focus-comment-btn${item.comment ? ' focus-comment-btn--active' : ''}`}
+            onClick={() => setCommenting((prev) => !prev)}
+            title="Comment (C)"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </button>
           <button
             type="button"
             className="focus-edit-btn"

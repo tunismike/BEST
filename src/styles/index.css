@@ -411,6 +411,87 @@ body {
   color: var(--color-text);
 }
 
+/* ===== Comment Toggle ===== */
+.comment-toggle-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-surface);
+  cursor: pointer;
+  color: var(--color-text-faint);
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.comment-toggle-btn:hover {
+  border-color: var(--color-text-soft);
+  color: var(--color-text);
+}
+
+.comment-toggle-btn--active {
+  background: var(--color-use-soft);
+  border-color: var(--color-use);
+  color: var(--color-use);
+}
+
+/* ===== Comment Box ===== */
+.comment-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: formSlide 0.2s var(--ease-out);
+}
+
+.comment-textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-surface-warm);
+  resize: vertical;
+  transition: border-color 0.15s ease;
+  line-height: 1.5;
+}
+
+.comment-textarea::placeholder { color: var(--color-text-faint); }
+.comment-textarea:focus { outline: none; border-color: var(--color-text); }
+
+.comment-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comment-hint {
+  font-size: 0.625rem;
+  color: var(--color-text-faint);
+  letter-spacing: 0.02em;
+}
+
+/* ===== Comment Preview (list view) ===== */
+.card-comment-preview {
+  font-size: 0.75rem;
+  color: var(--color-use);
+  background: var(--color-use-soft);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  line-height: 1.4;
+  transition: background 0.15s ease;
+  white-space: pre-line;
+}
+
+.card-comment-preview:hover {
+  background: #dde8ff;
+}
+
 /* ===== Buttons ===== */
 .btn {
   display: inline-flex;
@@ -999,6 +1080,80 @@ body {
   align-items: center;
   min-width: 80px;
   justify-content: flex-end;
+}
+
+/* --- Comment button (focus) --- */
+.focus-comment-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  color: rgba(255,255,255,0.35);
+  transition: all 0.15s ease;
+}
+
+.focus-comment-btn:hover {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+  border-color: rgba(255,255,255,0.25);
+}
+
+.focus-comment-btn--active {
+  background: rgba(37, 99, 235, 0.15);
+  border-color: rgba(37, 99, 235, 0.4);
+  color: #60a5fa;
+}
+
+/* --- Comment preview (focus) --- */
+.focus-comment-preview {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 6px;
+  max-width: 520px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(37, 99, 235, 0.1);
+  color: rgba(96, 165, 250, 0.8);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  white-space: pre-line;
+  margin-bottom: 8px;
+}
+
+.focus-comment-preview:hover {
+  background: rgba(37, 99, 235, 0.16);
+}
+
+.focus-comment-preview svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0.5;
+}
+
+/* --- Comment textarea dark override --- */
+.focus-edit-wrap .comment-textarea {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.85);
+}
+
+.focus-edit-wrap .comment-textarea::placeholder {
+  color: rgba(255,255,255,0.25);
+}
+
+.focus-edit-wrap .comment-textarea:focus {
+  border-color: rgba(255,255,255,0.3);
+}
+
+.focus-edit-wrap .comment-hint {
+  color: rgba(255,255,255,0.2);
 }
 
 /* --- Edit button (focus) --- */
