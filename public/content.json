@@ -1,0 +1,78 @@
+[
+  {
+    "id": "hero-banner",
+    "title": "Hero Banner",
+    "category": "Homepage",
+    "description": "Making the impossible possible -- Stronger, lighter, reusable products that replace traditional ones at a fraction of the cost. BEST develops innovative cellulose fiber treatment technology for moisture resistance, fire resistance, and sustainability.",
+    "link": "https://besustainabletechnologies.com",
+    "media": "assets/hero-packaging.png"
+  },
+  {
+    "id": "problem-statement",
+    "title": "The Problem: Water Damage",
+    "category": "Homepage",
+    "description": "Water damage costs industries over $50 billion annually. Traditional cellulosic materials like cardboard and paper are vulnerable to moisture, leading to product loss, structural failure, and massive waste. Fire risks compound the problem in warehousing and transport.",
+    "link": null
+  },
+  {
+    "id": "four-rs",
+    "title": "The 4R Advantage",
+    "category": "Homepage",
+    "description": "BEST products are built on four pillars: Reusable (withstand multiple use cycles), Recyclable (fully repulpable cellulose), Reducible (lighter weight reduces shipping costs and carbon footprint), and Remarkable (performance that exceeds traditional materials).",
+    "link": null
+  },
+  {
+    "id": "technology-overview",
+    "title": "Our Proprietary Technology",
+    "category": "Technology",
+    "description": "BEST's proprietary chemical process molecularly binds with cellulose fibers to 'lock' them against moisture. The treatment makes fibers biodegradable, recyclable, repulpable, fire-resistant, and resistant to insects, mildew, and mold -- all while remaining hydrophobic.",
+    "media": "assets/mechanism-diagram.png",
+    "link": "https://besustainabletechnologies.com/our-technology/"
+  },
+  {
+    "id": "cellulose-primer",
+    "title": "Understanding Cellulose",
+    "category": "Technology",
+    "description": "Cellulose is the most abundant organic polymer on Earth, forming the structural component of plant cell walls. Traditional cardboard and paper products use cellulose fibers but remain vulnerable to water. BEST's treatment locks these fibers at the molecular level, creating a hydrophobic barrier without sacrificing breathability or recyclability.",
+    "media": "assets/cellulose-fiber.png",
+    "link": null
+  },
+  {
+    "id": "product-pallets",
+    "title": "Treated Pallet Manufacturing",
+    "category": "Products",
+    "description": "With ~2 billion pallets circulating in the U.S., retailers demand sustainable alternatives to wood. BEST-treated cellulosic pallets offer moisture resistance, structural integrity for multi-trip use, full recyclability, and lighter weight for reduced shipping costs. Ideal for retail transportation and warehouse storage.",
+    "media": "assets/product-pallet.png",
+    "link": "https://besustainabletechnologies.com/best-solutions-for-retail-transportation-pallets/"
+  },
+  {
+    "id": "product-paper",
+    "title": "Treated Paper & Packaging",
+    "category": "Products",
+    "description": "BEST-treated paper and packaging materials resist moisture damage during shipping and storage. Rail freight moves 10 billion+ tons of goods annually in the U.S. -- cardboard packaging is superior but vulnerable. Our treatment locks cellulose fibers for moisture resistance, breathability, durability, and full recyclability.",
+    "media": "assets/paper-samples.png",
+    "link": "https://besustainabletechnologies.com/best-solutions-for-railroad-cargo-transport/"
+  },
+  {
+    "id": "product-construction",
+    "title": "Construction Materials",
+    "category": "Products",
+    "description": "BEST technology extends to fire-retardant construction materials. Treated cellulosic products can replace traditional building materials with lighter, more sustainable alternatives that resist moisture, fire, insects, and mold -- addressing key challenges in modern construction.",
+    "media": "assets/coated-vs-uncoated.png",
+    "link": null
+  },
+  {
+    "id": "mission-vision",
+    "title": "Mission & Vision",
+    "category": "Company",
+    "description": "Mission: To be better stewards of our environment by implementing innovative chemistry that makes products manufactured from organic fibers more sustainable, more reusable, and more recyclable. We envision a world where cellulosic materials outperform plastics and traditional materials in every application.",
+    "link": "https://besustainabletechnologies.com/about-us/"
+  },
+  {
+    "id": "leadership-team",
+    "title": "Leadership Team",
+    "category": "Company",
+    "description": "Led by Richard S. Lacour (Co-founder & Chairman), Mark A. Parrish (Managing Director & CEO), Dr. Robert Morton (Chief Science Officer), Fred D. Lowder (Chief Commercial Officer), and Russell Moffett (Sales Manager). A team combining deep expertise in chemistry, manufacturing, and commercial strategy.",
+    "link": "https://besustainabletechnologies.com/about-us/"
+  }
+]

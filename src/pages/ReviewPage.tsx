@@ -1,0 +1,113 @@
+import { useState, useMemo } from 'react';
+import { useParams } from 'react-router-dom';
+import { useContentReview } from '../hooks/useContentReview';
+import { ContentCard } from '../components/ContentCard';
+import { FilterBar } from '../components/FilterBar';
+import { ProgressSummary } from '../components/ProgressSummary';
+import type { ReviewStatus } from '../types';
+
+export function ReviewPage() {
+  const { reviewId } = useParams<{ reviewId: string }>();
+  const {
+    items,
+    isLoading,
+    loadError,
+    saveStates,
+    setStatus,
+    saveEdits,
+    resetEdits,
+    categories,
+  } = useContentReview(reviewId ?? '');
+
+  const [statusFilter, setStatusFilter] = useState<ReviewStatus | 'all'>('all');
+  const [categoryFilter, setCategoryFilter] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const hasActiveFilters = statusFilter !== 'all' || categoryFilter !== '' || searchQuery !== '';
+
+  const filteredItems = useMemo(() => {
+    return items.filter((item) => {
+      if (statusFilter !== 'all' && item.status !== statusFilter) return false;
+      if (categoryFilter && item.category !== categoryFilter) return false;
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        const matchesTitle = item.title.toLowerCase().includes(q);
+        const matchesDesc = item.description?.toLowerCase().includes(q);
+        if (!matchesTitle && !matchesDesc) return false;
+      }
+      return true;
+    });
+  }, [items, statusFilter, categoryFilter, searchQuery]);
+
+  const clearFilters = () => {
+    setStatusFilter('all');
+    setCategoryFilter('');
+    setSearchQuery('');
+  };
+
+  if (!reviewId) {
+    return (
+      <div className="page-container">
+        <div className="error-state">No review ID provided. Check your link.</div>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className="page-container">
+        <div className="loading-state">Loading content...</div>
+      </div>
+    );
+  }
+
+  if (loadError) {
+    return (
+      <div className="page-container">
+        <div className="error-state">Failed to load: {loadError}</div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="page-container">
+      <header className="page-header">
+        <h1>BEST Content Review</h1>
+        <p className="page-subtitle">
+          Review each content item and set a status. Your changes save automatically.
+        </p>
+      </header>
+
+      <ProgressSummary items={items} />
+
+      <FilterBar
+        statusFilter={statusFilter}
+        onStatusFilterChange={setStatusFilter}
+        categoryFilter={categoryFilter}
+        onCategoryFilterChange={setCategoryFilter}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        categories={categories}
+        onClear={clearFilters}
+        hasActiveFilters={hasActiveFilters}
+      />
+
+      {filteredItems.length === 0 && (
+        <div className="empty-state">No items match your filters.</div>
+      )}
+
+      <div className="card-list">
+        {filteredItems.map((item) => (
+          <ContentCard
+            key={item.id}
+            item={item}
+            saveState={saveStates[item.id] ?? 'idle'}
+            onStatusChange={(status) => setStatus(item.id, status)}
+            onSaveEdits={(edits) => saveEdits(item.id, edits)}
+            onResetEdits={() => resetEdits(item.id)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
