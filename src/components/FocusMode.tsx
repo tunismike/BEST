@@ -211,11 +211,6 @@ export function FocusMode({
         <div
           className={`focus-content ${transitioning ? `focus-content--exit-${direction}` : 'focus-content--enter'}`}
         >
-          {/* Category label */}
-          {item.category && (
-            <span className="focus-category">{item.category}</span>
-          )}
-
           {/* Image items: just show the image — it IS the content */}
           {hasImage && (
             <div className="focus-media">
