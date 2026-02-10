@@ -52,14 +52,21 @@ export function ContentCard({
       )}
 
       <div className="card-body">
-        <div className="card-header">
-          <span className="card-title">{item.title}</span>
-          {item.isEdited && <span className="card-edited-dot" title="Edited" />}
-        </div>
-
-        {/* Only show description for text-only cards — images speak for themselves */}
-        {!hasImage && item.description && (
-          <p className="card-description">{item.description}</p>
+        {/* Text-only cards: show title + description */}
+        {!hasImage && (
+          <>
+            <div className="card-header">
+              <span className="card-title">{item.title}</span>
+              {item.isEdited && <span className="card-edited-dot" title="Edited" />}
+            </div>
+            {item.description && (
+              <p className="card-description">{item.description}</p>
+            )}
+          </>
+        )}
+        {/* Image cards: the image IS the content — no title/description needed */}
+        {hasImage && item.isEdited && (
+          <span className="card-edited-dot" title="Edited" />
         )}
 
         <div className="card-actions">

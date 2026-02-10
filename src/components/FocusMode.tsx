@@ -216,13 +216,7 @@ export function FocusMode({
             <span className="focus-category">{item.category}</span>
           )}
 
-          {/* Title */}
-          <h2 className="focus-title">
-            {item.title}
-            {item.isEdited && <span className="focus-edited-dot" />}
-          </h2>
-
-          {/* Media */}
+          {/* Image items: just show the image — it IS the content */}
           {hasImage && (
             <div className="focus-media">
               <img
@@ -232,9 +226,17 @@ export function FocusMode({
             </div>
           )}
 
-          {/* Description */}
-          {item.description && (
-            <p className="focus-description">{item.description}</p>
+          {/* Text-only items: show title + description */}
+          {!hasImage && (
+            <>
+              <h2 className="focus-title">
+                {item.title}
+                {item.isEdited && <span className="focus-edited-dot" />}
+              </h2>
+              {item.description && (
+                <p className="focus-description">{item.description}</p>
+              )}
+            </>
           )}
 
           {/* Current status indicator */}
