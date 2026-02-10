@@ -1,78 +1,453 @@
 [
   {
-    "id": "hero-banner",
-    "title": "Hero Banner",
+    "id": "home-hero-image",
+    "title": "Homepage: Hero Image",
     "category": "Homepage",
-    "description": "Making the impossible possible -- Stronger, lighter, reusable products that replace traditional ones at a fraction of the cost. BEST develops innovative cellulose fiber treatment technology for moisture resistance, fire resistance, and sustainability.",
-    "link": "https://besustainabletechnologies.com",
+    "description": "Hero banner image showing treated packaging/paper products. Used as the main visual at the top of the homepage.",
     "media": "assets/hero-packaging.png"
   },
   {
-    "id": "problem-statement",
-    "title": "The Problem: Water Damage",
+    "id": "home-hero-image-alt",
+    "title": "Homepage: Hero Image (Alternate - Droplet)",
     "category": "Homepage",
-    "description": "Water damage costs industries over $50 billion annually. Traditional cellulosic materials like cardboard and paper are vulnerable to moisture, leading to product loss, structural failure, and massive waste. Fire risks compound the problem in warehousing and transport.",
-    "link": null
+    "description": "Alternative hero image showing water droplet on treated surface. Could replace or complement the packaging hero.",
+    "media": "assets/hero-droplet.png"
   },
   {
-    "id": "four-rs",
-    "title": "The 4R Advantage",
+    "id": "home-hero-headline",
+    "title": "Homepage: Hero Headline & CTA",
     "category": "Homepage",
-    "description": "BEST products are built on four pillars: Reusable (withstand multiple use cycles), Recyclable (fully repulpable cellulose), Reducible (lighter weight reduces shipping costs and carbon footprint), and Remarkable (performance that exceeds traditional materials).",
-    "link": null
+    "description": "Weather-related and flood damage losses are well over $50 billion annually. And cost insurance companies more than $16 billion per year.\n\nWhat if... water was no longer the enemy?\nWhat if... there is something that not only stands up to water but beats it?\nWhat would you pay for that?\n\nDiscover how we can conquer water.",
+    "link": "https://besustainabletechnologies.com"
   },
   {
-    "id": "technology-overview",
-    "title": "Our Proprietary Technology",
-    "category": "Technology",
-    "description": "BEST's proprietary chemical process molecularly binds with cellulose fibers to 'lock' them against moisture. The treatment makes fibers biodegradable, recyclable, repulpable, fire-resistant, and resistant to insects, mildew, and mold -- all while remaining hydrophobic.",
-    "media": "assets/mechanism-diagram.png",
-    "link": "https://besustainabletechnologies.com/our-technology/"
+    "id": "home-problem-homes",
+    "title": "Homepage: Water Damages Homes",
+    "category": "Homepage",
+    "description": "It can warp floors and worse -- ruin electrical systems, corrode plumbing, destroy ceilings and walls, cause mold growth, and weaken structural integrity."
   },
   {
-    "id": "cellulose-primer",
-    "title": "Understanding Cellulose",
-    "category": "Technology",
-    "description": "Cellulose is the most abundant organic polymer on Earth, forming the structural component of plant cell walls. Traditional cardboard and paper products use cellulose fibers but remain vulnerable to water. BEST's treatment locks these fibers at the molecular level, creating a hydrophobic barrier without sacrificing breathability or recyclability.",
-    "media": "assets/cellulose-fiber.png",
-    "link": null
+    "id": "home-problem-recycling",
+    "title": "Homepage: Water Hurts Recycling",
+    "category": "Homepage",
+    "description": "Wet cardboard creates many problems. It's harder to sort and wets other recyclables, making for messy pickup and handling. Even when dry, the cardboard fibers become brittle and crumbly, making it much less valuable."
   },
   {
-    "id": "product-pallets",
-    "title": "Treated Pallet Manufacturing",
-    "category": "Products",
-    "description": "With ~2 billion pallets circulating in the U.S., retailers demand sustainable alternatives to wood. BEST-treated cellulosic pallets offer moisture resistance, structural integrity for multi-trip use, full recyclability, and lighter weight for reduced shipping costs. Ideal for retail transportation and warehouse storage.",
-    "media": "assets/product-pallet.png",
-    "link": "https://besustainabletechnologies.com/best-solutions-for-retail-transportation-pallets/"
+    "id": "home-problem-fire",
+    "title": "Homepage: Fire - Another Adversary",
+    "category": "Homepage",
+    "description": "It can take just 30 seconds for a small flame to turn into a major blaze. There's a yearly average of 358,300 home-based fires, causing an estimated $15.9 billion in property damage."
   },
   {
-    "id": "product-paper",
-    "title": "Treated Paper & Packaging",
-    "category": "Products",
-    "description": "BEST-treated paper and packaging materials resist moisture damage during shipping and storage. Rail freight moves 10 billion+ tons of goods annually in the U.S. -- cardboard packaging is superior but vulnerable. Our treatment locks cellulose fibers for moisture resistance, breathability, durability, and full recyclability.",
-    "media": "assets/paper-samples.png",
-    "link": "https://besustainabletechnologies.com/best-solutions-for-railroad-cargo-transport/"
+    "id": "home-problem-paper",
+    "title": "Homepage: Water Destroys Paper",
+    "category": "Homepage",
+    "description": "Paper loses strength when wet. Books suffer damage due to swelling. Mold begins to grow when objects left damp for 72 hours."
   },
   {
-    "id": "product-construction",
-    "title": "Construction Materials",
-    "category": "Products",
-    "description": "BEST technology extends to fire-retardant construction materials. Treated cellulosic products can replace traditional building materials with lighter, more sustainable alternatives that resist moisture, fire, insects, and mold -- addressing key challenges in modern construction.",
-    "media": "assets/coated-vs-uncoated.png",
-    "link": null
+    "id": "home-challenges-biodegradability",
+    "title": "Homepage: Challenge - Biodegradability",
+    "category": "Homepage",
+    "description": "We require products that naturally break down and are not toxic to our environment."
   },
   {
-    "id": "mission-vision",
-    "title": "Mission & Vision",
+    "id": "home-challenges-repulpability",
+    "title": "Homepage: Challenge - Repulpability",
+    "category": "Homepage",
+    "description": "Materials should break down after repeat use. For example, converting paper back to pulp to be used again."
+  },
+  {
+    "id": "home-challenges-insects",
+    "title": "Homepage: Challenge - Resistance to Insects",
+    "category": "Homepage",
+    "description": "Over time, we must ensure effectiveness and control over pest populations such as termites."
+  },
+  {
+    "id": "home-challenges-strength",
+    "title": "Homepage: Challenge - Strength-to-Weight Ratio",
+    "category": "Homepage",
+    "description": "We need materials that are as light as paper yet as strong as steel."
+  },
+  {
+    "id": "home-challenges-insulation",
+    "title": "Homepage: Challenge - Thermal Insulation",
+    "category": "Homepage",
+    "description": "Cups that can easily keep hot items hot and cold items cold with no condensation or \"sweating.\""
+  },
+  {
+    "id": "home-polymer-statement",
+    "title": "Homepage: Polymer Fibers Statement",
+    "category": "Homepage",
+    "description": "POLYMER FIBERS ARE NO LONGER THE BEST ANSWER\n\nUsing chemicals and plastics when manufacturing paper or construction materials has limitations -- the chemicals involved to treat products are toxic. And these products are not sustainable or recyclable. And natural fibers, though more desirable from a sustainability aspect, don't hold up well."
+  },
+  {
+    "id": "home-4r-headline",
+    "title": "Homepage: 4R's Headline",
+    "category": "Homepage",
+    "description": "It's time for products that meet the 4 R's: Reusable, Recyclable, Reducible, and Remarkable"
+  },
+  {
+    "id": "home-4r-reducible",
+    "title": "Homepage: Reducible",
+    "category": "Homepage",
+    "description": "Using less material to conserve natural resources."
+  },
+  {
+    "id": "home-4r-recyclable",
+    "title": "Homepage: Recyclable",
+    "category": "Homepage",
+    "description": "If unable to be put back into circulation, products can be broken down easily, cost-effectively, and efficiently recreated to be used again."
+  },
+  {
+    "id": "home-4r-reusable",
+    "title": "Homepage: Reusable",
+    "category": "Homepage",
+    "description": "With nominal effort, products can be put back into circulation with minimal treatment or maintenance."
+  },
+  {
+    "id": "home-4r-remarkable",
+    "title": "Homepage: Remarkable",
+    "category": "Homepage",
+    "description": "It's Time for Remarkable. We need a broader class of materials that simultaneously solves many challenges, including water/insect resistance and repellence, fire suppression, unprecedented power-to-weight ratio, repulpability, biodegradability, and viable thermal insulation."
+  },
+  {
+    "id": "home-industry-paper",
+    "title": "Homepage: Industry - Pulp/Paper Manufacturing",
+    "category": "Homepage",
+    "description": "Create cost-effective paper products made with natural fibers that are water and mildew resistant, with chemicals safe for humans and the environment, and no harmful by-products.\n\nCreate treated paper products that are completely recyclable, remain breathable, work with existing processes with little or no modifications, and can include fire protection."
+  },
+  {
+    "id": "home-industry-construction",
+    "title": "Homepage: Industry - Construction Materials",
+    "category": "Homepage",
+    "description": "Create cost-effective building products made with natural fibers that can be made fire/water/mildew resistant, with chemicals safe for humans and the environment.\n\nCreate products that are 25% lighter than current materials yet remain strong and durable, are completely recyclable, remain breathable, and work with existing manufacturing processes."
+  },
+  {
+    "id": "home-mission",
+    "title": "Homepage: Our Mission",
     "category": "Company",
-    "description": "Mission: To be better stewards of our environment by implementing innovative chemistry that makes products manufactured from organic fibers more sustainable, more reusable, and more recyclable. We envision a world where cellulosic materials outperform plastics and traditional materials in every application.",
-    "link": "https://besustainabletechnologies.com/about-us/"
+    "description": "BEST is implementing innovative chemistry to make products manufactured from organic fibers more sustainable, more reusable, and more recyclable. This proprietary chemistry can make a wide range of products -- from paper production to construction materials -- water- and swell-resistant."
   },
   {
-    "id": "leadership-team",
-    "title": "Leadership Team",
+    "id": "home-vision",
+    "title": "Homepage: Our Vision",
     "category": "Company",
-    "description": "Led by Richard S. Lacour (Co-founder & Chairman), Mark A. Parrish (Managing Director & CEO), Dr. Robert Morton (Chief Science Officer), Fred D. Lowder (Chief Commercial Officer), and Russell Moffett (Sales Manager). A team combining deep expertise in chemistry, manufacturing, and commercial strategy.",
-    "link": "https://besustainabletechnologies.com/about-us/"
+    "description": "Wherever organic fibers are used in manufacturing, BEST wants to integrate its innovative chemistry to make products better -- for the environment and for the world."
+  },
+  {
+    "id": "home-purpose",
+    "title": "Homepage: Our Purpose",
+    "category": "Company",
+    "description": "A Better, Sustainable Future Through Chemistry + Organic Fibers"
+  },
+  {
+    "id": "tech-intro",
+    "title": "Technology: What Is Our Technology?",
+    "category": "Technology",
+    "description": "Through a proprietary chemical process that molecularly binds with cellulose fibers, we have been able to \"lock the fibers,\" so they are no longer susceptible to moisture."
+  },
+  {
+    "id": "tech-promise",
+    "title": "Technology: What Is Promising About It?",
+    "category": "Technology",
+    "description": "By preventing absorption, the material no longer weakens or swells when exposed to water, maintaining its structural integrity and strength.\n\nOur process alters natural fibers to allow air to pass through, making the material breathable and further removing the threat of water damage.\n\nThrough chemical and molecular innovations, we are developing new cellulosic fiber-based products that allow for reduced consumption, while increasing reusability and recyclability -- all at a fraction of the cost of traditional products."
+  },
+  {
+    "id": "tech-mechanism-image",
+    "title": "Technology: Mechanism Diagram",
+    "category": "Technology",
+    "description": "Diagram showing how the proprietary chemical process molecularly binds with cellulose fibers.",
+    "media": "assets/mechanism-diagram.png"
+  },
+  {
+    "id": "tech-molecular-bonding-image",
+    "title": "Technology: Molecular Bonding Diagram",
+    "category": "Technology",
+    "description": "Detailed molecular bonding diagram showing the chemistry of the cellulose treatment process.",
+    "media": "assets/molecular-bonding-diagram.png"
+  },
+  {
+    "id": "tech-benefit-biodegradable",
+    "title": "Technology: Benefit - Biodegradable",
+    "category": "Technology",
+    "description": "Less harm to our environment. No emissions from toxins. Less waste going into environment. Sustainable business model."
+  },
+  {
+    "id": "tech-benefit-recyclable",
+    "title": "Technology: Benefit - Recyclable",
+    "category": "Technology",
+    "description": "Able to reuse and reduce waste."
+  },
+  {
+    "id": "tech-benefit-repulpable",
+    "title": "Technology: Benefit - Repulpable",
+    "category": "Technology",
+    "description": "Reduce waste by reusing materials in upcycled products again and again."
+  },
+  {
+    "id": "tech-benefit-fire-resistant",
+    "title": "Technology: Benefit - Fire-Resistant",
+    "category": "Technology",
+    "description": "Safer products with less risk of loss and damage."
+  },
+  {
+    "id": "tech-benefit-pest-resistant",
+    "title": "Technology: Benefit - Insect/Mildew/Mold Resistant",
+    "category": "Technology",
+    "description": "Products withstand the elements of nature with less loss and damage."
+  },
+  {
+    "id": "tech-benefit-hydrophobic",
+    "title": "Technology: Benefit - Hydrophobicity",
+    "category": "Technology",
+    "description": "Materials withstand water and rain exposure with little damage and loss and maintain strength and structural integrity."
+  },
+  {
+    "id": "tech-cardboard-stats",
+    "title": "Technology: Cardboard Production Stats",
+    "category": "Technology",
+    "description": "Time To Work Smarter To Save Our Environment. The global production of cardboard was estimated to be 66 million tons in 2020. Cardboard output is forecast to increase to more than 72 million tons. We must create products that are more sustainable as well as cost-effective."
+  },
+  {
+    "id": "tech-cellulose-primer",
+    "title": "Technology: Cellulose Primer",
+    "category": "Technology",
+    "description": "Cellulose is an organic compound and the most abundant biopolymer on Earth. It is an important structural component of green plants used in manufacturing paper and cardboard products. Around 90% of shipped products in the US are packaged in cardboard.\n\nThe properties of cellulose make it attractive as a substitute for plastics. However, the challenge with cellulose is its water content and absorption, which can contribute to degradation leading to poor mechanical properties and reduced product life.\n\nWhat is needed is a way to strengthen the cellulose at the molecular level, which historically has been a complex phenomenon."
+  },
+  {
+    "id": "tech-cellulose-fiber-image",
+    "title": "Technology: Cellulose Fiber Close-Up",
+    "category": "Technology",
+    "description": "Close-up image of cellulose fiber structure.",
+    "media": "assets/cellulose-fiber.png"
+  },
+  {
+    "id": "tech-cellulose-microscopy-image",
+    "title": "Technology: Cellulose Microscopy",
+    "category": "Technology",
+    "description": "Microscopy image showing cellulose fiber structure at high magnification.",
+    "media": "assets/cellulose-microscopy.png"
+  },
+  {
+    "id": "tech-traditional-vs-best",
+    "title": "Technology: Traditional Cardboard vs. BEST Treatment",
+    "category": "Technology",
+    "description": "Today's cardboard technology involves recycled material and new cellulose from harvesting wood. It is pulped, filtered, blended, placed on a conveyer belt, and blasted with heat. Cardboard takes approximately 12 months to completely decompose. In landfills, it deteriorates and chemically breaks down, releasing methane -- which impacts the environment 20 times more than carbon dioxide."
+  },
+  {
+    "id": "tech-solution",
+    "title": "Technology: Our Treated Cellulose Solution",
+    "category": "Technology",
+    "description": "Our solution involves treating cellulose at the molecular level. It is not a surfactant (Surface Active Agent). We developed a proprietary method that involves bonding with cellulose molecules at the chemical level. As a result, we have developed technology that can meet a range of challenges that existing products are unable to meet."
+  },
+  {
+    "id": "tech-coated-vs-uncoated-image",
+    "title": "Technology: Coated vs. Uncoated Comparison",
+    "category": "Technology",
+    "description": "Side-by-side comparison of coated (BEST-treated) vs. uncoated paper/cardboard showing water resistance difference.",
+    "media": "assets/coated-vs-uncoated.png"
+  },
+  {
+    "id": "tech-cobb-test-image",
+    "title": "Technology: Cobb Test Results",
+    "category": "Technology",
+    "description": "Cobb test results showing water absorption measurements for treated vs. untreated materials.",
+    "media": "assets/cobb-test.png"
+  },
+  {
+    "id": "tech-cobb-test-setup-image",
+    "title": "Technology: Cobb Test Setup",
+    "category": "Technology",
+    "description": "Laboratory setup for the Cobb test measuring water absorption of treated materials.",
+    "media": "assets/cobb-test-setup.png"
+  },
+  {
+    "id": "tech-contact-angle-image",
+    "title": "Technology: Contact Angle Measurement",
+    "category": "Technology",
+    "description": "Contact angle measurement showing hydrophobicity of treated cellulose surface.",
+    "media": "assets/contact-angle.png"
+  },
+  {
+    "id": "tech-contact-angle-goniometer-image",
+    "title": "Technology: Contact Angle Goniometer",
+    "category": "Technology",
+    "description": "Goniometer instrument used for contact angle measurement on treated surfaces.",
+    "media": "assets/contact-angle-goniometer.png"
+  },
+  {
+    "id": "tech-treated-humidity-image",
+    "title": "Technology: Treated Paper Humidity Test",
+    "category": "Technology",
+    "description": "Results of humidity exposure test on BEST-treated paper products.",
+    "media": "assets/treated-paper-humidity.png"
+  },
+  {
+    "id": "tech-paper-mill-image",
+    "title": "Technology: Paper Mill",
+    "category": "Technology",
+    "description": "Paper mill production environment where BEST treatment can be integrated.",
+    "media": "assets/paper-mill.png"
+  },
+  {
+    "id": "tech-paper-mill-abstract-image",
+    "title": "Technology: Paper Mill (Abstract)",
+    "category": "Technology",
+    "description": "Abstract/artistic view of paper mill operations.",
+    "media": "assets/paper-mill-abstract.png"
+  },
+  {
+    "id": "product-pallet-image",
+    "title": "Product: Pallet Image",
+    "category": "Products",
+    "description": "BEST-treated cellulosic fiber shipping pallet.",
+    "media": "assets/product-pallet.png"
+  },
+  {
+    "id": "product-pallet-intro",
+    "title": "Product: Retail Pallets - Overview",
+    "category": "Products",
+    "description": "With roughly 2 billion pallets circulating in the United States, global retailers want to reduce their carbon footprint through sustainable and eco-friendly operations. Since these retailers carry vast inventories and depend on complex supply chain operations, they want sustainable solutions to transport goods. One efficient, cost-effective option? Recycled cardboard pallets for retail transportation."
+  },
+  {
+    "id": "product-pallet-problems",
+    "title": "Product: Retail Pallets - Current Problems",
+    "category": "Products",
+    "description": "Cardboard pallets have significant liabilities:\n\n1. Vulnerable to Moisture -- can neither sustain nor resist moisture for long periods, can't be stored outside\n2. Not as Reliable as Wooden Pallets -- tendency to buckle or collapse under heavy cargo\n3. Not Particularly Hygienic -- absorbent nature prevents sanitization, risking product contamination\n4. Vulnerable to Legal Issues -- flimsy pallets can result in safety incidents, injuries, or fatalities"
+  },
+  {
+    "id": "product-pallet-solution",
+    "title": "Product: Retail Pallets - BEST Solution",
+    "category": "Products",
+    "description": "Through a proprietary chemical process that molecularly binds with cellulose fibers, BEST can \"lock the fibers,\" making them resistant to moisture. The material maintains structural integrity and strength, remains breathable, and allows for reduced consumption while increasing reusability and recyclability -- at a fraction of the cost of traditional products."
+  },
+  {
+    "id": "product-paper-samples-image",
+    "title": "Product: Paper Samples",
+    "category": "Products",
+    "description": "Samples of BEST-treated paper products showing range of applications.",
+    "media": "assets/paper-samples.png"
+  },
+  {
+    "id": "product-paper-image",
+    "title": "Product: Treated Paper",
+    "category": "Products",
+    "description": "BEST-treated paper product showing moisture resistance properties.",
+    "media": "assets/product-paper.png"
+  },
+  {
+    "id": "product-railroad-intro",
+    "title": "Product: Railroad Cargo - Overview",
+    "category": "Products",
+    "description": "Rail freight moves 10 billion+ tons of goods around the U.S. annually, making it vital to the economy. While recycled cardboard is superior to protect and package goods, it holds hidden dangers: vulnerable to moisture, susceptible to friction and wear, often discarded after single use, and a fire hazard."
+  },
+  {
+    "id": "product-railroad-solution",
+    "title": "Product: Railroad Cargo - BEST Solution",
+    "category": "Products",
+    "description": "BEST's treatment helps maintain structural integrity and strength. The process alters natural fibers to allow air passage, making material breathable. Rail and logistics companies need more durable, moisture-resistant, and fire-resistant materials. Working with BEST allows these companies to be better stewards of our environment while reducing costs."
+  },
+  {
+    "id": "product-construction-text",
+    "title": "Product: Construction Materials",
+    "category": "Products",
+    "description": "Construction material that is fire retardant and lighter yet maintains significant strength. Create cost-effective building products made with natural fibers that can be made fire/water/mildew resistant. Products are 25% lighter than current materials yet remain strong and durable.",
+    "media": "assets/coated-vs-uncoated.png"
+  },
+  {
+    "id": "product-cork-image",
+    "title": "Product: Cork Product",
+    "category": "Products",
+    "description": "BEST-treated cork product application.",
+    "media": "assets/product-cork.png"
+  },
+  {
+    "id": "product-flowerpot-image",
+    "title": "Product: Flowerpot",
+    "category": "Products",
+    "description": "BEST-treated cellulosic flowerpot -- moisture-resistant biodegradable planter.",
+    "media": "assets/product-flowerpot.png"
+  },
+  {
+    "id": "product-stakes-image",
+    "title": "Product: Garden/Agricultural Stakes",
+    "category": "Products",
+    "description": "BEST-treated cellulosic stakes for garden or agricultural use.",
+    "media": "assets/product-stakes.png"
+  },
+  {
+    "id": "product-treeskirt-image",
+    "title": "Product: Tree Skirt",
+    "category": "Products",
+    "description": "BEST-treated tree skirt / ground cover product.",
+    "media": "assets/product-treeskirt.png"
+  },
+  {
+    "id": "product-weedblock-image",
+    "title": "Product: Weed Block",
+    "category": "Products",
+    "description": "BEST-treated cellulosic weed block for landscaping and agriculture.",
+    "media": "assets/product-weedblock.png"
+  },
+  {
+    "id": "product-agricultural-image",
+    "title": "Product: Agricultural Application",
+    "category": "Products",
+    "description": "BEST-treated product for agricultural applications.",
+    "media": "assets/product-agricultural.png"
+  },
+  {
+    "id": "about-intro",
+    "title": "About: Company Introduction",
+    "category": "Company",
+    "description": "We are developing an innovative approach to the use of cellulosic fiber that makes the impossible possible -- Stronger, lighter, reusable products that replace traditional ones at a fraction of the cost."
+  },
+  {
+    "id": "about-mission",
+    "title": "About: Mission Statement",
+    "category": "Company",
+    "description": "To be better stewards of our environment by implementing innovative chemistry that can make products manufactured from organic fibers more sustainable, more reusable, and more recyclable."
+  },
+  {
+    "id": "about-team-intro",
+    "title": "About: Team Introduction",
+    "category": "Company",
+    "description": "BEST has brought together senior leaders in the areas of industrial chemistry, chemical engineering, manufacturing, and emerging sustainability technologies to realize this mission."
+  },
+  {
+    "id": "about-lacour-bio",
+    "title": "About: Richard S. Lacour - Bio",
+    "category": "Company",
+    "description": "Richard S. Lacour, Co-founder & Chairman of the Board. BEST has successfully pioneered an environmentally safe process to treat biomass delivering various degrees of hydrophobicity. Mr. Lacour places high emphasis on the environment and sustainability as owner of two of the largest carbon credit projects in Brazil, preserving millions of hectares of Amazon rainforest. CPA background with Arthur Anderson LLP; founded own public accounting practice. Also a Certified Public Insurance Adjuster who directly advised the Governor of Louisiana following the BP Oil Spill."
+  },
+  {
+    "id": "about-morton-bio",
+    "title": "About: Dr. Robert Morton - Bio",
+    "category": "Company",
+    "description": "Dr. Robert Morton, Chief Science Officer. Over 45 years in American industry. Chief materials scientist at Phillips 66 for 30 years with 24 patents. Discovered chemistry driving regenerable materials for removing sulfur from petroleum products. Developed standard analytical methods used by the U.S. EPA worldwide. Pioneer in elemental x-ray imaging (XRF imaging), contributed to recovery of lost works of Archimedes and imaging the Archaeopteryx. Ph.D. in Chemistry from University of Missouri-Kansas City."
+  },
+  {
+    "id": "about-lowder-bio",
+    "title": "About: Fred D. Lowder - Bio",
+    "category": "Company",
+    "description": "Fred D. Lowder, Chief Commercial Officer. Responsible for developing and leading BEST's commercial and market development. Industrial chemist with significant experience in technical groups and strategic sales management. 37-year career in petroleum industry, leading expert in Pentane, Hexane, and Heptane solvents. Instrumental in converting PIMA foam blowing from freon to pentane. At Phillips 66, led Solvents team to increase net profit from $38MM/yr to $64MM/yr. B.S. in Math and Chemistry Education from West Texas State University."
+  },
+  {
+    "id": "about-parrish-bio",
+    "title": "About: Mark A. Parrish - Bio",
+    "category": "Company",
+    "description": "Mark A. Parrish, Managing Director and CEO. Proven leader in company transformation and shareholder value with deep knowledge of industrials and technology. Senior leadership experience in sustainability, operational excellence, corporate strategy, M&A, and emerging technologies. Led world-class manufacturers including Ply Gem Windows, Interface Inc., and Deceuninck North America. Two M.S. degrees from MIT (Mechanical Engineering and Operations Management). B.S. from West Point. Former U.S. Army AH-64 Apache pilot; received Bronze Star and Air Medal for Valor."
+  },
+  {
+    "id": "about-moffett-bio",
+    "title": "About: Russell Moffett - Bio",
+    "category": "Company",
+    "description": "Russell Moffett, Sales Manager. 34 years of experience in petroleum and chemical industries. Most recently Mid-Continent Region Sales Manager for Phillips 66 Specialty Solvents (17+ years). Career began with Schlumberger as Field Engineer, progressing through various roles in South Louisiana and Texas. Experience in refined products, light hydrocarbons, and calcined petroleum coke. Serves on Mississippi State University Petroleum Engineering Advisory Board. B.S. in Petroleum Engineering from Mississippi State University."
+  },
+  {
+    "id": "about-mccalmont-bio",
+    "title": "About: Sam McCalmont - Bio",
+    "category": "Company",
+    "description": "Sam McCalmont. 37 years of experience in specialty chemical business and specialty hydrocarbons. Career at Callery Chemical (business development, product development, sales management), then Phillips Petroleum/Phillips 66 Specialty Solvents (Northeast Territory Manager including Canada, Europe, and Middle East). B.S. in Chemistry from Marshall University."
   }
 ]
