@@ -67,25 +67,22 @@ export function useContentReview(reviewId: string): UseContentReviewReturn {
         if (!baselineRes.ok) throw new Error('Failed to load content.json');
         const baselineData: ContentItem[] = await baselineRes.json();
 
-        const [reviewsRes, editsRes] = await Promise.all([
-          supabase
-            .from('content_reviews')
-            .select('*')
-            .eq('review_id', reviewId),
-          supabase
-            .from('content_edits')
-            .select('*')
-            .eq('review_id', reviewId),
-        ]);
-
         if (cancelled) return;
-
-        if (reviewsRes.error) throw new Error(reviewsRes.error.message);
-        if (editsRes.error) throw new Error(editsRes.error.message);
-
         setBaseline(baselineData);
-        setReviews((reviewsRes.data ?? []) as ContentReview[]);
-        setEdits((editsRes.data ?? []) as ContentEdit[]);
+
+        if (supabase) {
+          const [reviewsRes, editsRes] = await Promise.all([
+            supabase.from('content_reviews').select('*').eq('review_id', reviewId),
+            supabase.from('content_edits').select('*').eq('review_id', reviewId),
+          ]);
+
+          if (cancelled) return;
+          if (reviewsRes.error) throw new Error(reviewsRes.error.message);
+          if (editsRes.error) throw new Error(editsRes.error.message);
+
+          setReviews((reviewsRes.data ?? []) as ContentReview[]);
+          setEdits((editsRes.data ?? []) as ContentEdit[]);
+        }
       } catch (err) {
         if (!cancelled) {
           setLoadError(err instanceof Error ? err.message : 'Unknown error');
@@ -126,6 +123,11 @@ export function useContentReview(reviewId: string): UseContentReviewReturn {
         return [...prev, row];
       });
 
+      if (!supabase) {
+        setSaveState(itemId, 'saved');
+        return;
+      }
+
       setSaveState(itemId, 'saving');
 
       supabase
@@ -137,7 +139,6 @@ export function useContentReview(reviewId: string): UseContentReviewReturn {
         .then(({ error }) => {
           if (error) {
             setSaveState(itemId, 'error');
-            // Rollback
             setReviews((prev) => prev.filter((r) => r.item_id !== itemId || r.status !== status));
           } else {
             setSaveState(itemId, 'saved');
@@ -152,8 +153,6 @@ export function useContentReview(reviewId: string): UseContentReviewReturn {
       itemId: string,
       editData: { title?: string; category?: string; description?: string; link?: string }
     ) => {
-      setSaveState(itemId, 'saving');
-
       const row = {
         review_id: reviewId,
         item_id: itemId,
@@ -163,6 +162,25 @@ export function useContentReview(reviewId: string): UseContentReviewReturn {
         link: editData.link ?? null,
       };
 
+      const now = new Date().toISOString();
+      const editRow: ContentEdit = { ...row, updated_at: now };
+
+      if (!supabase) {
+        setEdits((prev) => {
+          const idx = prev.findIndex((e) => e.item_id === itemId);
+          if (idx >= 0) {
+            const next = [...prev];
+            next[idx] = editRow;
+            return next;
+          }
+          return [...prev, editRow];
+        });
+        setSaveState(itemId, 'saved');
+        return;
+      }
+
+      setSaveState(itemId, 'saving');
+
       supabase
         .from('content_edits')
         .upsert(row, { onConflict: 'review_id,item_id' })
@@ -171,8 +189,7 @@ export function useContentReview(reviewId: string): UseContentReviewReturn {
             setSaveState(itemId, 'error');
           } else {
             setSaveState(itemId, 'saved');
-            const now = new Date().toISOString();
-            const editRow: ContentEdit = {
+            const returnedRow: ContentEdit = {
               ...row,
               updated_at: (data as ContentEdit[] | null)?.[0]?.updated_at ?? now,
             };
@@ -180,10 +197,10 @@ export function useContentReview(reviewId: string): UseContentReviewReturn {
               const idx = prev.findIndex((e) => e.item_id === itemId);
               if (idx >= 0) {
                 const next = [...prev];
-                next[idx] = editRow;
+                next[idx] = returnedRow;
                 return next;
               }
-              return [...prev, editRow];
+              return [...prev, returnedRow];
             });
           }
         });
@@ -193,6 +210,12 @@ export function useContentReview(reviewId: string): UseContentReviewReturn {
 
   const resetEdits = useCallback(
     (itemId: string) => {
+      if (!supabase) {
+        setEdits((prev) => prev.filter((e) => e.item_id !== itemId));
+        setSaveState(itemId, 'saved');
+        return;
+      }
+
       setSaveState(itemId, 'saving');
 
       supabase
