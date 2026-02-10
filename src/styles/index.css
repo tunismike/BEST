@@ -1036,19 +1036,22 @@ body {
 .focus-action-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   height: 42px;
   padding: 0 20px;
-  border: 1.5px solid rgba(255,255,255,0.12);
+  border: 1.5px solid;
   border-radius: var(--radius-pill);
   background: transparent;
   cursor: pointer;
   font-family: var(--font-body);
   font-size: 0.8125rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.55);
   transition: all 0.15s var(--ease-out);
   white-space: nowrap;
+}
+
+.focus-action-btn svg {
+  flex-shrink: 0;
 }
 
 .focus-action-btn:disabled {
@@ -1064,32 +1067,70 @@ body {
   height: 20px;
   padding: 0 5px;
   border-radius: 4px;
-  background: rgba(255,255,255,0.06);
   font-family: var(--font-body);
   font-size: 0.625rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.25);
   line-height: 1;
 }
 
+/* Use — blue tint always on */
+.focus-action-btn--use {
+  border-color: rgba(37, 99, 235, 0.35);
+  color: #93bbfd;
+  background: rgba(37, 99, 235, 0.08);
+}
+.focus-action-btn--use kbd {
+  background: rgba(37, 99, 235, 0.15);
+  color: rgba(96, 165, 250, 0.5);
+}
 .focus-action-btn--use:hover:not(:disabled) {
   border-color: var(--color-use);
-  color: #93bbfd;
-  background: rgba(37, 99, 235, 0.1);
+  color: #bdd4fe;
+  background: rgba(37, 99, 235, 0.18);
 }
 
+/* Like — green tint always on */
+.focus-action-btn--like {
+  border-color: rgba(5, 150, 105, 0.35);
+  color: #34d399;
+  background: rgba(5, 150, 105, 0.08);
+}
+.focus-action-btn--like kbd {
+  background: rgba(5, 150, 105, 0.15);
+  color: rgba(52, 211, 153, 0.5);
+}
 .focus-action-btn--like:hover:not(:disabled) {
   border-color: var(--color-like);
-  color: #34d399;
-  background: rgba(5, 150, 105, 0.1);
+  color: #6ee7b7;
+  background: rgba(5, 150, 105, 0.18);
 }
 
+/* Remove — red tint always on */
+.focus-action-btn--remove {
+  border-color: rgba(220, 38, 38, 0.35);
+  color: #f87171;
+  background: rgba(220, 38, 38, 0.08);
+}
+.focus-action-btn--remove kbd {
+  background: rgba(220, 38, 38, 0.15);
+  color: rgba(248, 113, 113, 0.5);
+}
 .focus-action-btn--remove:hover:not(:disabled) {
   border-color: var(--color-remove);
-  color: #f87171;
-  background: rgba(220, 38, 38, 0.1);
+  color: #fca5a5;
+  background: rgba(220, 38, 38, 0.18);
 }
 
+/* Skip — neutral */
+.focus-action-btn--skip {
+  border-color: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.4);
+  background: transparent;
+}
+.focus-action-btn--skip kbd {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.2);
+}
 .focus-action-btn--skip:hover:not(:disabled) {
   border-color: rgba(255,255,255,0.25);
   color: rgba(255,255,255,0.7);

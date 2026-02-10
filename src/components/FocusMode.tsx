@@ -293,6 +293,9 @@ export function FocusMode({
             onClick={() => handleStatus('use')}
             disabled={transitioning}
           >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             Use
             <kbd>1</kbd>
           </button>
@@ -302,6 +305,9 @@ export function FocusMode({
             onClick={() => handleStatus('like')}
             disabled={transitioning}
           >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+            </svg>
             Like
             <kbd>2</kbd>
           </button>
@@ -311,6 +317,10 @@ export function FocusMode({
             onClick={() => handleStatus('remove')}
             disabled={transitioning}
           >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
             Remove
             <kbd>3</kbd>
           </button>
@@ -320,6 +330,10 @@ export function FocusMode({
             onClick={handleSkip}
             disabled={transitioning || currentIndex === items.length - 1}
           >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="13 17 18 12 13 7" />
+              <line x1="6" y1="12" x2="18" y2="12" />
+            </svg>
             Skip
             <kbd>&#9251;</kbd>
           </button>
