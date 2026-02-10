@@ -14,6 +14,20 @@
     "media": "assets/hero-droplet.png"
   },
   {
+    "id": "home-hero-website-image",
+    "title": "Homepage: Hero Banner (Website)",
+    "category": "Homepage",
+    "description": "Original website hero banner image (14-1.jpg) used at the top of the BEST homepage on the live site.",
+    "media": "images/14-1.jpg"
+  },
+  {
+    "id": "home-recycle-icon",
+    "title": "Homepage: Recycle Icon",
+    "category": "Homepage",
+    "description": "Green recycle icon graphic used on the homepage to reinforce sustainability messaging.",
+    "media": "images/Recycle001_mod2.png"
+  },
+  {
     "id": "home-hero-headline",
     "title": "Homepage: Hero Headline & CTA",
     "category": "Homepage",
@@ -123,6 +137,41 @@
     "description": "Create cost-effective building products made with natural fibers that can be made fire/water/mildew resistant, with chemicals safe for humans and the environment.\n\nCreate products that are 25% lighter than current materials yet remain strong and durable, are completely recyclable, remain breathable, and work with existing manufacturing processes."
   },
   {
+    "id": "home-team-thumb-lacour",
+    "title": "Homepage: Team Thumbnail - Richard Lacour",
+    "category": "Homepage",
+    "description": "Small headshot thumbnail of Richard S. Lacour (Co-founder & Chairman of the Board) used in the team section on the homepage. Uses placeholder image.",
+    "media": "images/mugshot-placeholder.jpg"
+  },
+  {
+    "id": "home-team-thumb-parrish",
+    "title": "Homepage: Team Thumbnail - Mark Parrish",
+    "category": "Homepage",
+    "description": "Small headshot thumbnail of Mark A. Parrish (Managing Director and CEO) used in the team section on the homepage.",
+    "media": "images/mark-1.jpg"
+  },
+  {
+    "id": "home-team-thumb-morton",
+    "title": "Homepage: Team Thumbnail - Robert Morton",
+    "category": "Homepage",
+    "description": "Small headshot thumbnail of Dr. Robert Morton (Chief Science Officer) used in the team section on the homepage.",
+    "media": "images/Robert-Morton.jpg"
+  },
+  {
+    "id": "home-team-thumb-lowder",
+    "title": "Homepage: Team Thumbnail - Fred Lowder",
+    "category": "Homepage",
+    "description": "Small headshot thumbnail of Fred D. Lowder (Chief Commercial Officer) used in the team section on the homepage.",
+    "media": "images/lowder.jpg"
+  },
+  {
+    "id": "home-team-thumb-moffett",
+    "title": "Homepage: Team Thumbnail - Russell Moffett",
+    "category": "Homepage",
+    "description": "Small headshot thumbnail of Russell Moffett (Sales Manager) used in the team section on the homepage.",
+    "media": "images/RDMoffett.jpg"
+  },
+  {
     "id": "home-mission",
     "title": "Homepage: Our Mission",
     "category": "Company",
@@ -165,6 +214,48 @@
     "category": "Technology",
     "description": "Detailed molecular bonding diagram showing the chemistry of the cellulose treatment process.",
     "media": "assets/molecular-bonding-diagram.png"
+  },
+  {
+    "id": "tech-water-resistance-demo",
+    "title": "Technology: Water Resistance Demo (Website)",
+    "category": "Technology",
+    "description": "Photo demonstrating BEST-treated material's water resistance properties. Shows water beading on treated cellulose surface.",
+    "media": "images/sd.jpeg"
+  },
+  {
+    "id": "tech-benefits-diagram",
+    "title": "Technology: Benefits Diagram (Website)",
+    "category": "Technology",
+    "description": "SVG diagram showing the key benefits of BEST technology: biodegradable, recyclable, repulpable, fire-resistant, insect/mildew/mold resistant, and hydrophobic.",
+    "media": "images/currect-one.svg"
+  },
+  {
+    "id": "tech-destroying-elements",
+    "title": "Technology: Environmental Destroying Elements",
+    "category": "Technology",
+    "description": "Infographic showing the environmental elements that destroy traditional cellulose products -- water, fire, insects, mold, and UV exposure -- which BEST technology protects against.",
+    "media": "images/distroying-elements.webp"
+  },
+  {
+    "id": "tech-approach-diagram",
+    "title": "Technology: Approach Diagram",
+    "category": "Technology",
+    "description": "Diagram illustrating BEST's molecular approach to treating cellulose fibers, showing the difference between surface-level coatings and molecular-level bonding.",
+    "media": "images/2-7.webp"
+  },
+  {
+    "id": "tech-cardboard-comparison",
+    "title": "Technology: Cardboard Comparison Image",
+    "category": "Technology",
+    "description": "Image comparing traditional cardboard with BEST-treated cardboard, demonstrating the visual and structural differences after water exposure.",
+    "media": "images/card-1.png"
+  },
+  {
+    "id": "tech-solution-diagram",
+    "title": "Technology: Solution Diagram",
+    "category": "Technology",
+    "description": "Diagram illustrating BEST's treated cellulose solution, showing the proprietary chemical bonding process at the molecular level.",
+    "media": "images/1.png"
   },
   {
     "id": "tech-benefit-biodegradable",
@@ -297,6 +388,41 @@
     "media": "assets/paper-mill-abstract.png"
   },
   {
+    "id": "tech-app-paper-manufacturing",
+    "title": "Technology: Application - Paper/Pallet Manufacturing",
+    "category": "Technology",
+    "description": "Image showing BEST technology applied to paper and pallet manufacturing processes. Demonstrates how treated cellulose fibers create stronger, water-resistant paper products.",
+    "media": "images/1.jpg"
+  },
+  {
+    "id": "tech-app-construction",
+    "title": "Technology: Application - Construction Materials",
+    "category": "Technology",
+    "description": "Image showing BEST technology applied to construction materials. Building products made with treated natural fibers that are fire/water/mildew resistant, 25% lighter yet strong and durable.",
+    "media": "images/2.jpg"
+  },
+  {
+    "id": "tech-app-education-1",
+    "title": "Technology: Application - Education/Research 1",
+    "category": "Technology",
+    "description": "Educational or research application image demonstrating BEST cellulose treatment technology in an academic or laboratory setting.",
+    "media": "images/4.jpg"
+  },
+  {
+    "id": "tech-app-education-2",
+    "title": "Technology: Application - Education/Research 2",
+    "category": "Technology",
+    "description": "Second educational or research application image showing BEST technology demonstrations or studies.",
+    "media": "images/5.jpg"
+  },
+  {
+    "id": "tech-app-education-3",
+    "title": "Technology: Application - Education/Research 3",
+    "category": "Technology",
+    "description": "Third educational or research application image showcasing BEST technology in learning environments.",
+    "media": "images/6.jpg"
+  },
+  {
     "id": "product-pallet-image",
     "title": "Product: Pallet Image",
     "category": "Products",
@@ -397,6 +523,129 @@
     "media": "assets/product-agricultural.png"
   },
   {
+    "id": "pallets-hero-image",
+    "title": "Cellulostic Fiber Pallets: Hero Image",
+    "category": "Products - Pallets",
+    "description": "Hero image for the Cellulostic Fiber Shipping Pallets page showing cellulose fiber material close-up.",
+    "media": "images/cellulose.jpg"
+  },
+  {
+    "id": "pallets-intro",
+    "title": "Cellulostic Fiber Pallets: Introduction",
+    "category": "Products - Pallets",
+    "description": "Cellulostic Fiber Shipping Pallets page. This product page introduces BEST's cellulosic fiber pallet technology. Note: The live website page contains placeholder/lorem ipsum text in several sections, indicating the page was under construction or awaiting final copy."
+  },
+  {
+    "id": "pallets-image-1",
+    "title": "Cellulostic Fiber Pallets: Pallet Photo 1",
+    "category": "Products - Pallets",
+    "description": "First product photo on the Cellulostic Fiber Shipping Pallets page, showing a BEST-treated cellulosic fiber pallet.",
+    "media": "images/1-1.jpg"
+  },
+  {
+    "id": "pallets-image-2",
+    "title": "Cellulostic Fiber Pallets: Pallet Photo 2",
+    "category": "Products - Pallets",
+    "description": "Second product photo on the Cellulostic Fiber Shipping Pallets page, showing pallet construction details or another angle.",
+    "media": "images/2-1.jpg"
+  },
+  {
+    "id": "pallets-image-3",
+    "title": "Cellulostic Fiber Pallets: Pallet Photo 3",
+    "category": "Products - Pallets",
+    "description": "Third product photo on the Cellulostic Fiber Shipping Pallets page, showing pallet in use or additional detail.",
+    "media": "images/3-1.jpg"
+  },
+  {
+    "id": "pallets-placeholder-text",
+    "title": "Cellulostic Fiber Pallets: Placeholder Content",
+    "category": "Products - Pallets",
+    "description": "Several sections of the Cellulostic Fiber Shipping Pallets page on the live website contained placeholder/lorem ipsum text. This indicates the page was still under development. The actual product details (strength, weight capacity, moisture resistance, cost benefits) were not yet finalized in website copy."
+  },
+  {
+    "id": "railroad-hero-image",
+    "title": "Railroad Cargo: Hero Image",
+    "category": "Products - Railroad",
+    "description": "Hero image for the Railroad Cargo Packaging page showing a freight train, representing the rail shipping industry that BEST serves.",
+    "media": "images/train-w.jpg"
+  },
+  {
+    "id": "railroad-problem-moisture",
+    "title": "Railroad Cargo: Problem - Moisture Vulnerability",
+    "category": "Products - Railroad",
+    "description": "Vulnerable to Moisture: Recycled cardboard used in railroad cargo packaging cannot sustain or resist moisture for extended transit periods. Rain, humidity, and condensation during rail transport weaken cardboard, causing it to lose structural integrity and fail to protect goods. This leads to damaged cargo, insurance claims, and wasted materials."
+  },
+  {
+    "id": "railroad-problem-friction",
+    "title": "Railroad Cargo: Problem - Friction and Wear",
+    "category": "Products - Railroad",
+    "description": "Susceptible to Friction and Wear: The vibration and movement of rail transport subjects cardboard packaging to constant friction and mechanical stress. Over long journeys, this causes the material to weaken, tear, and disintegrate, leaving cargo exposed and unprotected before reaching its destination."
+  },
+  {
+    "id": "railroad-problem-disposal",
+    "title": "Railroad Cargo: Problem - Single-Use Disposal",
+    "category": "Products - Railroad",
+    "description": "Often Discarded After Single Use: Traditional cardboard packaging for railroad cargo is typically used once and then discarded. This creates enormous waste volumes, contributes to landfill burden, and represents poor economics. The inability to reuse packaging drives up per-shipment costs and increases the industry's environmental footprint."
+  },
+  {
+    "id": "railroad-problem-fire",
+    "title": "Railroad Cargo: Problem - Fire Hazard",
+    "category": "Products - Railroad",
+    "description": "A Fire Hazard: Cardboard is highly flammable, posing a significant fire risk during rail transport. Sparks from rail friction, electrical issues, or external fires can ignite cardboard packaging, potentially destroying entire freight loads and creating dangerous conditions. Fire-resistant packaging materials are critical for rail safety."
+  },
+  {
+    "id": "retail-hero-image",
+    "title": "Retail Pallets: Warehouse Image",
+    "category": "Products - Retail",
+    "description": "Hero image for the Retail Pallet page showing a warehouse/distribution center environment with palletized goods, representing the retail supply chain.",
+    "media": "images/image.jpg"
+  },
+  {
+    "id": "retail-solution-diagram",
+    "title": "Retail Pallets: Solution Diagram",
+    "category": "Products - Retail",
+    "description": "Diagram illustrating BEST's solution for retail pallets, showing how treated cellulose fiber pallets address the key problems of moisture, reliability, hygiene, and legal liability.",
+    "media": "images/2.png"
+  },
+  {
+    "id": "retail-cellulose-image",
+    "title": "Retail Pallets: Cellulose Structure Image",
+    "category": "Products - Retail",
+    "description": "Microscopic or close-up image of cellulose structure used on the Retail Pallet page to illustrate the material science behind BEST-treated pallets.",
+    "media": "images/C0370629-Cellulose.jpg"
+  },
+  {
+    "id": "retail-problem-moisture",
+    "title": "Retail Pallets: Problem - Moisture Vulnerability",
+    "category": "Products - Retail",
+    "description": "Vulnerable to Moisture: Cardboard pallets can neither sustain nor resist moisture for long periods. They cannot be stored outside or in humid environments. Exposure to rain, spills, or warehouse condensation causes them to weaken, warp, and potentially collapse. This makes them unreliable for retailers who need consistent supply chain performance in all conditions."
+  },
+  {
+    "id": "retail-problem-reliability",
+    "title": "Retail Pallets: Problem - Reliability vs. Wood",
+    "category": "Products - Retail",
+    "description": "Not as Reliable as Wooden Pallets: Cardboard pallets have a tendency to buckle or collapse under heavy cargo loads. Their load-bearing capacity diminishes significantly when exposed to any moisture or sustained weight over time. This unreliability compared to wooden pallets has been a major barrier to adoption, even though cardboard is more sustainable and cost-effective."
+  },
+  {
+    "id": "retail-problem-hygiene",
+    "title": "Retail Pallets: Problem - Hygiene Concerns",
+    "category": "Products - Retail",
+    "description": "Not Particularly Hygienic: The absorbent nature of cardboard prevents proper sanitization, creating a risk of product contamination. In food, pharmaceutical, and retail supply chains, hygiene is critical. Untreated cardboard can harbor bacteria, mold, and other contaminants that transfer to products, making it unsuitable for industries with strict sanitation requirements."
+  },
+  {
+    "id": "retail-problem-legal",
+    "title": "Retail Pallets: Problem - Legal Liability",
+    "category": "Products - Retail",
+    "description": "Vulnerable to Legal Issues: Flimsy or weakened pallets can result in safety incidents, injuries, or fatalities in warehouse and retail environments. Collapsed pallets can cause falling merchandise, forklift accidents, and worker injuries. This exposes companies to lawsuits, regulatory fines, workers' compensation claims, and reputational damage."
+  },
+  {
+    "id": "about-nature-photo",
+    "title": "About: Nature/Environmental Photo",
+    "category": "Company",
+    "description": "Scenic nature photograph (by Johannes Plenio) used on the About page, showing a lush forest/nature scene that reinforces BEST's environmental mission and commitment to sustainability.",
+    "media": "images/pexels-johannes-plenio-1423600.jpg"
+  },
+  {
     "id": "about-intro",
     "title": "About: Company Introduction",
     "category": "Company",
@@ -449,5 +698,68 @@
     "title": "About: Sam McCalmont - Bio",
     "category": "Company",
     "description": "Sam McCalmont. 37 years of experience in specialty chemical business and specialty hydrocarbons. Career at Callery Chemical (business development, product development, sales management), then Phillips Petroleum/Phillips 66 Specialty Solvents (Northeast Territory Manager including Canada, Europe, and Middle East). B.S. in Chemistry from Marshall University."
+  },
+  {
+    "id": "team-photo-morton",
+    "title": "Team: Dr. Robert Morton - Headshot",
+    "category": "Company",
+    "description": "Full bio headshot photograph of Dr. Robert Morton, Chief Science Officer. Used on the About page team bios section.",
+    "media": "images/Robert-Morton-Picture.jpg"
+  },
+  {
+    "id": "team-photo-lowder",
+    "title": "Team: Fred D. Lowder - Headshot",
+    "category": "Company",
+    "description": "Full bio headshot photograph of Fred D. Lowder, Chief Commercial Officer. Used on the About page team bios section.",
+    "media": "images/IMG_0907-1.jpg"
+  },
+  {
+    "id": "team-photo-parrish",
+    "title": "Team: Mark A. Parrish - Headshot",
+    "category": "Company",
+    "description": "Full bio headshot photograph of Mark A. Parrish, Managing Director and CEO. Used on the About page team bios section.",
+    "media": "images/mark.jpg"
+  },
+  {
+    "id": "team-photo-moffett",
+    "title": "Team: Russell Moffett - Headshot",
+    "category": "Company",
+    "description": "Full bio headshot photograph of Russell Moffett, Sales Manager. Used on the About page team bios section.",
+    "media": "images/RDMoffett-bio-picture.jpg"
+  },
+  {
+    "id": "team-photo-mccalmont",
+    "title": "Team: Sam McCalmont - Headshot",
+    "category": "Company",
+    "description": "Full bio headshot photograph of Sam McCalmont. Used on the About page team bios section.",
+    "media": "images/imewd.jpg"
+  },
+  {
+    "id": "contact-info",
+    "title": "Contact: Company Contact Information",
+    "category": "Contact",
+    "description": "BEST (BE Sustainable Technologies) contact information. The company can be reached through their website at besustainabletechnologies.com. The contact page provides a form for inquiries about their cellulose treatment technology, partnership opportunities, and product information.",
+    "link": "https://besustainabletechnologies.com/contact/"
+  },
+  {
+    "id": "contact-social-linkedin",
+    "title": "Contact: LinkedIn",
+    "category": "Contact",
+    "description": "BEST's LinkedIn company page for professional networking, industry updates, and corporate news.",
+    "link": "https://www.linkedin.com/company/besustainabletechnologies/"
+  },
+  {
+    "id": "contact-social-facebook",
+    "title": "Contact: Facebook",
+    "category": "Contact",
+    "description": "BEST's Facebook page for community engagement, news, and sustainability content.",
+    "link": "https://www.facebook.com/besustainabletechnologies/"
+  },
+  {
+    "id": "contact-email",
+    "title": "Contact: Email",
+    "category": "Contact",
+    "description": "General contact email for BE Sustainable Technologies inquiries: info@besustainabletechnologies.com",
+    "link": "mailto:info@besustainabletechnologies.com"
   }
 ]
