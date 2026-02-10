@@ -47,7 +47,7 @@ export function EditForm({ item, onSave, onCancel, onReset, saving }: EditFormPr
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          rows={4}
+          rows={3}
           disabled={saving}
         />
       </label>
@@ -64,15 +64,15 @@ export function EditForm({ item, onSave, onCancel, onReset, saving }: EditFormPr
       </label>
 
       <div className="edit-actions">
-        <button type="submit" className="btn btn--primary" disabled={saving}>
-          Save Changes
+        <button type="submit" className="btn btn--primary btn--sm" disabled={saving}>
+          Save
         </button>
-        <button type="button" className="btn btn--secondary" onClick={onCancel} disabled={saving}>
+        <button type="button" className="btn btn--secondary btn--sm" onClick={onCancel} disabled={saving}>
           Cancel
         </button>
         {item.isEdited && onReset && (
-          <button type="button" className="btn btn--danger" onClick={onReset} disabled={saving}>
-            Reset to Original
+          <button type="button" className="btn btn--danger btn--sm" onClick={onReset} disabled={saving}>
+            Reset
           </button>
         )}
       </div>

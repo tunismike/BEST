@@ -41,9 +41,11 @@ export function ContentCard({
     setEditing(false);
   };
 
+  const hasImage = !!item.media;
+
   return (
     <article className={`content-card content-card--${item.status}`}>
-      {item.media && (
+      {hasImage && (
         <div className="card-media">
           <img src={import.meta.env.BASE_URL + item.media} alt={item.title} />
         </div>
@@ -51,40 +53,33 @@ export function ContentCard({
 
       <div className="card-body">
         <div className="card-header">
-          <h3 className="card-title">{item.title}</h3>
-          <div className="card-meta">
-            {item.category && <span className="card-category">{item.category}</span>}
-            {item.isEdited && <span className="card-edited-badge">Edited</span>}
-          </div>
+          <span className="card-title">{item.title}</span>
+          {item.isEdited && <span className="card-edited-dot" title="Edited" />}
         </div>
 
-        {item.description && <p className="card-description">{item.description}</p>}
-
-        {item.link && (
-          <a className="card-link" href={item.link} target="_blank" rel="noopener noreferrer">
-            {item.link}
-          </a>
+        {/* Only show description for text-only cards — images speak for themselves */}
+        {!hasImage && item.description && (
+          <p className="card-description">{item.description}</p>
         )}
 
         <div className="card-actions">
-          <div className="card-actions-left">
-            <StatusControl
-              status={item.status}
-              onChange={onStatusChange}
-              disabled={saveState === 'saving'}
-            />
-          </div>
+          <StatusControl
+            status={item.status}
+            onChange={onStatusChange}
+            disabled={saveState === 'saving'}
+          />
           <div className="card-actions-right">
+            <SaveIndicator state={saveState} />
             {!editing && (
               <button
                 type="button"
                 className="edit-toggle-btn"
                 onClick={() => setEditing(true)}
+                title="Edit content"
               >
-                Edit
+                &#9998;
               </button>
             )}
-            <SaveIndicator state={saveState} />
           </div>
         </div>
 
@@ -96,14 +91,6 @@ export function ContentCard({
             onReset={handleReset}
             saving={saveState === 'saving'}
           />
-        )}
-
-        {item.statusUpdatedAt && (
-          <div className="card-footer">
-            <span className="card-timestamp">
-              Last updated: {new Date(item.statusUpdatedAt).toLocaleString()}
-            </span>
-          </div>
         )}
       </div>
     </article>

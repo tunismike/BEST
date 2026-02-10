@@ -14,21 +14,18 @@ export function ProgressSummary({ items }: ProgressSummaryProps) {
 
   return (
     <div className="progress-summary">
-      <div className="progress-text">
-        <strong>
-          {reviewed} of {total}
-        </strong>{' '}
-        reviewed ({pct}%)
-      </div>
+      <span className="progress-text">
+        <strong>{reviewed}</strong>/{total}
+      </span>
 
       <div className="progress-bar">
         <div className="progress-fill" style={{ width: `${pct}%` }} />
       </div>
 
       <div className="progress-chips">
-        {useCount > 0 && <span className="chip chip--use">{useCount} Use</span>}
-        {likeCount > 0 && <span className="chip chip--like">{likeCount} Like</span>}
-        {removeCount > 0 && <span className="chip chip--remove">{removeCount} Remove</span>}
+        {useCount > 0 && <span className="chip chip--use">{useCount}</span>}
+        {likeCount > 0 && <span className="chip chip--like">{likeCount}</span>}
+        {removeCount > 0 && <span className="chip chip--remove">{removeCount}</span>}
       </div>
     </div>
   );

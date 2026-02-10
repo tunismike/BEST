@@ -48,7 +48,7 @@ export function ReviewPage() {
   if (!reviewId) {
     return (
       <div className="page-container">
-        <div className="error-state">No review ID provided. Check your link.</div>
+        <div className="error-state">No review ID provided.</div>
       </div>
     );
   }
@@ -56,7 +56,7 @@ export function ReviewPage() {
   if (isLoading) {
     return (
       <div className="page-container">
-        <div className="loading-state">Loading content...</div>
+        <div className="loading-state">Loading...</div>
       </div>
     );
   }
@@ -64,20 +64,13 @@ export function ReviewPage() {
   if (loadError) {
     return (
       <div className="page-container">
-        <div className="error-state">Failed to load: {loadError}</div>
+        <div className="error-state">{loadError}</div>
       </div>
     );
   }
 
   return (
     <div className="page-container">
-      <header className="page-header">
-        <h1>BEST Content Review</h1>
-        <p className="page-subtitle">
-          Review each content item and set a status. Your changes save automatically.
-        </p>
-      </header>
-
       <div className="controls-bar">
         <ProgressSummary items={items} />
 
@@ -95,7 +88,7 @@ export function ReviewPage() {
       </div>
 
       {filteredItems.length === 0 && (
-        <div className="empty-state">No items match your filters.</div>
+        <div className="empty-state">No matches.</div>
       )}
 
       <div className="card-list">

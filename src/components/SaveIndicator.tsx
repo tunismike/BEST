@@ -10,19 +10,14 @@ export function SaveIndicator({ state, onRetry }: SaveIndicatorProps) {
 
   return (
     <span className={`save-indicator save-indicator--${state}`}>
-      {state === 'saving' && (
-        <>
-          <span className="save-spinner" />
-          Saving...
-        </>
-      )}
-      {state === 'saved' && <>&#10003; Saved</>}
+      {state === 'saving' && <span className="save-spinner" />}
+      {state === 'saved' && <>&#10003;</>}
       {state === 'error' && (
         <>
-          &#10007; Save failed
+          &#10007;
           {onRetry && (
             <button className="save-retry" onClick={onRetry} type="button">
-              Retry
+              retry
             </button>
           )}
         </>
