@@ -66,21 +66,27 @@ export function ContentCard({
           </a>
         )}
 
-        <StatusControl
-          status={item.status}
-          onChange={onStatusChange}
-          disabled={saveState === 'saving'}
-        />
-
-        {!editing && (
-          <button
-            type="button"
-            className="btn btn--secondary btn--sm"
-            onClick={() => setEditing(true)}
-          >
-            Edit Content
-          </button>
-        )}
+        <div className="card-actions">
+          <div className="card-actions-left">
+            <StatusControl
+              status={item.status}
+              onChange={onStatusChange}
+              disabled={saveState === 'saving'}
+            />
+          </div>
+          <div className="card-actions-right">
+            {!editing && (
+              <button
+                type="button"
+                className="edit-toggle-btn"
+                onClick={() => setEditing(true)}
+              >
+                Edit
+              </button>
+            )}
+            <SaveIndicator state={saveState} />
+          </div>
+        </div>
 
         {editing && (
           <EditForm
@@ -92,14 +98,13 @@ export function ContentCard({
           />
         )}
 
-        <div className="card-footer">
-          <SaveIndicator state={saveState} />
-          {item.statusUpdatedAt && (
+        {item.statusUpdatedAt && (
+          <div className="card-footer">
             <span className="card-timestamp">
               Last updated: {new Date(item.statusUpdatedAt).toLocaleString()}
             </span>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </article>
   );

@@ -78,19 +78,21 @@ export function ReviewPage() {
         </p>
       </header>
 
-      <ProgressSummary items={items} />
+      <div className="controls-bar">
+        <ProgressSummary items={items} />
 
-      <FilterBar
-        statusFilter={statusFilter}
-        onStatusFilterChange={setStatusFilter}
-        categoryFilter={categoryFilter}
-        onCategoryFilterChange={setCategoryFilter}
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-        categories={categories}
-        onClear={clearFilters}
-        hasActiveFilters={hasActiveFilters}
-      />
+        <FilterBar
+          statusFilter={statusFilter}
+          onStatusFilterChange={setStatusFilter}
+          categoryFilter={categoryFilter}
+          onCategoryFilterChange={setCategoryFilter}
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          categories={categories}
+          onClear={clearFilters}
+          hasActiveFilters={hasActiveFilters}
+        />
+      </div>
 
       {filteredItems.length === 0 && (
         <div className="empty-state">No items match your filters.</div>

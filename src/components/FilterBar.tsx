@@ -59,7 +59,7 @@ export function FilterBar({
       />
 
       {hasActiveFilters && (
-        <button type="button" className="btn btn--secondary btn--sm" onClick={onClear}>
+        <button type="button" className="filter-clear-btn" onClick={onClear}>
           Clear Filters
         </button>
       )}
