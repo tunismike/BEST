@@ -1,8 +1,12 @@
 import type { ReviewStatus } from '../types';
 
+export type ContentTypeFilter = 'all' | 'images' | 'text';
+
 interface FilterBarProps {
   statusFilter: ReviewStatus | 'all';
   onStatusFilterChange: (status: ReviewStatus | 'all') => void;
+  contentTypeFilter: ContentTypeFilter;
+  onContentTypeFilterChange: (type: ContentTypeFilter) => void;
   categoryFilter: string;
   onCategoryFilterChange: (category: string) => void;
   searchQuery: string;
@@ -15,6 +19,8 @@ interface FilterBarProps {
 export function FilterBar({
   statusFilter,
   onStatusFilterChange,
+  contentTypeFilter,
+  onContentTypeFilterChange,
   categoryFilter,
   onCategoryFilterChange,
   searchQuery,
@@ -39,6 +45,16 @@ export function FilterBar({
 
       <select
         className="filter-select"
+        value={contentTypeFilter}
+        onChange={(e) => onContentTypeFilterChange(e.target.value as ContentTypeFilter)}
+      >
+        <option value="all">Images & Text</option>
+        <option value="images">Images Only</option>
+        <option value="text">Text Only</option>
+      </select>
+
+      <select
+        className="filter-select"
         value={categoryFilter}
         onChange={(e) => onCategoryFilterChange(e.target.value)}
       >
@@ -53,14 +69,14 @@ export function FilterBar({
       <input
         type="text"
         className="filter-search"
-        placeholder="Search title or description..."
+        placeholder="Search..."
         value={searchQuery}
         onChange={(e) => onSearchChange(e.target.value)}
       />
 
       {hasActiveFilters && (
         <button type="button" className="filter-clear-btn" onClick={onClear}>
-          Clear Filters
+          Clear
         </button>
       )}
     </div>

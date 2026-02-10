@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useContentReview } from '../hooks/useContentReview';
 import { ContentCard } from '../components/ContentCard';
 import { FilterBar } from '../components/FilterBar';
+import type { ContentTypeFilter } from '../components/FilterBar';
 import { ProgressSummary } from '../components/ProgressSummary';
 import { FocusMode } from '../components/FocusMode';
 import type { ReviewStatus } from '../types';
@@ -33,6 +34,7 @@ export function ReviewPage() {
 
   const [viewMode, setViewMode] = useState<ViewMode>(getStoredViewMode);
   const [statusFilter, setStatusFilter] = useState<ReviewStatus | 'all'>('all');
+  const [contentTypeFilter, setContentTypeFilter] = useState<ContentTypeFilter>('all');
   const [categoryFilter, setCategoryFilter] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -40,11 +42,13 @@ export function ReviewPage() {
     try { localStorage.setItem('best-view-mode', viewMode); } catch { /* ignore */ }
   }, [viewMode]);
 
-  const hasActiveFilters = statusFilter !== 'all' || categoryFilter !== '' || searchQuery !== '';
+  const hasActiveFilters = statusFilter !== 'all' || contentTypeFilter !== 'all' || categoryFilter !== '' || searchQuery !== '';
 
   const filteredItems = useMemo(() => {
     return items.filter((item) => {
       if (statusFilter !== 'all' && item.status !== statusFilter) return false;
+      if (contentTypeFilter === 'images' && !item.media) return false;
+      if (contentTypeFilter === 'text' && item.media) return false;
       if (categoryFilter && item.category !== categoryFilter) return false;
       if (searchQuery) {
         const q = searchQuery.toLowerCase();
@@ -54,10 +58,11 @@ export function ReviewPage() {
       }
       return true;
     });
-  }, [items, statusFilter, categoryFilter, searchQuery]);
+  }, [items, statusFilter, contentTypeFilter, categoryFilter, searchQuery]);
 
   const clearFilters = () => {
     setStatusFilter('all');
+    setContentTypeFilter('all');
     setCategoryFilter('');
     setSearchQuery('');
   };
@@ -124,6 +129,8 @@ export function ReviewPage() {
         <FilterBar
           statusFilter={statusFilter}
           onStatusFilterChange={setStatusFilter}
+          contentTypeFilter={contentTypeFilter}
+          onContentTypeFilterChange={setContentTypeFilter}
           categoryFilter={categoryFilter}
           onCategoryFilterChange={setCategoryFilter}
           searchQuery={searchQuery}
