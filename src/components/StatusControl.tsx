@@ -37,11 +37,18 @@ export function StatusControl({ status, onChange, disabled }: StatusControlProps
         onClick={() => onChange(status === 'remove' ? 'unreviewed' : 'remove')}
         disabled={disabled}
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-        Remove
+        {status === 'remove' ? (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 14 4 9 9 4" />
+            <path d="M20 20v-7a4 4 0 0 0-4-4H4" />
+          </svg>
+        ) : (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        )}
+        {status === 'remove' ? 'Un-Remove' : 'Remove'}
       </button>
     </div>
   );
