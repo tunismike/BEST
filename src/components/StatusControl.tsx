@@ -12,7 +12,7 @@ export function StatusControl({ status, onChange, disabled }: StatusControlProps
       <button
         type="button"
         className={`status-btn status-btn--use${status === 'use' ? ' status-btn--active' : ''}`}
-        onClick={() => onChange('use')}
+        onClick={() => onChange(status === 'use' ? 'unreviewed' : 'use')}
         disabled={disabled}
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -23,7 +23,7 @@ export function StatusControl({ status, onChange, disabled }: StatusControlProps
       <button
         type="button"
         className={`status-btn status-btn--like${status === 'like' ? ' status-btn--active' : ''}`}
-        onClick={() => onChange('like')}
+        onClick={() => onChange(status === 'like' ? 'unreviewed' : 'like')}
         disabled={disabled}
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -34,7 +34,7 @@ export function StatusControl({ status, onChange, disabled }: StatusControlProps
       <button
         type="button"
         className={`status-btn status-btn--remove${status === 'remove' ? ' status-btn--active' : ''}`}
-        onClick={() => onChange('remove')}
+        onClick={() => onChange(status === 'remove' ? 'unreviewed' : 'remove')}
         disabled={disabled}
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

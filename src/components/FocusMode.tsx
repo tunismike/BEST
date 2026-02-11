@@ -72,6 +72,11 @@ export function FocusMode({
   const handleStatus = useCallback(
     (status: ReviewStatus) => {
       if (!item || transitioning) return;
+      // Toggle off if clicking the already-active status
+      if (item.status === status) {
+        onStatusChange(item.id, 'unreviewed');
+        return;
+      }
       onStatusChange(item.id, status);
       // Auto-advance after setting status
       if (currentIndex < items.length - 1) {
