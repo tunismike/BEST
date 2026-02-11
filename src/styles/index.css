@@ -85,14 +85,14 @@ body {
 .view-toggle-btn {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  height: 30px;
-  padding: 0 12px;
+  gap: 6px;
+  height: 36px;
+  padding: 0 16px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
   background: var(--color-surface);
   font-family: var(--font-body);
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--color-text-soft);
   cursor: pointer;
@@ -118,7 +118,7 @@ body {
 }
 
 .progress-text {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: var(--color-text-faint);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
@@ -154,10 +154,10 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 22px;
-  padding: 1px 7px;
+  min-width: 24px;
+  padding: 2px 9px;
   border-radius: var(--radius-pill);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
@@ -175,11 +175,11 @@ body {
 }
 
 .filter-select {
-  height: 30px;
-  padding: 0 24px 0 10px;
+  height: 36px;
+  padding: 0 28px 0 14px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-family: var(--font-body);
   font-weight: 500;
   color: var(--color-text);
@@ -198,11 +198,11 @@ body {
 }
 
 .filter-search {
-  height: 30px;
-  padding: 0 10px;
+  height: 36px;
+  padding: 0 14px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-family: var(--font-body);
   color: var(--color-text);
   background: var(--color-surface);
@@ -215,11 +215,11 @@ body {
 .filter-search:focus { outline: none; border-color: var(--color-text-soft); }
 
 .filter-clear-btn {
-  height: 30px;
-  padding: 0 10px;
+  height: 36px;
+  padding: 0 14px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-family: var(--font-body);
   font-weight: 600;
   color: var(--color-text-faint);
@@ -290,10 +290,10 @@ body {
 
 /* ===== Card Body ===== */
 .card-body {
-  padding: 14px 18px 14px;
+  padding: 18px 22px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .card-header {
@@ -319,8 +319,8 @@ body {
 
 .card-description {
   color: var(--color-text);
-  font-size: 0.9375rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.65;
   white-space: pre-line;
 }
 
@@ -347,14 +347,14 @@ body {
 .status-btn {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px 14px;
+  gap: 6px;
+  padding: 7px 18px;
   border: 1.5px solid;
   border-radius: var(--radius-pill);
   background: transparent;
   cursor: pointer;
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 600;
   transition: all 0.15s var(--ease-out);
   white-space: nowrap;
@@ -419,8 +419,8 @@ body {
 
 /* ===== Edit Button ===== */
 .edit-toggle-btn {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -428,7 +428,7 @@ body {
   border-radius: 50%;
   background: var(--color-surface);
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: var(--color-text-faint);
   transition: all 0.15s ease;
   flex-shrink: 0;
@@ -441,8 +441,8 @@ body {
 
 /* ===== Comment Toggle ===== */
 .comment-toggle-btn {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -476,10 +476,10 @@ body {
 
 .comment-textarea {
   width: 100%;
-  padding: 8px 10px;
+  padding: 10px 12px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-family: var(--font-body);
   color: var(--color-text);
   background: var(--color-surface-warm);
@@ -498,17 +498,17 @@ body {
 }
 
 .comment-hint {
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   color: var(--color-text-faint);
   letter-spacing: 0.02em;
 }
 
 /* ===== Comment Preview (list view) ===== */
 .card-comment-preview {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   color: var(--color-use);
   background: var(--color-use-soft);
-  padding: 6px 10px;
+  padding: 8px 12px;
   border-radius: var(--radius-sm);
   cursor: pointer;
   line-height: 1.4;
@@ -525,12 +525,12 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  padding: 6px 14px;
+  gap: 5px;
+  padding: 8px 18px;
   border: 1.5px solid transparent;
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.15s var(--ease-out);
@@ -558,7 +558,7 @@ body {
 }
 .btn--danger:hover:not(:disabled) { background: #b91c1c; }
 
-.btn--sm { padding: 4px 10px; font-size: 0.6875rem; }
+.btn--sm { padding: 5px 12px; font-size: 0.75rem; }
 
 /* ===== Edit Form ===== */
 .edit-form {
@@ -583,7 +583,7 @@ body {
 }
 
 .edit-label {
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   color: var(--color-text-faint);
   text-transform: uppercase;
@@ -593,10 +593,10 @@ body {
 .edit-form input,
 .edit-form textarea {
   width: 100%;
-  padding: 7px 10px;
+  padding: 9px 12px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-family: var(--font-body);
   color: var(--color-text);
   background: var(--color-surface);
@@ -620,8 +620,8 @@ body {
 .save-indicator {
   display: inline-flex;
   align-items: center;
-  gap: 3px;
-  font-size: 0.75rem;
+  gap: 4px;
+  font-size: 0.8125rem;
 }
 
 .save-indicator--saving { color: var(--color-text-faint); }
@@ -997,9 +997,9 @@ body {
 /* --- Focus description --- */
 .focus-description {
   color: rgba(255,255,255,0.55);
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.7;
-  max-width: 580px;
+  max-width: 620px;
   text-align: center;
   white-space: pre-line;
   margin-bottom: 12px;
@@ -1112,8 +1112,8 @@ body {
 
 /* --- Comment button (focus) --- */
 .focus-comment-btn {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1186,8 +1186,8 @@ body {
 
 /* --- Edit button (focus) --- */
 .focus-edit-btn {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1219,15 +1219,15 @@ body {
 .focus-action-btn {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  height: 42px;
-  padding: 0 20px;
+  gap: 8px;
+  height: 48px;
+  padding: 0 24px;
   border: 1.5px solid;
   border-radius: var(--radius-pill);
   background: transparent;
   cursor: pointer;
   font-family: var(--font-body);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   transition: all 0.15s var(--ease-out);
   white-space: nowrap;
@@ -1359,7 +1359,7 @@ body {
   .focus-actions-left { order: 2; min-width: auto; }
   .focus-actions-center { order: 1; width: 100%; justify-content: center; flex-wrap: wrap; }
   .focus-actions-right { display: none; }
-  .focus-action-btn { height: 38px; padding: 0 14px; font-size: 0.75rem; }
+  .focus-action-btn { height: 42px; padding: 0 18px; font-size: 0.8125rem; }
   .focus-action-btn kbd { display: none; }
   .focus-hint { display: none; }
   .view-toggle-btn span { display: none; }
