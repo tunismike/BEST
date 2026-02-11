@@ -235,10 +235,7 @@ export function FocusMode({
           {/* Text-only items: show title + description */}
           {!hasImage && (
             <>
-              <h2 className="focus-title">
-                {item.title}
-                {item.isEdited && <span className="focus-edited-dot" />}
-              </h2>
+              {item.isEdited && <span className="focus-edited-dot" />}
               {item.description && (
                 <p className="focus-description">{item.description}</p>
               )}
