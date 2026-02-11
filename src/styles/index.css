@@ -341,26 +341,27 @@ body {
 /* ===== Status Control ===== */
 .status-control {
   display: flex;
-  gap: 4px;
+  gap: 6px;
 }
 
 .status-btn {
-  padding: 4px 12px;
-  border: 1.5px solid var(--color-border);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 14px;
+  border: 1.5px solid;
   border-radius: var(--radius-pill);
-  background: var(--color-surface);
+  background: transparent;
   cursor: pointer;
   font-family: var(--font-body);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--color-text-faint);
   transition: all 0.15s var(--ease-out);
   white-space: nowrap;
 }
 
-.status-btn:hover:not(:disabled) {
-  border-color: var(--color-text-soft);
-  color: var(--color-text);
+.status-btn svg {
+  flex-shrink: 0;
 }
 
 .status-btn:disabled {
@@ -368,20 +369,47 @@ body {
   cursor: not-allowed;
 }
 
-.status-btn--active.status-btn--unreviewed {
-  background: var(--color-unreviewed);
-  border-color: var(--color-unreviewed);
-  color: white;
+/* Use — blue */
+.status-btn--use {
+  border-color: rgba(37, 99, 235, 0.25);
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.06);
+}
+.status-btn--use:hover:not(:disabled) {
+  border-color: rgba(37, 99, 235, 0.5);
+  background: rgba(37, 99, 235, 0.12);
 }
 .status-btn--active.status-btn--use {
   background: var(--color-use);
   border-color: var(--color-use);
   color: white;
 }
+
+/* Like — green */
+.status-btn--like {
+  border-color: rgba(5, 150, 105, 0.25);
+  color: #059669;
+  background: rgba(5, 150, 105, 0.06);
+}
+.status-btn--like:hover:not(:disabled) {
+  border-color: rgba(5, 150, 105, 0.5);
+  background: rgba(5, 150, 105, 0.12);
+}
 .status-btn--active.status-btn--like {
   background: var(--color-like);
   border-color: var(--color-like);
   color: white;
+}
+
+/* Remove — red */
+.status-btn--remove {
+  border-color: rgba(220, 38, 38, 0.25);
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.06);
+}
+.status-btn--remove:hover:not(:disabled) {
+  border-color: rgba(220, 38, 38, 0.5);
+  background: rgba(220, 38, 38, 0.12);
 }
 .status-btn--active.status-btn--remove {
   background: var(--color-remove);
