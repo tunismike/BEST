@@ -428,7 +428,7 @@ body {
   border-radius: 50%;
   background: var(--color-surface);
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: 1.05rem;
   color: var(--color-text-faint);
   transition: all 0.15s ease;
   flex-shrink: 0;
@@ -1195,7 +1195,7 @@ body {
   border-radius: 50%;
   background: transparent;
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   color: rgba(255,255,255,0.35);
   transition: all 0.15s ease;
 }
