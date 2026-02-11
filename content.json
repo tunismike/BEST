@@ -31,64 +31,16 @@
     "link": "https://besustainabletechnologies.com"
   },
   {
-    "id": "home-problem-homes",
-    "title": "Damages Homes",
-    "category": "Homepage",
-    "description": "It can warp floors and worse -- ruin electrical systems, corrode plumbing, destroy ceilings and walls, cause mold growth, and weaken structural integrity."
-  },
-  {
-    "id": "home-problem-recycling",
-    "title": "Much Worse For Recycling",
-    "category": "Homepage",
-    "description": "Wet cardboard creates many problems. It\u2019s harder to sort and wets other recyclables, making for messy pickup and handling. Even when dry, the cardboard fibers become brittle and crumbly, making it much less valuable."
-  },
-  {
-    "id": "home-problem-fire",
-    "title": "Fire - Another Public Adversary",
-    "category": "Homepage",
-    "description": "It can take just 30 seconds for a small flame to turn into a major blaze. There\u2019s a yearly average of 358,300 home-based fires, causing an estimated at $15.9 billion in property damage."
-  },
-  {
     "id": "home-water-enemy",
     "title": "WATER >>> PUBLIC ENEMY #1",
     "category": "Homepage",
-    "description": "WATER  >>> PUBLIC ENEMY #1"
+    "description": "WATER >>> PUBLIC ENEMY #1\n\nDamages Homes\nIt can warp floors and worse -- ruin electrical systems, corrode plumbing, destroy ceilings and walls, cause mold growth, and weaken structural integrity.\n\nMuch Worse For Recycling\nWet cardboard creates many problems. It\u2019s harder to sort and wets other recyclables, making for messy pickup and handling. Even when dry, the cardboard fibers become brittle and crumbly, making it much less valuable.\n\nFire - Another Public Adversary\nIt can take just 30 seconds for a small flame to turn into a major blaze. There\u2019s a yearly average of 358,300 home-based fires, causing an estimated at $15.9 billion in property damage.\n\nWater Destroys\nPaper loses strength when wet. Books suffer damage due to swelling. Mold begins to grow when objects left damp for 72 hours."
   },
   {
-    "id": "home-problem-paper",
-    "title": "Water Destroys",
+    "id": "home-challenges",
+    "title": "Other Challenges to Address",
     "category": "Homepage",
-    "description": "Paper loses strength when wet. Books suffer damage due to swelling. Mold begins to grow when objects left damp for 72 hours."
-  },
-  {
-    "id": "home-challenges-biodegradability",
-    "title": "Biodegradability",
-    "category": "Homepage",
-    "description": "We require products that naturally break down and are not toxic to our environment."
-  },
-  {
-    "id": "home-challenges-repulpability",
-    "title": "Repulpability",
-    "category": "Homepage",
-    "description": "Materials should break down after repeat use. For example, converting paper back to pulp to be used again."
-  },
-  {
-    "id": "home-challenges-insects",
-    "title": "Resistance to Insects",
-    "category": "Homepage",
-    "description": "Over time, we must ensure effectiveness and control over pest populations such as termites."
-  },
-  {
-    "id": "home-challenges-strength",
-    "title": "Strength-to-weight ratio",
-    "category": "Homepage",
-    "description": "We need materials that are as light as paper yet as strong as steel."
-  },
-  {
-    "id": "home-challenges-insulation",
-    "title": "Thermal Insulation",
-    "category": "Homepage",
-    "description": "Cups that can easily keep hot items hot and cold items cold with no condensation or \u201csweating.\u201d"
+    "description": "Biodegradability\nWe require products that naturally break down and are not toxic to our environment.\n\nRepulpability\nMaterials should break down after repeat use. For example, converting paper back to pulp to be used again.\n\nResistance to Insects\nOver time, we must ensure effectiveness and control over pest populations such as termites.\n\nStrength-to-weight ratio\nWe need materials that are as light as paper yet as strong as steel.\n\nThermal Insulation\nCups that can easily keep hot items hot and cold items cold with no condensation or \u201csweating.\u201d"
   },
   {
     "id": "home-polymer-statement",
@@ -97,34 +49,10 @@
     "description": "Using chemicals and plastics when manufacturing paper or construction materials has limitations \u2013 the chemicals involved to treat products are toxic. And these products are not sustainable or recyclable. And natural fibers, though more desirable from a sustainability aspect, don\u2019t hold up well."
   },
   {
-    "id": "home-4r-headline",
-    "title": "The 4 R's",
+    "id": "home-4rs",
+    "title": "The 4 R\u2019s",
     "category": "Homepage",
-    "description": "It\u2019s time for products that meet the 4 R\u2019s:  Reusable, Recyclable, Reducible, and Remarkable"
-  },
-  {
-    "id": "home-4r-reducible",
-    "title": "Reducible",
-    "category": "Homepage",
-    "description": "Using less material to conserve natural resources."
-  },
-  {
-    "id": "home-4r-recyclable",
-    "title": "Recyclable",
-    "category": "Homepage",
-    "description": "If unable to be put back into circulation, products can be broken down easily, cost-effectively, and efficiently recreated to be used again."
-  },
-  {
-    "id": "home-4r-reusable",
-    "title": "Reusable",
-    "category": "Homepage",
-    "description": "With nominal effort, products can be put back into circulation with minimal treatment or maintenance."
-  },
-  {
-    "id": "home-4r-remarkable",
-    "title": "Remarkable",
-    "category": "Homepage",
-    "description": "It\u2019s Time for Remarkable\n\nWe need a broader class of materials that simultaneously solves a many challenges, including water/insect resistance and repellence, fire suppression, unprecedented power-to-weight ratio, repulpability, biodegradability, and viable thermal insulation."
+    "description": "It\u2019s time for products that meet the 4 R\u2019s:  Reusable, Recyclable, Reducible, and Remarkable\n\nReducible\nUsing less material to conserve natural resources.\n\nRecyclable\nIf unable to be put back into circulation, products can be broken down easily, cost-effectively, and efficiently recreated to be used again.\n\nReusable\nWith nominal effort, products can be put back into circulation with minimal treatment or maintenance.\n\nIt\u2019s Time for Remarkable\nWe need a broader class of materials that simultaneously solves a many challenges, including water/insect resistance and repellence, fire suppression, unprecedented power-to-weight ratio, repulpability, biodegradability, and viable thermal insulation."
   },
   {
     "id": "home-industry-paper",
@@ -247,40 +175,10 @@
     "media": "images/1.png"
   },
   {
-    "id": "tech-benefit-biodegradable",
-    "title": "Biodegradable",
+    "id": "tech-benefits",
+    "title": "Technology Benefits",
     "category": "Technology",
-    "description": "Less harm to our environment\nNo emissions from toxins\nLess waste going into environment\nSustainable business model"
-  },
-  {
-    "id": "tech-benefit-recyclable",
-    "title": "Recyclable",
-    "category": "Technology",
-    "description": "Able to reuse and reduce waste"
-  },
-  {
-    "id": "tech-benefit-repulpable",
-    "title": "Repulpable",
-    "category": "Technology",
-    "description": "Reduce waste by reusing materials in upcycled products again and again"
-  },
-  {
-    "id": "tech-benefit-fire-resistant",
-    "title": "Fire-resistant",
-    "category": "Technology",
-    "description": "Safer products with less risk of loss and damage"
-  },
-  {
-    "id": "tech-benefit-pest-resistant",
-    "title": "Insect/Mildew/Mold Resistant",
-    "category": "Technology",
-    "description": "Products withstand the elements of nature with less loss and damage"
-  },
-  {
-    "id": "tech-benefit-hydrophobic",
-    "title": "Hydrophobicity",
-    "category": "Technology",
-    "description": "Materials withstand water and rain exposure with little damage and loss and  maintain strength and structural integrity"
+    "description": "Biodegradable\nLess harm to our environment\nNo emissions from toxins\nLess waste going into environment\nSustainable business model\n\nRecyclable\nAble to reuse and reduce waste\n\nRepulpable\nReduce waste by reusing materials in upcycled products again and again\n\nFire-resistant\nSafer products with less risk of loss and damage\n\nInsect/Mildew/Mold Resistant\nProducts withstand the elements of nature with less loss and damage\n\nHydrophobicity\nMaterials withstand water and rain exposure with little damage and loss and  maintain strength and structural integrity"
   },
   {
     "id": "tech-cardboard-stats",
