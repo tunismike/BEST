@@ -441,13 +441,15 @@
                 width: 100%;
             }
 
-            .mobile-slider-target {
+            .mobile-slider-target,
+            .mobile-data-target {
                 width: 100%;
                 display: block;
             }
         }
 
-        .mobile-slider-target {
+        .mobile-slider-target,
+        .mobile-data-target {
             display: none;
         }
 
@@ -486,22 +488,27 @@
                 </div>
             </div>
 
-            <div class="data-grid">
-                <div class="data-item">
-                    <span class="data-item-label">Contact Angle (&theta;) (deg)</span>
-                    <input type="number" class="data-item-value-input" id="angleVal" value="70.0" step="0.1" min="70"
-                        max="165">
-                </div>
-                <div class="data-item">
-                    <span class="data-item-label">Est. Cost / m&sup2; ($)</span>
-                    <input type="number" class="data-item-value-input" id="costVal" value="2.50" step="0.1" min="2.50"
-                        max="45.00">
-                </div>
-            </div>
+            <!-- Desktop Data Container -->
+            <div id="desktopDataContainer">
+                <div id="dataGroup">
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span class="data-item-label">Contact Angle (&theta;) (deg)</span>
+                            <input type="number" class="data-item-value-input" id="angleVal" value="70.0" step="0.1"
+                                min="70" max="165">
+                        </div>
+                        <div class="data-item">
+                            <span class="data-item-label">Est. Cost / m&sup2; ($)</span>
+                            <input type="number" class="data-item-value-input" id="costVal" value="2.50" step="0.1"
+                                min="2.50" max="45.00">
+                        </div>
+                    </div>
 
-            <div class="status-container">
-                <div class="status-dot" id="statusIndicator"></div>
-                <span class="status-text" id="statusText">State: Hydrophilic (Wetting)</span>
+                    <div class="status-container">
+                        <div class="status-dot" id="statusIndicator"></div>
+                        <span class="status-text" id="statusText">State: Hydrophilic (Wetting)</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -513,6 +520,8 @@
                 <!-- Fixing the width/height to avoid blurring -->
                 <canvas id="dropletCanvas" width="480" height="480"></canvas>
             </div>
+            <!-- Mobile Data Container -->
+            <div id="mobileDataContainer" class="mobile-data-target"></div>
             <!-- Mobile Slider Container -->
             <div id="mobileSliderContainer" class="mobile-slider-target"></div>
         </div>
@@ -752,15 +761,21 @@
 
         function handleLayoutChange(e) {
             const sliderGroup = document.getElementById('sliderGroup');
-            const mobileTarget = document.getElementById('mobileSliderContainer');
-            const desktopTarget = document.getElementById('desktopSliderContainer');
+            const mobileSliderTarget = document.getElementById('mobileSliderContainer');
+            const desktopSliderTarget = document.getElementById('desktopSliderContainer');
+
+            const dataGroup = document.getElementById('dataGroup');
+            const mobileDataTarget = document.getElementById('mobileDataContainer');
+            const desktopDataTarget = document.getElementById('desktopDataContainer');
 
             if (e.matches) {
                 // Mobile layout
-                mobileTarget.appendChild(sliderGroup);
+                mobileSliderTarget.appendChild(sliderGroup);
+                mobileDataTarget.appendChild(dataGroup);
             } else {
                 // Desktop layout
-                desktopTarget.appendChild(sliderGroup);
+                desktopSliderTarget.appendChild(sliderGroup);
+                desktopDataTarget.appendChild(dataGroup);
             }
         }
 
