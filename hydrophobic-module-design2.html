@@ -419,7 +419,8 @@
                 <div class="slider-wrapper">
                     <div class="slider-track"></div>
                     <div class="slider-fill" id="sliderFill" style="width: 0%;"></div>
-                    <input type="range" id="concSlider" min="0" max="100" value="0" aria-label="Concentration">
+                    <input type="range" id="concSlider" min="0" max="100" step="any" value="0.00"
+                        aria-label="Concentration">
                 </div>
             </div>
 
@@ -487,7 +488,7 @@
         }
 
         function updateFromSlider() {
-            const conc = parseInt(slider.value, 10);
+            const conc = parseFloat(slider.value) || 0;
             const p = conc / 100;
             const currentAngle = 70 + Math.sin(p * Math.PI / 2) * 95;
             const cost = 2.50 + Math.pow(p, 1.8) * 42.50;
@@ -505,15 +506,15 @@
             // Allow temporary out of bounds typing by clamping math logic, but don't overwrite the user's input
             const renderAngle = Math.max(70, Math.min(165, angle));
 
+            // Accurate floating-point concentration for math
             const sinVal = (renderAngle - 70) / 95;
             const p = Math.asin(Math.max(0, Math.min(1, sinVal))) * 2 / Math.PI;
 
-            // Use precise decimal for cost, but the slider only takes integers
+            // Maintain continuous precision internally and on the slider
             const exactConc = p * 100;
-            const conc = Math.max(0, Math.min(100, Math.round(exactConc)));
             const cost = 2.50 + Math.pow(p, 1.8) * 42.50;
 
-            slider.value = conc;
+            slider.value = exactConc;
             costVal.value = cost.toFixed(2);
 
             updateVisuals(exactConc, renderAngle);
@@ -528,10 +529,9 @@
             const powVal = (renderCost - 2.50) / 42.50;
             const p = Math.pow(Math.max(0, Math.min(1, powVal)), 1 / 1.8);
             const exactConc = p * 100;
-            const conc = Math.max(0, Math.min(100, Math.round(exactConc)));
             const angle = 70 + Math.sin(p * Math.PI / 2) * 95;
 
-            slider.value = conc;
+            slider.value = exactConc;
             angleVal.value = angle.toFixed(1);
 
             updateVisuals(exactConc, angle);
