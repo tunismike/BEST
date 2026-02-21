@@ -501,11 +501,14 @@
         function updateFromAngle() {
             let angle = parseFloat(angleVal.value);
             if (isNaN(angle)) return;
-            // Allow temporary out of bounds typing, but clamp math logic to prevent breaking visualization
+
+            // Allow temporary out of bounds typing by clamping math logic, but don't overwrite the user's input
             const renderAngle = Math.max(70, Math.min(165, angle));
 
             const sinVal = (renderAngle - 70) / 95;
             const p = Math.asin(Math.max(0, Math.min(1, sinVal))) * 2 / Math.PI;
+
+            // Use precise decimal for cost, but the slider only takes integers
             const conc = Math.max(0, Math.min(100, Math.round(p * 100)));
             const cost = 2.50 + Math.pow(p, 1.8) * 42.50;
 
@@ -518,6 +521,7 @@
         function updateFromCost() {
             let cost = parseFloat(costVal.value);
             if (isNaN(cost)) return;
+
             const renderCost = Math.max(2.5, Math.min(45, cost));
 
             const powVal = (renderCost - 2.50) / 42.50;
@@ -688,12 +692,29 @@
         angleVal.addEventListener('input', updateFromAngle);
         costVal.addEventListener('input', updateFromCost);
 
-        // Snap back values visually when input loses focus
+        // Snap back values visually when input loses focus, matching internal math bounds
         angleVal.addEventListener('change', () => {
-            angleVal.value = Math.max(70, Math.min(165, parseFloat(angleVal.value) || 70)).toFixed(1);
+            let val = parseFloat(angleVal.value);
+            if (isNaN(val)) val = 70;
+            if (val < 70) {
+                angleVal.value = '70.0';
+                updateFromAngle();
+            } else if (val > 165) {
+                angleVal.value = '165.0';
+                updateFromAngle();
+            }
         });
+
         costVal.addEventListener('change', () => {
-            costVal.value = Math.max(2.5, Math.min(45, parseFloat(costVal.value) || 2.5)).toFixed(2);
+            let val = parseFloat(costVal.value);
+            if (isNaN(val)) val = 2.5;
+            if (val < 2.5) {
+                costVal.value = '2.50';
+                updateFromCost();
+            } else if (val > 45) {
+                costVal.value = '45.00';
+                updateFromCost();
+            }
         });
     </script>
 </body>
