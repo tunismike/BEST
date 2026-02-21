@@ -420,19 +420,36 @@
                 margin-bottom: 1.5rem;
             }
 
-            /* Move slider to the very bottom on mobile */
-            .control-group {
-                order: 6;
-                margin-bottom: 0;
-            }
+            /* Remove the control group ordering logic from here since it moves panels entirely */
 
             .panel-viz {
                 padding: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1.5rem;
             }
 
             .canvas-wrapper {
                 margin-bottom: 0;
                 margin-top: 0;
+                width: 100%;
+            }
+
+            .mobile-slider-target {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        .mobile-slider-target {
+            display: none;
+        }
+
+        @media (max-width: 800px) {
+            .mobile-slider-target {
+                display: block;
             }
         }
     </style>
@@ -449,16 +466,19 @@
                 from a hydrophilic baseline to a stable superhydrophobic state.
             </p>
 
-            <div class="control-group">
-                <div class="control-header">
-                    <span class="control-label">Additive Conc.</span>
-                    <span class="control-value" id="concVal">0.00%</span>
-                </div>
-                <div class="slider-wrapper">
-                    <div class="slider-track"></div>
-                    <div class="slider-fill" id="sliderFill" style="width: 0%;"></div>
-                    <input type="range" id="concSlider" min="0" max="100" step="any" value="0.00"
-                        aria-label="Concentration">
+            <!-- Desktop Slider Container -->
+            <div id="desktopSliderContainer">
+                <div class="control-group" id="sliderGroup">
+                    <div class="control-header">
+                        <span class="control-label">Additive Conc.</span>
+                        <span class="control-value" id="concVal">0.00%</span>
+                    </div>
+                    <div class="slider-wrapper">
+                        <div class="slider-track"></div>
+                        <div class="slider-fill" id="sliderFill" style="width: 0%;"></div>
+                        <input type="range" id="concSlider" min="0" max="100" step="any" value="0.00"
+                            aria-label="Concentration">
+                    </div>
                 </div>
             </div>
 
@@ -489,6 +509,8 @@
                 <!-- Fixing the width/height to avoid blurring -->
                 <canvas id="dropletCanvas" width="480" height="480"></canvas>
             </div>
+            <!-- Mobile Slider Container -->
+            <div id="mobileSliderContainer" class="mobile-slider-target"></div>
         </div>
     </div>
 
@@ -723,6 +745,25 @@
 
             updateFromSlider();
         }
+
+        function handleLayoutChange(e) {
+            const sliderGroup = document.getElementById('sliderGroup');
+            const mobileTarget = document.getElementById('mobileSliderContainer');
+            const desktopTarget = document.getElementById('desktopSliderContainer');
+
+            if (e.matches) {
+                // Mobile layout
+                mobileTarget.appendChild(sliderGroup);
+            } else {
+                // Desktop layout
+                desktopTarget.appendChild(sliderGroup);
+            }
+        }
+
+        const mediaQuery = window.matchMedia('(max-width: 800px)');
+        mediaQuery.addEventListener('change', handleLayoutChange);
+        // Initial check
+        handleLayoutChange(mediaQuery);
 
         window.addEventListener('resize', setupCanvas);
         window.addEventListener('load', setupCanvas);
