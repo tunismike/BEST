@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Hydrophobic Module</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050510;
+            --grid-color: rgba(0, 240, 255, 0.08);
+            --text-primary: #e2e8f0;
+            --text-muted: #64748b;
+            --accent-main: #00f0ff;
+            --accent-secondary: #fcd34d;
+            /* yellow/amber for cost */
+            --border-color: #1e293b;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            background-image:
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+            font-family: var(--font-mono);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .module-wrapper {
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(5, 5, 16, 0.85);
+            border: 1px solid var(--border-color);
+            padding: 2px;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 2px;
+            /* For borders between sections */
+            background-color: var(--border-color);
+            /* Creates 1px borders between elements */
+        }
+
+        .panel {
+            background-color: var(--bg-color);
+            padding: 30px;
+            position: relative;
+        }
+
+        /* Technical corner brackets */
+        .panel::before,
+        .panel::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 1px solid var(--accent-main);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .panel::before {
+            top: 6px;
+            left: 6px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .panel::after {
+            bottom: 6px;
+            right: 6px;
+            border-left: none;
+            border-top: none;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-main);
+        }
+
+        p.desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .control-block {
+            margin-bottom: 30px;
+        }
+
+        .label-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+        }
+
+        .value-display {
+            font-size: 1.1rem;
+            color: #fff;
+            padding: 2px 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+            height: 20px;
+            outline: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Custom track */
+        .slider-wrapper {
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .wire-track {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--border-color);
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+
+        .wire-fill {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 1px;
+            background: var(--accent-main);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        /* Thumb elements */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 24px;
+            background: var(--bg-color);
+            border: 1px solid var(--accent-main);
+            border-radius: 0;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0, 240, 255, 0.4);
+        }
+
+        input[type=range]::-moz-range-thumb {
+            width: 14px;
+            height: 24px;
+            background: var(--bg-color);
+            border: 1px solid var(--accent-main);
+            border-radius: 0;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0, 240, 255, 0.4);
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .data-box {
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            position: relative;
+        }
+
+        .data-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+        }
+
+        .data-box.angle::before {
+            background: var(--accent-main);
+        }
+
+        .data-box.cost::before {
+            background: var(--accent-secondary);
+        }
+
+        .data-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .data-val {
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+
+        .data-box.angle .data-val {
+            color: var(--accent-main);
+        }
+
+        .data-box.cost .data-val {
+            color: var(--accent-secondary);
+        }
+
+        .terminal-readout {
+            font-size: 0.75rem;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.05);
+            padding: 15px;
+            border: 1px dotted rgba(16, 185, 129, 0.3);
+            margin-top: 20px;
+            min-height: 80px;
+            line-height: 1.6;
+        }
+
+        .terminal-readout span.prefix {
+            color: var(--text-muted);
+        }
+
+        /* Canvas Panel */
+        .viz-panel {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .canvas-container {
+            flex-grow: 1;
+            position: relative;
+            width: 100%;
+            min-height: 400px;
+            border: 1px dashed var(--border-color);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            border: 1px solid var(--text-muted);
+            padding: 4px 8px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            background: var(--bg-color);
+            z-index: 10;
+        }
+
+        .axis-label {
+            position: absolute;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .axis-y {
+            top: 15px;
+            left: 15px;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+
+        .axis-x {
+            bottom: 15px;
+            right: 15px;
+        }
+
+        @media (max-width: 800px) {
+            .module-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .canvas-container {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="module-wrapper">
+        <div class="panel">
+            <h2>SYS_OPT_03</h2>
+            <p class="desc">// PARAMETER TUNING: Hydrophobic Coating Concentration vs. Contact Angle & Cost Modeling</p>
+
+            <div class="control-block">
+                <div class="label-row">
+                    <span>Concentration [C_h]</span>
+                    <span class="value-display" id="concVal">0.00%</span>
+                </div>
+                <div class="slider-wrapper">
+                    <div class="wire-track"></div>
+                    <div class="wire-fill" id="sliderFill" style="width: 0%"></div>
+                    <input type="range" id="concSlider" min="0" max="100" value="0">
+                </div>
+            </div>
+
+            <div class="data-grid">
+                <div class="data-box angle">
+                    <div class="data-label">Contact Angle (θ_c)</div>
+                    <div class="data-val" id="angleVal">70.0&deg;</div>
+                </div>
+                <div class="data-box cost">
+                    <div class="data-label">Prod. Cost [USD/m&sup2;]</div>
+                    <div class="data-val" id="costVal">2.50</div>
+                </div>
+            </div>
+
+            <div class="terminal-readout" id="terminal">
+                <!-- JS inserts text -->
+            </div>
+        </div>
+
+        <div class="panel viz-panel">
+            <div class="canvas-container">
+                <div class="status-badge" id="statusBadge">HYDROPHILIC</div>
+                <div class="axis-label axis-y">Z-AXIS (μm)</div>
+                <div class="axis-label axis-x">X-AXIS (μm)</div>
+                <canvas id="wireframeCanvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('concSlider');
+        const sliderFill = document.getElementById('sliderFill');
+        const concVal = document.getElementById('concVal');
+        const angleVal = document.getElementById('angleVal');
+        const costVal = document.getElementById('costVal');
+        const terminal = document.getElementById('terminal');
+        const statusBadge = document.getElementById('statusBadge');
+        const canvas = document.getElementById('wireframeCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            if (!canvas.parentElement) return;
+            const rect = canvas.parentElement.getBoundingClientRect();
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            ctx.scale(dpr, dpr);
+            canvas.style.width = `${rect.width}px`;
+            canvas.style.height = `${rect.height}px`;
+            update();
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        function getTerminalLog(conc, angle) {
+            if (conc < 20) return `> Analyzing baseline hydrophilic geometry...<br><span class="prefix">sys></span> High substrate adhesion detected.<br><span class="prefix">sys></span> Wetting state: Complete/High.`;
+            if (conc < 55) return `> Coating applied: ${conc}%.<br><span class="prefix">sys></span> Contact angle θ = ${angle.toFixed(1)}&deg;<br><span class="prefix">sys></span> State transition: Hydrophobic. Partial wetting.`;
+            if (conc < 85) return `> Coating applied: ${conc}%.<br><span class="prefix">sys></span> Contact angle θ = ${angle.toFixed(1)}&deg;<br><span class="prefix">sys></span> State: Highly Hydrophobic. Droplet mobility increased.`;
+            return `> MAXIMUM CONCENTRATION REACHED.<br><span class="prefix">sys></span> Contact angle θ = ${angle.toFixed(1)}&deg;<br><span class="prefix">sys></span> State: SUPERHYDROPHOBIC (Cassie-Baxter state).<br><span class="prefix">sys></span> Self-cleaning effect optimal.`;
+        }
+
+        function getStatusLine(conc) {
+            if (conc < 20) return { label: "HYDROPHILIC STATE", color: "#64748b" };
+            if (conc < 55) return { label: "HYDROPHOBIC STATE", color: "#00f0ff" };
+            if (conc < 85) return { label: "HIGHLY HYDROPHOBIC", color: "#3b82f6" };
+            return { label: "SUPERHYDROPHOBIC", color: "#8b5cf6" };
+        }
+
+        function update() {
+            const conc = parseInt(slider.value, 10);
+
+            sliderFill.style.width = `${conc}%`;
+
+            concVal.innerText = conc.toFixed(2) + "%";
+
+            const p = conc / 100;
+            const easedP = Math.sin(p * Math.PI / 2);
+            const currentAngle = 70 + easedP * 95;
+            const cost = 2.50 + Math.pow(p, 1.8) * 42.50;
+
+            angleVal.innerHTML = currentAngle.toFixed(1) + "&deg;";
+            costVal.innerHTML = cost.toFixed(2);
+
+            const status = getStatusLine(conc);
+            statusBadge.innerText = status.label;
+            statusBadge.style.color = status.color;
+            statusBadge.style.borderColor = status.color;
+
+            terminal.innerHTML = getTerminalLog(conc, currentAngle);
+
+            drawWireframe(currentAngle);
+        }
+
+        function drawWireframe(thetaDeg) {
+            const w = parseFloat(canvas.style.width) || canvas.parentElement.clientWidth;
+            const h = parseFloat(canvas.style.height) || canvas.parentElement.clientHeight;
+
+            ctx.clearRect(0, 0, w, h);
+
+            const surfaceY = h * 0.75;
+            const cx = w / 2;
+
+            // 1. Draw Grid Background on Canvas for technical feel
+            ctx.strokeStyle = 'rgba(0, 240, 255, 0.08)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            for (let i = (cx % 20); i < w; i += 20) { ctx.moveTo(i, 0); ctx.lineTo(i, h); }
+            for (let j = (surfaceY % 20); j < h; j += 20) { ctx.moveTo(0, j); ctx.lineTo(w, j); }
+            ctx.stroke();
+
+            // 2. Center Axis
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+            ctx.beginPath();
+            ctx.moveTo(cx, Math.max(0, surfaceY - 200));
+            ctx.lineTo(cx, surfaceY + 50);
+            ctx.setLineDash([4, 4]);
+            ctx.stroke();
+            ctx.setLineDash([]); // reset
+
+            // 3. Surface Line
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.moveTo(0, surfaceY);
+            ctx.lineTo(w, surfaceY);
+            ctx.stroke();
+
+            // Substrate hatching
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+            for (let i = -50; i < w + 50; i += 12) {
+                ctx.moveTo(i, surfaceY);
+                ctx.lineTo(i - 15, surfaceY + 15);
+            }
+            ctx.stroke();
+
+            // 4. Droplet Math
+            const theta = thetaDeg * Math.PI / 180;
+            const baseArea = 25000;
+            const areaRatio = Math.max(0.1, theta - Math.sin(theta) * Math.cos(theta));
+            const R = Math.sqrt(baseArea / areaRatio);
+            const cy = surfaceY + R * Math.cos(theta);
+
+            const leftAngle = Math.atan2(-Math.cos(theta), -Math.sin(theta));
+            const rightAngle = Math.atan2(-Math.cos(theta), Math.sin(theta));
+            const contactX = cx + R * Math.sin(theta);
+            const dropWidth = 2 * R * Math.sin(theta);
+
+            // 5. Draw Droplet Wireframe
+            ctx.beginPath();
+            ctx.arc(cx, cy, R, leftAngle, rightAngle, false);
+            ctx.strokeStyle = '#00f0ff';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Faint fill to identify enclosed volume
+            ctx.fillStyle = 'rgba(0, 240, 255, 0.05)';
+            ctx.fill();
+
+            // 6. Tangent Line Construction
+            const L = 80;
+            ctx.beginPath();
+            ctx.moveTo(contactX, surfaceY);
+            ctx.lineTo(contactX - L * Math.cos(theta), surfaceY - L * Math.sin(theta));
+            ctx.strokeStyle = '#fcd34d'; // Amber
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+
+            // Tangent intersection point
+            ctx.beginPath();
+            ctx.arc(contactX, surfaceY, 3, 0, Math.PI * 2);
+            ctx.fillStyle = '#fcd34d';
+            ctx.fill();
+
+            // 7. Contact Angle Arc
+            ctx.beginPath();
+            ctx.arc(contactX, surfaceY, 25, Math.PI, Math.PI + theta, false);
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+
+            // Text labels
+            ctx.fillStyle = '#fff';
+            ctx.font = '12px "JetBrains Mono", monospace';
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'middle';
+
+            const midTheta = Math.PI + theta / 2;
+            const textX = contactX + 35 * Math.cos(midTheta);
+            const textY = surfaceY + 35 * Math.sin(midTheta);
+
+            // Background for text
+            const textStr = "θc=" + thetaDeg.toFixed(1) + "°";
+            const tWidth = ctx.measureText(textStr).width;
+            ctx.fillStyle = 'var(--bg-color)';
+            ctx.fillRect(textX - tWidth - 2, textY - 8, tWidth + 4, 16);
+
+            ctx.fillStyle = '#fff';
+            ctx.fillText(textStr, textX, textY);
+
+            // Radius label (R)
+            const radAngle = Math.PI * 1.5 + theta / 2;
+            ctx.beginPath();
+            ctx.moveTo(cx, cy);
+            ctx.lineTo(cx + R * Math.cos(radAngle), cy + R * Math.sin(radAngle));
+            ctx.strokeStyle = '#00f0ff';
+            ctx.setLineDash([2, 4]);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            ctx.beginPath();
+            ctx.arc(cx, cy, 2, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.textAlign = 'left';
+            ctx.fillStyle = 'rgba(255,255,255,0.7)';
+            ctx.fillText(" R=" + R.toFixed(1), cx + R / 2 * Math.cos(radAngle), cy + R / 2 * Math.sin(radAngle) - 10);
+
+            // Base width label
+            const widthY = surfaceY + 25;
+            ctx.beginPath();
+            ctx.moveTo(cx - dropWidth / 2, widthY - 5);
+            ctx.lineTo(cx - dropWidth / 2, widthY + 5);
+            ctx.moveTo(cx + dropWidth / 2, widthY - 5);
+            ctx.lineTo(cx + dropWidth / 2, widthY + 5);
+            ctx.moveTo(cx - dropWidth / 2, widthY);
+            ctx.lineTo(cx + dropWidth / 2, widthY);
+            ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+            ctx.stroke();
+
+            ctx.textAlign = 'center';
+            ctx.fillText("d = " + dropWidth.toFixed(1) + " μm", cx, widthY + 15);
+        }
+
+        slider.addEventListener('input', update);
+        setTimeout(resizeCanvas, 50);
+
+    </script>
+</body>
+
+</html>

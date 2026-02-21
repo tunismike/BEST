@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Hydrophobic Module</title>
+    <!-- Use a modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b1120;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(148, 163, 184, 0.2);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-blue-glow: rgba(56, 189, 248, 0.5);
+            --accent-green: #34d399;
+            --accent-green-glow: rgba(52, 211, 153, 0.5);
+            --accent-red: #f87171;
+            --font-main: 'Outfit', sans-serif;
+            --surface-color: #334155;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            background-image:
+                radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(52, 211, 153, 0.05), transparent 40%);
+            font-family: var(--font-main);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        * {
+            box-sizing: inherit;
+        }
+
+        .module-container {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .controls-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .module-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
+            margin-bottom: 16px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            width: fit-content;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .slider-group {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .slider-group label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .slider-group span.val {
+            color: var(--accent-blue);
+            font-weight: 700;
+            background: rgba(56, 189, 248, 0.1);
+            padding: 4px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            height: 8px;
+            border-radius: 4px;
+            outline: none;
+            transition: background 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        input[type=range]:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            box-shadow: 0 0 15px var(--accent-blue-glow), inset 0 0 0 6px var(--accent-blue);
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        input[type=range]::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+        }
+
+        input[type=range]::-moz-range-thumb {
+            width: 28px;
+            height: 28px;
+            border: none;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            box-shadow: 0 0 15px var(--accent-blue-glow), inset 0 0 0 6px var(--accent-blue);
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        input[type=range]::-moz-range-thumb:hover {
+            transform: scale(1.15);
+        }
+
+        .slider-track-fill {
+            position: absolute;
+            height: 8px;
+            background: linear-gradient(90deg, var(--accent-blue), #818cf8);
+            border-radius: 4px;
+            top: 42px;
+            /* align with slider */
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .metric-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: transparent;
+            transition: background 0.3s;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .metric-card.angle:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        .metric-card.angle::before {
+            background: var(--accent-blue);
+        }
+
+        .metric-card.cost:hover {
+            border-color: rgba(52, 211, 153, 0.3);
+        }
+
+        .metric-card.cost::before {
+            background: var(--accent-green);
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .metric-card.angle .metric-value {
+            color: var(--accent-blue);
+            text-shadow: 0 0 20px var(--accent-blue-glow);
+        }
+
+        .metric-card.cost .metric-value {
+            color: var(--accent-green);
+            text-shadow: 0 0 20px var(--accent-green-glow);
+        }
+
+        .infobox {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(56, 189, 248, 0.05);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 0 12px 12px 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        /* Visualization Column */
+        .viz-col {
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .state-label {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        @media (max-width: 850px) {
+            .module-container {
+                grid-template-columns: 1fr;
+            }
+
+            .viz-col {
+                min-height: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="module-container">
+        <div class="controls-col">
+            <div class="module-badge">Interactive Simulation</div>
+            <h2>Surface Optimization</h2>
+            <p class="subtitle">Adjust the concentration of hydrophobic coating material to observe its effect on water
+                repellency (contact angle) and the associated production cost.</p>
+
+            <div class="slider-group">
+                <label>
+                    Material Concentration
+                    <span class="val" id="concVal">0%</span>
+                </label>
+                <input type="range" id="concSlider" min="0" max="100" value="0">
+                <div class="slider-track-fill" id="sliderFill" style="width: 0%"></div>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card angle">
+                    <div class="metric-label">Contact Angle</div>
+                    <div class="metric-value" id="angleVal">70&deg;</div>
+                </div>
+                <div class="metric-card cost">
+                    <div class="metric-label">Est. Cost / m&sup2;</div>
+                    <div class="metric-value" id="costVal">$2.50</div>
+                </div>
+            </div>
+
+            <div class="infobox" id="infoText">
+                Baseline surface with standard wettability. Water heavily adheres to the surface and creates a wide
+                contact patch.
+            </div>
+        </div>
+
+        <div class="viz-col">
+            <div class="state-label" id="stateLabel">HYDROPHILIC</div>
+            <canvas id="dropletCanvas" width="500" height="500"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('concSlider');
+        const sliderFill = document.getElementById('sliderFill');
+        const concVal = document.getElementById('concVal');
+        const angleVal = document.getElementById('angleVal');
+        const costVal = document.getElementById('costVal');
+        const infoText = document.getElementById('infoText');
+        const stateLabel = document.getElementById('stateLabel');
+        const canvas = document.getElementById('dropletCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Make canvas responsive
+        function resizeCanvas() {
+            if (!canvas.parentElement) return;
+            const rect = canvas.parentElement.getBoundingClientRect();
+            // High DPI support
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            ctx.scale(dpr, dpr);
+            canvas.style.width = `${rect.width}px`;
+            canvas.style.height = `${rect.height}px`;
+            update(); // redraw
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        function getStateInfo(conc) {
+            if (conc < 20) return {
+                text: "Baseline surface with low wettability resistance. Water heavily adheres to the surface, forming a flat drop.",
+                label: "NATIVE",
+                color: "#94a3b8"
+            };
+            if (conc < 55) return {
+                text: "Moderate concentration provides distinct hydrophobic properties. Droplets begin to bead up, reducing surface contact area.",
+                label: "HYDROPHOBIC",
+                color: "#38bdf8"
+            };
+            if (conc < 85) return {
+                text: "High concentration yields a highly hydrophobic surface. Water forms beads that easily roll off, carrying away dirt.",
+                label: "HIGHLY HYDROPHOBIC",
+                color: "#818cf8"
+            };
+            return {
+                text: "Superhydrophobic range! Water forms near-perfect spheres with minimal contact area. Maximum water repellency is achieved at a premium cost.",
+                label: "SUPERHYDROPHOBIC",
+                color: "#a78bfa"
+            };
+        }
+
+        // Animation frame request ID for smooth transition if needed, though direct redraw is fast enough
+        function update() {
+            const conc = parseInt(slider.value, 10);
+
+            // Update slider visual fill
+            sliderFill.style.width = `calc(${conc}% - ${(conc / 100) * 28}px + 14px)`; // accounting for thumb width
+
+            concVal.innerText = conc + "%";
+
+            // Map conc (0-100) to angle (70-165)
+            const p = conc / 100;
+
+            // Smooth S-curve for angle to mimic diminishing returns at high concentrations
+            // Using an easeOutQuad type curve or sin curve
+            const easedP = Math.sin(p * Math.PI / 2);
+            const currentAngle = 70 + easedP * 95;
+
+            // Cost grows quadratically with concentration because extreme purity/coating thickness costs more
+            const cost = 2.50 + Math.pow(p, 1.8) * 42.50;
+
+            angleVal.innerHTML = Math.round(currentAngle) + "&deg;";
+            costVal.innerHTML = "$" + cost.toFixed(2);
+
+            const state = getStateInfo(conc);
+            infoText.innerText = state.text;
+            stateLabel.innerText = state.label;
+            stateLabel.style.borderColor = state.color;
+            stateLabel.style.color = state.color;
+
+            // Update infobox border color to match state
+            infoText.style.borderColor = state.color;
+            infoText.style.background = state.color.replace(')', ', 0.05)').replace('rgb', 'rgba');
+            // Need to parse hex to rgba for reliable background coloring
+            const hex = state.color;
+            if (hex.startsWith('#')) {
+                const r = parseInt(hex.slice(1, 3), 16);
+                const g = parseInt(hex.slice(3, 5), 16);
+                const b = parseInt(hex.slice(5, 7), 16);
+                infoText.style.background = `rgba(${r}, ${g}, ${b}, 0.08)`;
+            }
+
+            drawCanvas(currentAngle);
+        }
+
+        function drawCanvas(thetaDeg) {
+            // Physical dimensions divided by DPR due to scale
+            const w = parseFloat(canvas.style.width) || canvas.parentElement.clientWidth;
+            const h = parseFloat(canvas.style.height) || canvas.parentElement.clientHeight;
+
+            ctx.clearRect(0, 0, w, h);
+
+            // Draw surface line
+            const surfaceY = h * 0.75;
+
+            // Draw deep surface gradient
+            const surfGrad = ctx.createLinearGradient(0, surfaceY, 0, h);
+            surfGrad.addColorStop(0, '#1e293b');
+            surfGrad.addColorStop(1, '#0f172a');
+            ctx.fillStyle = surfGrad;
+            ctx.fillRect(0, surfaceY, w, h - surfaceY);
+
+            ctx.beginPath();
+            ctx.moveTo(0, surfaceY);
+            ctx.lineTo(w, surfaceY);
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = '#475569';
+            ctx.stroke();
+
+            // Grid lines on surface for technical feel
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+            for (let i = 10; i < w; i += 40) {
+                ctx.beginPath();
+                ctx.moveTo(i, surfaceY);
+                ctx.lineTo(i - 20, h);
+                ctx.stroke();
+            }
+
+            // Draw the droplet
+            const theta = thetaDeg * Math.PI / 180;
+            // Base area to preserve droplet volume feeling (2D cross section area)
+            const baseArea = 22000;
+            const areaRatio = Math.max(0.1, theta - Math.sin(theta) * Math.cos(theta));
+            const R = Math.sqrt(baseArea / areaRatio);
+
+            const cy = surfaceY + R * Math.cos(theta); // Center Y
+            const cx = w / 2;
+
+            // Angles calculated such that we trace the arc above the center
+            const leftAngle = Math.atan2(-Math.cos(theta), -Math.sin(theta));
+            const rightAngle = Math.atan2(-Math.cos(theta), Math.sin(theta));
+
+            // Droplet body shadow
+            ctx.beginPath();
+            ctx.ellipse(cx, surfaceY, Math.abs(R * Math.sin(theta)) + 10, 8, 0, 0, 2 * Math.PI);
+            ctx.fillStyle = 'rgba(0,0,0,0.4)';
+            ctx.fill();
+
+            // Droplet arc
+            ctx.beginPath();
+            // anticlockwise=false sweeps clockwise from left to right over the top
+            ctx.arc(cx, cy, R, leftAngle, rightAngle, false);
+            ctx.closePath();
+
+            // Droplet Fill gradient
+            // Dynamic based on angle
+            const topY = cy - R;
+            const grad = ctx.createLinearGradient(cx, topY, cx, surfaceY);
+            grad.addColorStop(0, 'rgba(125, 211, 252, 0.85)'); // light blue top
+            grad.addColorStop(1, 'rgba(2, 132, 199, 0.95)');   // deep blue bottom
+
+            ctx.fillStyle = grad;
+            ctx.fill();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = 'rgba(186, 230, 253, 0.8)'; // bright rim
+            ctx.stroke();
+
+            // Inner glowing highlight (creates 3D bubble effect)
+            ctx.beginPath();
+            ctx.arc(cx, cy, R, leftAngle, rightAngle, false);
+            ctx.closePath();
+            const innerGrad = ctx.createRadialGradient(cx - R * 0.3, cy - R * 0.3, R * 0.1, cx, cy, R);
+            innerGrad.addColorStop(0, 'rgba(255, 255, 255, 0.6)');
+            innerGrad.addColorStop(0.4, 'rgba(255, 255, 255, 0)');
+            ctx.fillStyle = innerGrad;
+            ctx.fill();
+
+            // High gloss highlight
+            ctx.beginPath();
+            ctx.ellipse(cx - R * 0.25, cy - R * 0.5, R * 0.3, R * 0.12, -Math.PI / 8, 0, 2 * Math.PI);
+            ctx.fillStyle = 'rgba(255,255,255,0.4)';
+            ctx.fill();
+
+            // Draw Angle arcs and tangent
+            const contactX = cx + R * Math.sin(theta);
+            const L = 60; // tangent line length
+
+            // Tangent Line
+            ctx.beginPath();
+            ctx.moveTo(contactX, surfaceY);
+            ctx.lineTo(contactX - L * Math.cos(theta), surfaceY - L * Math.sin(theta));
+            // Use a prominent color
+            ctx.strokeStyle = '#f43f5e'; // rose-500
+            ctx.lineWidth = 2;
+            ctx.setLineDash([4, 4]);
+            ctx.stroke();
+            ctx.setLineDash([]); // reset
+
+            // Point at contact
+            ctx.beginPath();
+            ctx.arc(contactX, surfaceY, 4, 0, Math.PI * 2);
+            ctx.fillStyle = '#f43f5e';
+            ctx.fill();
+
+            // Angle Arc
+            ctx.beginPath();
+            // Canvas angles: Math.PI is horizontal left.
+            // We draw clockwise from Math.PI to Math.PI + theta
+            ctx.arc(contactX, surfaceY, 30, Math.PI, Math.PI + theta, false);
+            ctx.strokeStyle = 'rgba(226, 232, 240, 0.8)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Angle text positioning
+            ctx.fillStyle = '#f8fafc';
+            ctx.font = '600 15px "Outfit", sans-serif';
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'middle';
+
+            // Position text slightly outside the arc
+            const midTheta = Math.PI + theta / 2;
+            const textX = contactX + 45 * Math.cos(midTheta);
+            const textY = surfaceY + 45 * Math.sin(midTheta);
+
+            // Add a small soft shadow to text for readability
+            ctx.shadowColor = "rgba(0,0,0,0.8)";
+            ctx.shadowBlur = 4;
+            ctx.fillText(Math.round(thetaDeg) + "°", textX, textY);
+            ctx.shadowBlur = 0; // reset
+        }
+
+        slider.addEventListener('input', update);
+
+        // Initial setup
+        setTimeout(() => {
+            resizeCanvas();
+        }, 50);
+
+    </script>
+</body>
+
+</html>
