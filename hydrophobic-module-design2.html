@@ -509,13 +509,14 @@
             const p = Math.asin(Math.max(0, Math.min(1, sinVal))) * 2 / Math.PI;
 
             // Use precise decimal for cost, but the slider only takes integers
-            const conc = Math.max(0, Math.min(100, Math.round(p * 100)));
+            const exactConc = p * 100;
+            const conc = Math.max(0, Math.min(100, Math.round(exactConc)));
             const cost = 2.50 + Math.pow(p, 1.8) * 42.50;
 
             slider.value = conc;
             costVal.value = cost.toFixed(2);
 
-            updateVisuals(conc, renderAngle);
+            updateVisuals(exactConc, renderAngle);
         }
 
         function updateFromCost() {
@@ -526,13 +527,14 @@
 
             const powVal = (renderCost - 2.50) / 42.50;
             const p = Math.pow(Math.max(0, Math.min(1, powVal)), 1 / 1.8);
-            const conc = Math.max(0, Math.min(100, Math.round(p * 100)));
+            const exactConc = p * 100;
+            const conc = Math.max(0, Math.min(100, Math.round(exactConc)));
             const angle = 70 + Math.sin(p * Math.PI / 2) * 95;
 
             slider.value = conc;
             angleVal.value = angle.toFixed(1);
 
-            updateVisuals(conc, angle);
+            updateVisuals(exactConc, angle);
         }
 
         function updateStatus(angle) {
