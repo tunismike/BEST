@@ -122,6 +122,53 @@
         /* Controls */
         .control-group {
             margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .auto-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 10px;
+            border-radius: 2px;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: var(--teal-dim);
+            color: var(--teal);
+            border: 1px solid var(--teal);
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
+            margin-bottom: 0.5rem;
+        }
+
+        .auto-badge.visible {
+            opacity: 1;
+        }
+
+        .auto-badge .pulse-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--teal);
+            animation: pulse-glow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                opacity: 0.4;
+                box-shadow: 0 0 0 0 rgba(13, 115, 119, 0.3);
+            }
+
+            50% {
+                opacity: 1;
+                box-shadow: 0 0 6px 2px rgba(13, 115, 119, 0.5);
+            }
         }
 
         .control-header {
@@ -478,6 +525,7 @@
             <div id="desktopSliderContainer">
                 <div class="control-group" id="sliderGroup">
                     <div class="control-header">
+                        <div class="auto-badge" id="autoBadge"><span class="pulse-dot"></span>AUTO</div>
                         <span class="control-label">Additive Conc.</span>
                         <span class="control-value" id="concVal">0.00%</span>
                     </div>
@@ -817,6 +865,49 @@
                 costVal.value = '45.00';
                 updateFromCost();
             }
+        });
+
+        // --- Sine Wave Auto-Demo ---
+        let autoAnimId = null;
+        let autoStartTime = null;
+        const autoBadge = document.getElementById('autoBadge');
+        const moduleContainer = document.querySelector('.module-container');
+
+        function startAutoDemo() {
+            autoStartTime = performance.now();
+            autoBadge.classList.add('visible');
+
+            function animate(now) {
+                const elapsed = (now - autoStartTime) / 1000;
+                const sineVal = (Math.sin(elapsed * Math.PI / 5 - Math.PI / 2) + 1) / 2;
+                const concValue = sineVal * 100;
+
+                slider.value = concValue;
+                updateFromSlider();
+
+                autoAnimId = requestAnimationFrame(animate);
+            }
+            autoAnimId = requestAnimationFrame(animate);
+        }
+
+        function stopAutoDemo() {
+            if (autoAnimId !== null) {
+                cancelAnimationFrame(autoAnimId);
+                autoAnimId = null;
+                autoBadge.classList.remove('visible');
+            }
+        }
+
+        // Stop on any user interaction
+        moduleContainer.addEventListener('mousedown', stopAutoDemo);
+        moduleContainer.addEventListener('touchstart', stopAutoDemo);
+        slider.addEventListener('input', stopAutoDemo);
+        angleVal.addEventListener('focus', stopAutoDemo);
+        costVal.addEventListener('focus', stopAutoDemo);
+
+        // Start demo after page loads
+        window.addEventListener('load', () => {
+            setTimeout(startAutoDemo, 1000);
         });
     </script>
 </body>
