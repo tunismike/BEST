@@ -720,15 +720,21 @@
             ctx.lineWidth = 1;
             ctx.stroke();
 
-            // Droplet
+            // Droplet — per-state colors
+            const stateColors = thetaDeg >= 150
+                ? { fill: 'rgba(200, 150, 62, 0.25)', stroke: '#B8860B', accent: '#C8963E' }   // Superhydrophobic: rich gold
+                : thetaDeg >= 90
+                    ? { fill: 'rgba(13, 115, 119, 0.2)', stroke: '#0A5C5F', accent: '#0D7377' }     // Hydrophobic: saturated teal
+                    : { fill: 'rgba(100, 140, 180, 0.15)', stroke: '#4A6A8A', accent: '#5B7EA1' };  // Hydrophilic: steel blue
+
             ctx.beginPath();
             // anticlockwise=false sweeps clockwise from left to right over the top
             ctx.arc(centerX, cy, R, leftAngle, rightAngle, false);
             ctx.closePath();
 
-            ctx.fillStyle = thetaDeg >= 150 ? colors.goldDim : thetaDeg >= 90 ? colors.tealDim : 'rgba(180, 195, 210, 0.15)';
+            ctx.fillStyle = stateColors.fill;
             ctx.fill();
-            ctx.strokeStyle = colors.navy;
+            ctx.strokeStyle = stateColors.stroke;
             ctx.lineWidth = 2.5;
             ctx.setLineDash([]);
             ctx.stroke();
@@ -754,7 +760,7 @@
             ctx.beginPath();
             ctx.moveTo(CPx, CPy);
             ctx.lineTo(endX, endY);
-            ctx.strokeStyle = colors.teal;
+            ctx.strokeStyle = stateColors.accent;
             ctx.lineWidth = 1.5;
             ctx.setLineDash([4, 2]);
             ctx.stroke();
@@ -763,7 +769,7 @@
             ctx.beginPath();
             const arcRadius = 40;
             ctx.arc(CPx, CPy, arcRadius, Math.PI, Math.PI + thetaRad, false);
-            ctx.strokeStyle = thetaDeg >= 150 ? colors.gold : colors.teal;
+            ctx.strokeStyle = stateColors.accent;
             ctx.lineWidth = 1.5;
             ctx.setLineDash([]);
             ctx.stroke();
