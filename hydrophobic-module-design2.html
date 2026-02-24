@@ -898,10 +898,10 @@
             }
         }
 
-        // Stop on any user interaction
-        moduleContainer.addEventListener('mousedown', stopAutoDemo);
-        moduleContainer.addEventListener('touchstart', stopAutoDemo);
+        // Stop only when user interacts with controls (not casual touch/scroll)
         slider.addEventListener('input', stopAutoDemo);
+        slider.addEventListener('mousedown', stopAutoDemo);
+        slider.addEventListener('touchstart', stopAutoDemo);
         angleVal.addEventListener('focus', stopAutoDemo);
         costVal.addEventListener('focus', stopAutoDemo);
 

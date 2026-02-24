@@ -662,10 +662,10 @@
             }
         }
 
-        // Stop on any user interaction with the module
-        moduleContainer.addEventListener('mousedown', stopAutoDemo);
-        moduleContainer.addEventListener('touchstart', stopAutoDemo);
+        // Stop only when user interacts with the slider (not casual touch/scroll)
         slider.addEventListener('input', stopAutoDemo);
+        slider.addEventListener('mousedown', stopAutoDemo);
+        slider.addEventListener('touchstart', stopAutoDemo);
 
         // Initial setup
         setTimeout(() => {
