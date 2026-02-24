@@ -726,7 +726,7 @@
             ctx.arc(centerX, cy, R, leftAngle, rightAngle, false);
             ctx.closePath();
 
-            ctx.fillStyle = thetaDeg >= 150 ? colors.goldDim : colors.tealDim;
+            ctx.fillStyle = thetaDeg >= 150 ? colors.goldDim : thetaDeg >= 90 ? colors.tealDim : 'rgba(180, 195, 210, 0.15)';
             ctx.fill();
             ctx.strokeStyle = colors.navy;
             ctx.lineWidth = 2.5;
