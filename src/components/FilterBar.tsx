@@ -66,14 +66,6 @@ export function FilterBar({
         <option value="text">Text Only</option>
       </select>
 
-      <input
-        type="text"
-        className="filter-search"
-        placeholder="Search..."
-        value={searchQuery}
-        onChange={(e) => onSearchChange(e.target.value)}
-      />
-
       {hasActiveFilters && (
         <button type="button" className="filter-clear-btn" onClick={onClear}>
           Clear
