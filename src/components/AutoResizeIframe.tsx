@@ -42,7 +42,7 @@ export function AutoResizeIframe({ src, title, designWidth = 1440 }: AutoResizeI
                 const children = doc.body.children;
                 let maxBottom = 0;
                 for (let i = 0; i < children.length; i++) {
-                    const rect = children[i].getBoundingClientRect();
+                    const rect = (children[i] as Element).getBoundingClientRect();
                     const bottom = rect.top + rect.height;
                     if (bottom > maxBottom) maxBottom = bottom;
                 }
