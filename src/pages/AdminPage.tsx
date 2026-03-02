@@ -1,13 +1,23 @@
+import { useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { useContentReview } from '../hooks/useContentReview';
 import { exportToJson, exportToCsv, downloadFile } from '../utils/export';
+import { LoginPrompt } from '../components/LoginPrompt';
 
 export function AdminPage() {
   const { reviewId } = useParams<{ reviewId: string }>();
   const [searchParams] = useSearchParams();
   const adminKey = searchParams.get('key');
+  const [reviewerName, setReviewerName] = useState<string | null>(null);
 
   const expectedKey = import.meta.env.VITE_ADMIN_KEY as string;
+
+  useEffect(() => {
+    const stored = localStorage.getItem('best-reviewer-name');
+    if (stored) {
+      setReviewerName(stored);
+    }
+  }, []);
 
   if (!adminKey || adminKey !== expectedKey) {
     return (
@@ -17,11 +27,25 @@ export function AdminPage() {
     );
   }
 
-  return <AdminContent reviewId={reviewId ?? ''} />;
+  const handleLogin = (name: string) => {
+    localStorage.setItem('best-reviewer-name', name);
+    setReviewerName(name);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('best-reviewer-name');
+    setReviewerName(null);
+  };
+
+  if (!reviewerName) {
+    return <LoginPrompt onLogin={handleLogin} />;
+  }
+
+  return <AdminContent reviewId={reviewId ?? ''} reviewerName={reviewerName} onLogout={handleLogout} />;
 }
 
-function AdminContent({ reviewId }: { reviewId: string }) {
-  const { items, isLoading, loadError, resetEdits, saveStates } = useContentReview(reviewId);
+function AdminContent({ reviewId, reviewerName, onLogout }: { reviewId: string; reviewerName: string; onLogout: () => void }) {
+  const { items, isLoading, loadError, resetEdits, saveStates } = useContentReview(reviewId, reviewerName);
 
   if (isLoading) {
     return (
@@ -54,6 +78,9 @@ function AdminContent({ reviewId }: { reviewId: string }) {
       <header className="page-header">
         <h1>Admin: Review Results</h1>
         <p className="page-subtitle">Review ID: {reviewId}</p>
+        <button type="button" className="btn btn--sm" style={{ marginTop: '0.5rem' }} onClick={onLogout}>
+          Switch User
+        </button>
       </header>
 
       <div className="admin-actions">

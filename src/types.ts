@@ -5,6 +5,7 @@ export interface ContentItem {
   description?: string;
   link?: string;
   media?: string;
+  htmlFile?: string;
 }
 
 export type ReviewStatus = 'unreviewed' | 'use' | 'like' | 'remove';
@@ -12,6 +13,7 @@ export type ReviewStatus = 'unreviewed' | 'use' | 'like' | 'remove';
 export interface ContentReview {
   review_id: string;
   item_id: string;
+  reviewer_name: string;
   status: ReviewStatus;
   updated_at: string;
 }
@@ -29,14 +31,18 @@ export interface ContentEdit {
 export interface ContentComment {
   review_id: string;
   item_id: string;
+  reviewer_name: string;
   comment: string;
   updated_at: string;
 }
 
 export interface EffectiveItem extends ContentItem {
-  status: ReviewStatus;
+  status: ReviewStatus; // The current user's status
+  voteCounts: Record<ReviewStatus, number>; // Aggregate votes
+  allVotes: { reviewerName: string; status: ReviewStatus }[]; // List of specific votes
   isEdited: boolean;
-  comment: string;
+  comment: string; // The current user's comment
+  allComments: { reviewerName: string; text: string; updatedAt: string }[]; // All comments
   statusUpdatedAt?: string;
   editUpdatedAt?: string;
 }

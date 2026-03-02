@@ -18,7 +18,12 @@ function getStoredViewMode(): ViewMode {
   return 'list';
 }
 
-export function ReviewPage() {
+interface ReviewPageProps {
+  reviewerName: string;
+  onLogout: () => void;
+}
+
+export function ReviewPage({ reviewerName, onLogout }: ReviewPageProps) {
   const { reviewId } = useParams<{ reviewId: string }>();
   const {
     items,
@@ -30,7 +35,7 @@ export function ReviewPage() {
     resetEdits,
     saveComment,
     categories,
-  } = useContentReview(reviewId ?? '');
+  } = useContentReview(reviewId ?? '', reviewerName);
 
   const [viewMode, setViewMode] = useState<ViewMode>(getStoredViewMode);
   const [statusFilter, setStatusFilter] = useState<ReviewStatus | 'all'>('all');
@@ -109,7 +114,7 @@ export function ReviewPage() {
   // List mode (existing)
   return (
     <div className="page-container">
-      <div className="controls-bar">
+      <div className="controls-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div className="controls-bar-row">
           <ProgressSummary items={items} />
           <button
@@ -125,7 +130,22 @@ export function ReviewPage() {
             Focus
           </button>
         </div>
+        <div>
+          <span style={{ fontSize: '0.85rem', color: '#6b7280', marginRight: '1rem' }}>
+            Reviewing as: <strong>{reviewerName}</strong>
+          </span>
+          <button
+            type="button"
+            className="btn btn--sm"
+            onClick={onLogout}
+            title="Switch User Log In Identity"
+          >
+            Switch User
+          </button>
+        </div>
+      </div>
 
+      <div className="controls-bar" style={{ marginTop: '1rem' }}>
         <FilterBar
           statusFilter={statusFilter}
           onStatusFilterChange={setStatusFilter}
@@ -152,8 +172,6 @@ export function ReviewPage() {
             item={item}
             saveState={saveStates[item.id] ?? 'idle'}
             onStatusChange={(status) => setStatus(item.id, status)}
-            onSaveEdits={(edits) => saveEdits(item.id, edits)}
-            onResetEdits={() => resetEdits(item.id)}
             onSaveComment={(comment) => saveComment(item.id, comment)}
           />
         ))}

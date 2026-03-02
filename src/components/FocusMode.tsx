@@ -158,6 +158,7 @@ export function FocusMode({
   }
 
   const hasImage = !!item.media;
+  const hasComments = item.allComments.length > 0;
   const pct = total > 0 ? Math.round(((currentIndex + 1) / total) * 100) : 0;
   const reviewedPct = total > 0 ? Math.round((reviewed / total) * 100) : 0;
 
@@ -174,6 +175,12 @@ export function FocusMode({
   const handleResetEdits = () => {
     onResetEdits(item.id);
     setEditing(false);
+  };
+
+  const formatNames = (status: ReviewStatus) => {
+    return item.allVotes
+      ? item.allVotes.filter(v => v.status === status).map(v => v.reviewerName.split('@')[0]).join(', ')
+      : '';
   };
 
   return (
@@ -228,11 +235,23 @@ export function FocusMode({
           className={`focus-content ${transitioning ? `focus-content--exit-${direction}` : 'focus-content--enter'}`}
         >
           {/* Image items: just show the image — it IS the content */}
-          {hasImage && (
+          {hasImage && !item.htmlFile && (
             <div className="focus-media">
               <img
                 src={import.meta.env.BASE_URL + item.media}
                 alt={item.title}
+              />
+            </div>
+          )}
+
+          {/* HTML items */}
+          {item.htmlFile && (
+            <div className="focus-html-container" style={{ width: '100%', height: '70vh', minHeight: '600px', background: '#fff', borderRadius: '12px', overflow: 'hidden', marginBottom: '1.5rem', flexShrink: 0 }}>
+              <iframe
+                src={import.meta.env.BASE_URL + item.htmlFile}
+                title={item.title}
+                style={{ width: '100%', height: '100%', border: 'none' }}
+                scrolling="auto"
               />
             </div>
           )}
@@ -247,6 +266,12 @@ export function FocusMode({
             </>
           )}
 
+          <div className="focus-metrics">
+            {item.voteCounts.use > 0 && <span className="metric metric--use" title={formatNames('use')}>Use: {item.voteCounts.use} ({formatNames('use')})</span>}
+            {item.voteCounts.like > 0 && <span className="metric metric--like" title={formatNames('like')}>Like: {item.voteCounts.like} ({formatNames('like')})</span>}
+            {item.voteCounts.remove > 0 && <span className="metric metric--remove" title={formatNames('remove')}>Remove: {item.voteCounts.remove} ({formatNames('remove')})</span>}
+          </div>
+
           {/* Current status indicator */}
           {item.status !== 'unreviewed' && (
             <div className={`focus-current-status focus-current-status--${item.status}`}>
@@ -254,13 +279,14 @@ export function FocusMode({
             </div>
           )}
 
-          {/* Existing comment preview */}
-          {item.comment && !commenting && (
-            <div className="focus-comment-preview" onClick={() => setCommenting(true)}>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-              </svg>
-              {item.comment}
+          {/* Show all comments inline */}
+          {hasComments && !commenting && (
+            <div className="focus-comments-list card-comments-list" onClick={() => setCommenting(true)}>
+              {item.allComments.map((c, i) => (
+                <div key={i} className="comment-item">
+                  <strong>{c.reviewerName}:</strong> {c.text}
+                </div>
+              ))}
             </div>
           )}
 
@@ -269,7 +295,7 @@ export function FocusMode({
             <div className="focus-edit-wrap">
               <CommentBox
                 comment={item.comment}
-                onSave={(c) => { onSaveComment(item.id, c); if (!c) setCommenting(false); }}
+                onSave={(c) => { onSaveComment(item.id, c); setCommenting(false); }}
                 saving={saveState === 'saving'}
               />
             </div>
