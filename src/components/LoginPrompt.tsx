@@ -28,7 +28,7 @@ export function LoginPrompt({ onLogin }: LoginPromptProps) {
         <div className="login-backdrop">
             <div className="login-modal">
                 <h2>Who are you?</h2>
-                <p>Please select your name to continue reviewing items.</p>
+                <p>Please select your email to continue reviewing items.</p>
                 <form onSubmit={handleSubmit} className="login-form">
                     <select
                         value={selectedName}
