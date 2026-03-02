@@ -1520,11 +1520,49 @@ body {
   font-size: 0.875rem;
 }
 
+/* ===== Controls bar user info ===== */
+.controls-bar-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.controls-bar-user-label {
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+  white-space: nowrap;
+}
+
+/* ===== Focus HTML container (iframe) ===== */
+.focus-html-container {
+  width: 100%;
+  height: 70vh;
+  min-height: 600px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 640px) {
+  /* --- 1. Controls bar: stack vertically --- */
   .controls-bar {
     margin: 0 -12px;
     padding: 10px 12px;
+  }
+
+  .controls-bar-row {
+    flex-wrap: wrap;
+  }
+
+  .controls-bar-user {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
   }
 
   .page-container {
@@ -1540,23 +1578,68 @@ body {
     width: 100%;
   }
 
+  /* --- 5. Card actions: compact & stack --- */
   .card-body {
     padding: 10px 14px;
   }
 
   .card-actions {
     flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card-actions-right {
+    justify-content: center;
   }
 
   .status-control {
     flex-wrap: wrap;
+    justify-content: center;
   }
 
-  /* Focus mode mobile */
+  .status-btn {
+    padding: 5px 12px;
+    font-size: 0.8125rem;
+    gap: 4px;
+  }
+
+  /* --- 6. Metrics & comments: allow wrapping --- */
+  .card-metrics,
+  .focus-metrics {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* --- 2. Focus mode iframe: remove large min-height --- */
+  .focus-html-container {
+    min-height: auto;
+    height: 50vh;
+  }
+
+  /* --- 4. Nav arrows: overlay on content --- */
+  .focus-stage {
+    position: relative;
+  }
+
   .focus-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
     width: 36px;
     height: 36px;
-    margin: 0 2px;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+  }
+
+  .focus-nav-btn--prev {
+    left: 4px;
+  }
+
+  .focus-nav-btn--next {
+    right: 4px;
   }
 
   .focus-nav-btn svg {
@@ -1584,6 +1667,7 @@ body {
     font-size: 0.8125rem;
   }
 
+  /* --- 3. Focus action buttons: 2×2 grid --- */
   .focus-actions {
     padding: 10px 12px 14px;
     flex-wrap: wrap;
@@ -1599,8 +1683,9 @@ body {
   .focus-actions-center {
     order: 1;
     width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
   }
 
   .focus-actions-right {
@@ -1609,8 +1694,10 @@ body {
 
   .focus-action-btn {
     height: 42px;
-    padding: 0 18px;
+    padding: 0 10px;
     font-size: 0.8125rem;
+    justify-content: center;
+    gap: 6px;
   }
 
   .focus-action-btn kbd {
@@ -1623,6 +1710,15 @@ body {
 
   .view-toggle-btn span {
     display: none;
+  }
+
+  /* --- 7. Focus comments list: dark-mode colors --- */
+  .focus-comments-list.card-comments-list {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .focus-comments-list.card-comments-list:hover {
+    background: rgba(255, 255, 255, 0.08);
   }
 }
 
@@ -1754,6 +1850,10 @@ body {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.focus-comments-list:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .focus-comments-list .comment-item {

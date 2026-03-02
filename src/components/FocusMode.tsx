@@ -246,7 +246,7 @@ export function FocusMode({
 
           {/* HTML items */}
           {item.htmlFile && (
-            <div className="focus-html-container" style={{ width: '100%', height: '70vh', minHeight: '600px', background: '#fff', borderRadius: '12px', overflow: 'hidden', marginBottom: '1.5rem', flexShrink: 0 }}>
+            <div className="focus-html-container">
               <iframe
                 src={import.meta.env.BASE_URL + item.htmlFile}
                 title={item.title}
@@ -341,14 +341,6 @@ export function FocusMode({
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             </svg>
-          </button>
-          <button
-            type="button"
-            className="focus-edit-btn"
-            onClick={() => setEditing((prev) => !prev)}
-            title="Edit (E)"
-          >
-            &#9998;
           </button>
           <SaveIndicator state={saveState} />
         </div>

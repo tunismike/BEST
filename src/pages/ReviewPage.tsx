@@ -134,7 +134,7 @@ export function ReviewPage({ reviewerName, onLogout }: ReviewPageProps) {
   // List mode (existing)
   return (
     <div className="page-container">
-      <div className="controls-bar" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="controls-bar">
         <div className="controls-bar-row">
           <ProgressSummary items={items} />
           <button
@@ -150,8 +150,8 @@ export function ReviewPage({ reviewerName, onLogout }: ReviewPageProps) {
             Focus
           </button>
         </div>
-        <div>
-          <span style={{ fontSize: '0.85rem', color: '#6b7280', marginRight: '1rem' }}>
+        <div className="controls-bar-user">
+          <span className="controls-bar-user-label">
             Reviewing as: <strong>{reviewerName}</strong>
           </span>
           <button
