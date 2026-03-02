@@ -49,8 +49,10 @@ export function ReviewPage({ reviewerName, onLogout }: ReviewPageProps) {
 
   const hasActiveFilters = statusFilter !== 'all' || contentTypeFilter !== 'all' || categoryFilter !== '' || searchQuery !== '';
 
+  const LOGO_IDS = ['new-design-best-logo-redesign', 'legacy-layer-8'];
+
   const filteredItems = useMemo(() => {
-    return items.filter((item) => {
+    const filtered = items.filter((item) => {
       if (statusFilter !== 'all' && item.status !== statusFilter) return false;
       if (contentTypeFilter === 'images' && !item.media) return false;
       if (contentTypeFilter === 'text' && item.media) return false;
@@ -63,6 +65,24 @@ export function ReviewPage({ reviewerName, onLogout }: ReviewPageProps) {
       }
       return true;
     });
+
+    // Reorder logos: in "All" view, place them together after the last
+    // site mockup component; in a specific category, place them at the top.
+    const logos = filtered.filter((i) => LOGO_IDS.includes(i.id));
+    if (logos.length === 0) return filtered;
+
+    const rest = filtered.filter((i) => !LOGO_IDS.includes(i.id));
+    if (!categoryFilter) {
+      // "All" — insert after last component-* item
+      const lastComponentIdx = rest.reduce(
+        (acc, item, idx) => (item.id.startsWith('component-') ? idx : acc),
+        -1
+      );
+      rest.splice(lastComponentIdx + 1, 0, ...logos);
+      return rest;
+    }
+    // Specific category — logos at top
+    return [...logos, ...rest];
   }, [items, statusFilter, contentTypeFilter, categoryFilter, searchQuery]);
 
   const clearFilters = () => {

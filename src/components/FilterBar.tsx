@@ -45,16 +45,6 @@ export function FilterBar({
 
       <select
         className="filter-select"
-        value={contentTypeFilter}
-        onChange={(e) => onContentTypeFilterChange(e.target.value as ContentTypeFilter)}
-      >
-        <option value="all">Images & Text</option>
-        <option value="images">Images Only</option>
-        <option value="text">Text Only</option>
-      </select>
-
-      <select
-        className="filter-select"
         value={categoryFilter}
         onChange={(e) => onCategoryFilterChange(e.target.value)}
       >
@@ -64,6 +54,16 @@ export function FilterBar({
             {cat}
           </option>
         ))}
+      </select>
+
+      <select
+        className="filter-select"
+        value={contentTypeFilter}
+        onChange={(e) => onContentTypeFilterChange(e.target.value as ContentTypeFilter)}
+      >
+        <option value="all">Images & Text</option>
+        <option value="images">Images Only</option>
+        <option value="text">Text Only</option>
       </select>
 
       <input

@@ -1,980 +1,1258 @@
 [
   {
+    "id": "new-design-best-logo-redesign",
+    "title": "BEST Logo Redesign",
+    "category": "New Design",
+    "media": "assets/BEST logo redesign.svg"
+  },
+  {
     "id": "component-hero-headline",
     "title": "Hero: Headline & Subtitle",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-hero-headline.html"
   },
   {
     "id": "component-hero-cta",
     "title": "Hero: CTA Buttons",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-hero-cta.html"
   },
   {
     "id": "component-hero-stats",
     "title": "Hero: Credibility Stats",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-hero-stats.html"
   },
   {
     "id": "component-hero-visual",
     "title": "Hero: Background Visual",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-hero-visual.html"
   },
   {
     "id": "component-about-copy",
     "title": "About: Heading & Body Copy",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-about-copy.html"
   },
   {
     "id": "component-about-image",
     "title": "About: Hero Image",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-about-image.html"
   },
   {
     "id": "component-chemistry-heading",
     "title": "Chemistry: Section Heading",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-chemistry-heading.html"
   },
   {
     "id": "component-chemistry-stage-1",
     "title": "Chemistry: Stage 1 — Hydrolyzation",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-chemistry-stage-1.html"
   },
   {
     "id": "component-chemistry-stage-2",
     "title": "Chemistry: Stage 2 — Physisorption",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-chemistry-stage-2.html"
   },
   {
     "id": "component-chemistry-stage-3",
     "title": "Chemistry: Stage 3 — Covalent Bonding",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-chemistry-stage-3.html"
   },
   {
     "id": "component-chemistry-stage-4",
     "title": "Chemistry: Stage 4 — Curing",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-chemistry-stage-4.html"
   },
   {
     "id": "component-chemistry-video",
     "title": "Chemistry: Video Placeholder",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-chemistry-video.html"
   },
   {
     "id": "component-products-heading",
     "title": "Products: Section Heading",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-products-heading.html"
   },
   {
     "id": "component-products-paper",
     "title": "Products: Paper Card",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-products-paper.html"
   },
   {
     "id": "component-products-pallet",
     "title": "Products: Pallet Card",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-products-pallet.html"
   },
   {
     "id": "component-products-cork",
     "title": "Products: Cork Card",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-products-cork.html"
   },
   {
     "id": "component-products-flowerpot",
     "title": "Products: Flowerpot Card",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-products-flowerpot.html"
   },
   {
     "id": "component-products-agriculture",
     "title": "Products: Agricultural Products Card",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-products-agriculture.html"
   },
   {
     "id": "component-leadership-heading",
     "title": "Leadership: Section Heading",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-leadership-heading.html"
   },
   {
     "id": "component-leadership-rich",
     "title": "Leadership: Rich Bio Card",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-leadership-rich.html"
   },
   {
     "id": "component-leadership-bob",
     "title": "Leadership: Bob Bio Card",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-leadership-bob.html"
   },
   {
     "id": "component-leadership-fred",
     "title": "Leadership: Fred Bio Card",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-leadership-fred.html"
   },
   {
     "id": "component-ip-heading",
     "title": "IP: Heading & Patent Banner",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-ip-heading.html"
   },
   {
     "id": "component-ip-prior-art",
     "title": "IP: Prior Art Challenges",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-ip-prior-art.html"
   },
   {
     "id": "component-ip-solution",
     "title": "IP: BEST Solution Column",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-ip-solution.html"
   },
   {
     "id": "component-ip-comparison-shelf-life",
     "title": "IP: Emulsion Shelf Life",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-ip-comparison-shelf-life.html"
   },
   {
     "id": "component-ip-comparison-processing-temp",
     "title": "IP: Processing Temp",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-ip-comparison-processing-temp.html"
   },
   {
     "id": "component-ip-comparison-volume",
     "title": "IP: Volume Required",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-ip-comparison-volume.html"
   },
   {
     "id": "component-ip-comparison-oligomer",
     "title": "IP: Oligomer Inhibition",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-ip-comparison-oligomer.html"
   },
   {
     "id": "component-data-heading",
     "title": "Data: Heading & Disclaimer",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-data-heading.html"
   },
   {
     "id": "component-data-tile-tensile",
     "title": "Data: Tensile / Burst Strength",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-data-tile-tensile.html"
   },
   {
     "id": "component-data-tile-contact-angle",
     "title": "Data: Contact Angle",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-data-tile-contact-angle.html"
   },
   {
     "id": "component-data-tile-repulpability",
     "title": "Data: Repulpability",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-data-tile-repulpability.html"
   },
   {
     "id": "component-data-tile-recyclability",
     "title": "Data: Recyclability Certification",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-data-tile-recyclability.html"
   },
   {
     "id": "component-data-tile-food-safe",
     "title": "Data: Food-Safe Certification",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-data-tile-food-safe.html"
   },
   {
     "id": "component-data-tile-acoustic",
     "title": "Data: Acoustic Insulation",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-data-tile-acoustic.html"
   },
   {
     "id": "component-contact-heading",
     "title": "Contact: Section Heading",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-contact-heading.html"
   },
   {
     "id": "component-contact-info",
     "title": "Contact: Direct Info & NDA",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-contact-info.html"
   },
   {
     "id": "component-contact-form",
     "title": "Contact: Technical Inquiry Form",
-    "category": "Design Mockup Reviews",
+    "category": "New Design",
     "htmlFile": "sections/component-contact-form.html"
   },
   {
-    "id": "new-design-best-logo-redesign",
-    "title": "BEST Logo Redesign",
-    "category": "New Design Images",
-    "media": "assets/BEST logo redesign.svg"
-  },
-  {
-    "id": "legacy-layer-8",
-    "title": "Layer 8",
-    "category": "Legacy Website Images",
-    "media": "images/Layer-8.svg"
-  },
-  {
     "id": "new-design-hero-packaging",
-    "title": "Hero Image \u2014 Packaging",
-    "category": "New Design Images",
+    "title": "Hero Image — Packaging",
+    "category": "New Design",
     "media": "assets/hero-packaging.png"
   },
   {
     "id": "new-design-hero-droplet",
-    "title": "Hero Image \u2014 Droplet",
-    "category": "New Design Images",
+    "title": "Hero Image — Droplet",
+    "category": "New Design",
     "media": "assets/hero-droplet.png"
   },
   {
     "id": "new-design-mechanism-diagram",
     "title": "Mechanism Diagram",
-    "category": "New Design Images",
+    "category": "New Design",
     "media": "assets/mechanism-diagram.png"
   },
   {
     "id": "new-design-molecular-bonding",
     "title": "Molecular Bonding Diagram",
-    "category": "New Design Images",
+    "category": "New Design",
     "media": "assets/molecular-bonding-diagram.png"
   },
   {
     "id": "new-design-cellulose-fiber",
     "title": "Cellulose Fiber Close-Up",
-    "category": "New Design Images",
+    "category": "New Design",
     "media": "assets/cellulose-fiber.png"
   },
   {
     "id": "new-design-cellulose-microscopy",
     "title": "Cellulose Microscopy",
-    "category": "New Design Images",
+    "category": "New Design",
     "media": "assets/cellulose-microscopy.png"
   },
   {
     "id": "new-design-coated-vs-uncoated",
     "title": "Coated vs. Uncoated Comparison",
-    "category": "New Design Images",
+    "category": "New Design",
     "media": "assets/coated-vs-uncoated.png"
   },
   {
     "id": "new-design-cobb-test",
     "title": "Cobb Test Results",
-    "category": "New Design Images",
+    "category": "New Design",
     "media": "assets/cobb-test.png"
   },
   {
     "id": "new-design-cobb-test-setup",
     "title": "Cobb Test Setup",
-    "category": "New Design Images",
+    "category": "New Design",
     "media": "assets/cobb-test-setup.png"
   },
   {
     "id": "new-design-contact-angle",
     "title": "Contact Angle Measurement",
-    "category": "New Design Images",
+    "category": "New Design",
     "media": "assets/contact-angle.png"
   },
   {
     "id": "new-design-contact-angle-goniometer",
     "title": "Contact Angle Goniometer",
-    "category": "New Design Images",
+    "category": "New Design",
     "media": "assets/contact-angle-goniometer.png"
   },
   {
     "id": "new-design-treated-paper-humidity",
     "title": "Treated Paper Humidity Test",
-    "category": "New Design Images",
+    "category": "New Design",
     "media": "assets/treated-paper-humidity.png"
   },
   {
     "id": "new-design-paper-mill",
     "title": "Paper Mill",
-    "category": "New Design Images",
+    "category": "New Design",
     "media": "assets/paper-mill.png"
   },
   {
     "id": "new-design-paper-mill-abstract",
     "title": "Paper Mill (Abstract)",
-    "category": "New Design Images",
+    "category": "New Design",
     "media": "assets/paper-mill-abstract.png"
   },
   {
     "id": "new-design-paper-samples",
     "title": "Paper Samples",
-    "category": "New Design Images",
+    "category": "New Design",
     "media": "assets/paper-samples.png"
   },
   {
     "id": "new-design-product-pallet",
-    "title": "Product \u2014 Pallet",
-    "category": "New Design Images",
+    "title": "Product — Pallet",
+    "category": "New Design",
     "media": "assets/product-pallet.png"
   },
   {
     "id": "new-design-product-agricultural",
-    "title": "Product \u2014 Agricultural Application",
-    "category": "New Design Images",
+    "title": "Product — Agricultural Application",
+    "category": "New Design",
     "media": "assets/product-agricultural.png"
   },
   {
     "id": "new-design-product-cork",
-    "title": "Product \u2014 Cork",
-    "category": "New Design Images",
+    "title": "Product — Cork",
+    "category": "New Design",
     "media": "assets/product-cork.png"
   },
   {
     "id": "new-design-product-flowerpot",
-    "title": "Product \u2014 Flowerpot",
-    "category": "New Design Images",
+    "title": "Product — Flowerpot",
+    "category": "New Design",
     "media": "assets/product-flowerpot.png"
   },
   {
     "id": "new-design-product-paper",
-    "title": "Product \u2014 Treated Paper",
-    "category": "New Design Images",
+    "title": "Product — Treated Paper",
+    "category": "New Design",
     "media": "assets/product-paper.png"
   },
   {
     "id": "new-design-product-stakes",
-    "title": "Product \u2014 Garden/Agricultural Stakes",
-    "category": "New Design Images",
+    "title": "Product — Garden/Agricultural Stakes",
+    "category": "New Design",
     "media": "assets/product-stakes.png"
   },
   {
     "id": "new-design-product-treeskirt",
-    "title": "Product \u2014 Tree Skirt",
-    "category": "New Design Images",
+    "title": "Product — Tree Skirt",
+    "category": "New Design",
     "media": "assets/product-treeskirt.png"
   },
   {
     "id": "new-design-product-weedblock",
-    "title": "Product \u2014 Weed Block",
-    "category": "New Design Images",
+    "title": "Product — Weed Block",
+    "category": "New Design",
     "media": "assets/product-weedblock.png"
   },
   {
     "id": "new-design-d1-pallets-warehouse",
-    "title": "Design 1 \u2014 Pallets in Warehouse",
-    "category": "New Design Images",
+    "title": "Design 1 — Pallets in Warehouse",
+    "category": "New Design",
     "media": "assets/design1-img-4.png"
   },
   {
     "id": "new-design-d1-cork-board-droplets",
-    "title": "Design 1 \u2014 Cork/Fiber Board with Droplets",
-    "category": "New Design Images",
+    "title": "Design 1 — Cork/Fiber Board with Droplets",
+    "category": "New Design",
     "media": "assets/design1-img-5.png"
   },
   {
     "id": "new-design-d1-biodegradable-pots",
-    "title": "Design 1 \u2014 Biodegradable Flowerpots in Greenhouse",
-    "category": "New Design Images",
+    "title": "Design 1 — Biodegradable Flowerpots in Greenhouse",
+    "category": "New Design",
     "media": "assets/design1-img-6.png"
   },
   {
     "id": "new-design-d2-water-droplets-fiber",
-    "title": "Design 2 \u2014 Water Droplets on Fiber Surface",
-    "category": "New Design Images",
+    "title": "Design 2 — Water Droplets on Fiber Surface",
+    "category": "New Design",
     "media": "assets/design2-img-1.png"
   },
   {
     "id": "new-design-d2-paper-mill-machinery",
-    "title": "Design 2 \u2014 Paper Mill Machinery",
-    "category": "New Design Images",
+    "title": "Design 2 — Paper Mill Machinery",
+    "category": "New Design",
     "media": "assets/design2-img-2.png"
   },
   {
     "id": "new-design-d2-cellulose-h2o-diagram",
-    "title": "Design 2 \u2014 Cellulose & H\u2082O Molecular Diagram",
-    "category": "New Design Images",
+    "title": "Design 2 — Cellulose & H₂O Molecular Diagram",
+    "category": "New Design",
     "media": "assets/design2-img-3.png"
   },
   {
     "id": "new-design-d2-fiber-treatment-diagram",
-    "title": "Design 2 \u2014 Fiber Treatment Physisorbed Layer",
-    "category": "New Design Images",
+    "title": "Design 2 — Fiber Treatment Physisorbed Layer",
+    "category": "New Design",
     "media": "assets/design2-img-4.png"
   },
   {
     "id": "new-design-d2-molecular-orbital",
-    "title": "Design 2 \u2014 Molecular Orbital Overlap Diagram",
-    "category": "New Design Images",
+    "title": "Design 2 — Molecular Orbital Overlap Diagram",
+    "category": "New Design",
     "media": "assets/design2-img-5.png"
   },
   {
     "id": "new-design-d2-sem-fiber-microscopy",
-    "title": "Design 2 \u2014 SEM Fiber Microscopy (5000\u00d7)",
-    "category": "New Design Images",
+    "title": "Design 2 — SEM Fiber Microscopy (5000×)",
+    "category": "New Design",
     "media": "assets/design2-img-6.png"
   },
   {
     "id": "new-design-d2-cobb-test-comparison",
-    "title": "Design 2 \u2014 Cobb Test Treated vs. Untreated",
-    "category": "New Design Images",
+    "title": "Design 2 — Cobb Test Treated vs. Untreated",
+    "category": "New Design",
     "media": "assets/design2-img-7.png"
   },
   {
     "id": "new-design-d2-pallet-warehouse",
-    "title": "Design 2 \u2014 Pallet with Cargo in Warehouse",
-    "category": "New Design Images",
+    "title": "Design 2 — Pallet with Cargo in Warehouse",
+    "category": "New Design",
     "media": "assets/design2-img-8.png"
   },
   {
     "id": "new-design-d2-cork-block-droplets",
-    "title": "Design 2 \u2014 Cork Block with Water Droplets",
-    "category": "New Design Images",
+    "title": "Design 2 — Cork Block with Water Droplets",
+    "category": "New Design",
     "media": "assets/design2-img-9.png"
   },
   {
     "id": "new-design-d2-fern-fiber-pot",
-    "title": "Design 2 \u2014 Fern in Fiber Pot",
-    "category": "New Design Images",
+    "title": "Design 2 — Fern in Fiber Pot",
+    "category": "New Design",
     "media": "assets/design2-img-10.png"
   },
   {
     "id": "new-design-d2-weedblock-field",
-    "title": "Design 2 \u2014 Weed Block in Farm Field",
-    "category": "New Design Images",
+    "title": "Design 2 — Weed Block in Farm Field",
+    "category": "New Design",
     "media": "assets/design2-img-11.png"
+  },
+  {
+    "id": "legacy-layer-8",
+    "title": "Layer 8",
+    "category": "Legacy Design",
+    "media": "images/Layer-8.svg"
   },
   {
     "id": "legacy-1-8",
     "title": "1 8",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/1-8.webp"
   },
   {
     "id": "legacy-14-scaled",
     "title": "14 Scaled",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/14-scaled.jpg"
   },
   {
     "id": "legacy-15-second-option-scaled",
     "title": "15 Second Option Scaled",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/15-second-option-scaled.jpg"
   },
   {
     "id": "legacy-15276012-5570869",
     "title": "15276012 5570869",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/15276012_5570869.jpg"
   },
   {
     "id": "legacy-16240137-rm309-aew-008-a-1",
     "title": "16240137 Rm309 Aew 008 A 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/16240137_rm309-aew-008-a-1.jpg"
   },
   {
     "id": "legacy-16584743-abstract-white-background-of-circles-with-shadows-m",
     "title": "16584743 Abstract White Background Of Circles With Shadows Material 3d Style ...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/16584743_Abstract_white_background_of_circles_with_shadows_material_3d_style-1-scaled-1.jpg"
   },
   {
     "id": "legacy-3",
     "title": "3",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/3.jpg"
   },
   {
     "id": "legacy-33780830-gpt4-1",
     "title": "33780830 Gpt4 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/33780830_gpt4-1.jpg"
   },
   {
     "id": "legacy-bg1",
     "title": "BG1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/BG1.jpg"
   },
   {
     "id": "legacy-bg2-a",
     "title": "BG2 A",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/BG2-a.jpg"
   },
   {
     "id": "legacy-brand-1",
     "title": "Brand 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/Brand-1.png"
   },
   {
     "id": "legacy-brand-2",
     "title": "Brand 2",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/Brand-2.png"
   },
   {
     "id": "legacy-brand-3",
     "title": "Brand 3",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/Brand-3.png"
   },
   {
     "id": "legacy-brand-4",
     "title": "Brand 4",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/Brand-4.png"
   },
   {
     "id": "legacy-brand-5",
     "title": "Brand 5",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/Brand-5.png"
   },
   {
     "id": "legacy-img-0695-1",
     "title": "IMG 0695 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/IMG_0695-1.jpg"
   },
   {
     "id": "legacy-img-0695-e1695226785796",
     "title": "IMG 0695 E1695226785796",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/IMG_0695-e1695226785796.jpg"
   },
   {
     "id": "legacy-kkj",
     "title": "KKJ",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/KKJ.jpeg"
   },
   {
     "id": "legacy-logo-aivonic-1",
     "title": "Logo Aivonic 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/Logo_Aivonic_1.png"
   },
   {
     "id": "legacy-mission2",
     "title": "MISSION2",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/MISSION2.jpg"
   },
   {
     "id": "legacy-pallets-main-0518",
     "title": "Pallets Main 0518",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/Pallets_main_0518.jpg"
   },
   {
     "id": "legacy-t1",
     "title": "T1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/T1.jpg"
   },
   {
     "id": "legacy-t2",
     "title": "T2",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/T2.jpg"
   },
   {
     "id": "legacy-t3",
     "title": "T3",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/T3.jpg"
   },
   {
     "id": "legacy-t4",
     "title": "T4",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/T4.jpg"
   },
   {
     "id": "legacy-t5",
     "title": "T5",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/T5.jpg"
   },
   {
     "id": "legacy-t6",
     "title": "T6",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/T6.jpg"
   },
   {
     "id": "legacy-team-5",
     "title": "Team 5",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/Team-5.jpg"
   },
   {
     "id": "legacy-after-installing-a-program-on-the-robotic-arm-a-female-engin",
     "title": "After Installing A Program On The Robotic Arm A Female Engineer With A Roboti...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/after-installing-a-program-on-the-robotic-arm-a-female-engineer-with-a-robotic-arm-1.jpg"
   },
   {
     "id": "legacy-analysts-analyzing-financial-charts-in-office",
     "title": "Analysts Analyzing Financial Charts In Office",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/analysts-analyzing-financial-charts-in-office.jpg"
   },
   {
     "id": "legacy-benafits",
     "title": "Benafits",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/benafits.svg"
   },
   {
     "id": "legacy-best-logo",
     "title": "Best Logo",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/best-logo.svg"
   },
   {
     "id": "legacy-business-corporate-people-working-concept",
     "title": "Business Corporate People Working Concept",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/business-corporate-people-working-concept.jpg"
   },
   {
     "id": "legacy-business-people-working-on-sustainable-renewable-energy-proj",
     "title": "Business People Working On Sustainable Renewable Energy Project Inside Office...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/business-people-working-on-sustainable-renewable-energy-project-inside-office-windmill-industry.jpg"
   },
   {
     "id": "legacy-businessman-working-on-tablet-using-ai-business-technology-i",
     "title": "Businessman Working On Tablet Using Ai Business Technology Iot Internet Of Th...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/businessman-working-on-tablet-using-ai-business-technology-iot-internet-of-things-ai-concept.jpg"
   },
   {
     "id": "legacy-circuit-board-and-ai-micro-processor-artificial-intelligence",
     "title": "Circuit Board And Ai Micro Processor Artificial Intelligence Of Digital Human...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/circuit-board-and-ai-micro-processor-artificial-intelligence-of-digital-human-3d-render.jpg"
   },
   {
     "id": "legacy-computer-tech-night-and-woman-with-tablet-working-on-databas",
     "title": "Computer Tech Night And Woman With Tablet Working On Database Programming Cod...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/computer-tech-night-and-woman-with-tablet-working-on-database-programming-code-ai-development-des.jpg"
   },
   {
     "id": "legacy-cyborg-hand-3d-background-technology-artificial-intelligence",
     "title": "Cyborg Hand 3d Background Technology Artificial Intelligence 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/cyborg-hand-3d-background-technology-artificial-intelligence-1.jpg"
   },
   {
     "id": "legacy-engineer-check-and-control-automation-robot-arms-machine-in-",
     "title": "Engineer Check And Control Automation Robot Arms Machine In Intelligent Facto...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/engineer-check-and-control-automation-robot-arms-machine-in-intelligent-factory-industrial-.jpg"
   },
   {
     "id": "legacy-engineer-inspecting-automatic-ai-robot-arm-and-machines-in-f",
     "title": "Engineer Inspecting Automatic Ai Robot Arm And Machines In Factory Engineer I...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/engineer-inspecting-automatic-ai-robot-arm-and-machines-in-factory-engineer-inspecting-automatic-ai.jpg"
   },
   {
     "id": "legacy-engineer-working-in-container-storage-yard-stand-front-of-co",
     "title": "Engineer Working In Container Storage Yard Stand Front Of Container Lift Truc...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/engineer-working-in-container-storage-yard-stand-front-of-container-lift-truck-ready-to-delivery.jpg"
   },
   {
     "id": "legacy-factory-with-large-machine-middle",
     "title": "Factory With Large Machine Middle",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/factory-with-large-machine-middle.jpg"
   },
   {
     "id": "legacy-futuristic-banner-with-robot-and-copy-space-for-your-text-ar",
     "title": "Futuristic Banner With Robot And Copy Space For Your Text Artificial Intellig...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/futuristic-banner-with-robot-and-copy-space-for-your-text-artificial-intelligence.jpg"
   },
   {
     "id": "legacy-girl-engineer-in-robot-industry-fabrication-research-room-si",
     "title": "Girl Engineer In Robot Industry Fabrication Research Room Simulate Testing Ro...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/girl-engineer-in-robot-industry-fabrication-research-room-simulate-testing-robot-arm-on-operation.jpg"
   },
   {
     "id": "legacy-green-recycle-symbol-icon-free-vector-removebg-preview",
     "title": "Green Recycle Symbol Icon Free Vector Removebg Preview",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/green-recycle-symbol-icon-free-vector-removebg-preview.png"
   },
   {
     "id": "legacy-green-recycle-symbol-icon-free-vector",
     "title": "Green Recycle Symbol Icon Free Vector",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/green-recycle-symbol-icon-free-vector.jpeg"
   },
   {
     "id": "legacy-grou-pof-three-young-intercultural-healthcare-workers-having",
     "title": "Grou Pof Three Young Intercultural Healthcare Workers Having Discussion",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/grou-pof-three-young-intercultural-healthcare-workers-having-discussion.jpg"
   },
   {
     "id": "legacy-hgfdsa",
     "title": "Hgfdsa",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/hgfdsa.jpeg"
   },
   {
     "id": "legacy-high-tech-robotic-arm-technician-check-1",
     "title": "High Tech Robotic Arm With Artificial Intelligence Computer Processor Unit In...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/high-tech-robotic-arm-with-artificial-intelligence-computer-processor-unit-in-its-technician-check-1.jpg"
   },
   {
     "id": "legacy-high-tech-robotic-arm-technician-check",
     "title": "High Tech Robotic Arm With Artificial Intelligence Computer Processor Unit In...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/high-tech-robotic-arm-with-artificial-intelligence-computer-processor-unit-in-its-technician-check.jpg"
   },
   {
     "id": "legacy-image-1",
     "title": "Image 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/image-1.jpg"
   },
   {
     "id": "legacy-image-48",
     "title": "Image 48",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/image-48.webp"
   },
   {
     "id": "legacy-imf32-1",
     "title": "Imf32 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/imf32-1.jpg"
   },
   {
     "id": "legacy-imf32",
     "title": "Imf32",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/imf32.jpg"
   },
   {
     "id": "legacy-kk",
     "title": "Kk",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/kk.jpeg"
   },
   {
     "id": "legacy-male-engineer-using-remote-testing-and-control-ai-robot-mode",
     "title": "Male Engineer Using Remote Testing And Control Ai Robot Model In Academy Robo...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/male-engineer-using-remote-testing-and-control-ai-robot-model-in-academy-robotics-laboratory-room.jpg"
   },
   {
     "id": "legacy-matrix",
     "title": "Matrix",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/matrix.svg"
   },
   {
     "id": "legacy-metal-workers-use-machinery-craft-steel-generated-by-ai",
     "title": "Metal Workers Use Machinery Craft Steel Generated By Ai",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/metal-workers-use-machinery-craft-steel-generated-by-ai.jpg"
   },
   {
     "id": "legacy-modern-machinery-futuristic-laboratory-setting-generated-by-",
     "title": "Modern Machinery Futuristic Laboratory Setting Generated By Ai",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/modern-machinery-futuristic-laboratory-setting-generated-by-ai.jpg"
   },
   {
     "id": "legacy-open-hoppers",
     "title": "Open Hoppers",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/open-hoppers.jpg"
   },
   {
     "id": "legacy-palet",
     "title": "Palet",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/palet.jpeg"
   },
   {
     "id": "legacy-park-china-scaled",
     "title": "Park China Scaled",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/park-china-scaled.jpg"
   },
   {
     "id": "legacy-pexels-magda-ehlers-2547565-1",
     "title": "Pexels Magda Ehlers 2547565 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/pexels-magda-ehlers-2547565-1.jpg"
   },
   {
     "id": "legacy-pexels-pixabay-260367-1",
     "title": "Pexels Pixabay 260367 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/pexels-pixabay-260367-1.jpg"
   },
   {
     "id": "legacy-pexels-pixabay-260367",
     "title": "Pexels Pixabay 260367",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/pexels-pixabay-260367.jpg"
   },
   {
     "id": "legacy-pexels-pok-rie-6471926-1",
     "title": "Pexels Pok Rie 6471926 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/pexels-pok-rie-6471926-1.jpg"
   },
   {
     "id": "legacy-placeholder-1",
     "title": "Placeholder 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/placeholder-1.png"
   },
   {
     "id": "legacy-placeholder-2",
     "title": "Placeholder 2",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/placeholder-2.png"
   },
   {
     "id": "legacy-placeholder",
     "title": "Placeholder",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/placeholder.png"
   },
   {
     "id": "legacy-robot-ali-bom-ple",
     "title": "Robot Ali Bom Ple",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/robot-ali-bom-ple.jpg"
   },
   {
     "id": "legacy-robot-ali",
     "title": "Robot Ali",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/robot-ali.jpg"
   },
   {
     "id": "legacy-robot-bom-ple",
     "title": "Robot Bom Ple",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/robot-bom-ple.jpg"
   },
   {
     "id": "legacy-robot-ple",
     "title": "Robot Ple",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/robot-ple.jpg"
   },
   {
     "id": "legacy-robot-s-head-in-profile-2021-08-26-15-33-01-utc",
     "title": "Robot S Head In Profile 2021 08 26 15 33 01 Utc",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/robot-s-head-in-profile-2021-08-26-15-33-01-utc.png"
   },
   {
     "id": "legacy-robotic-arm-holding-wrench-repairs-metal-machinery-generated",
     "title": "Robotic Arm Holding Wrench Repairs Metal Machinery Generated By Ai 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/robotic-arm-holding-wrench-repairs-metal-machinery-generated-by-ai-1.jpg"
   },
   {
     "id": "legacy-robotic-arm-modern-industrial-technology-industrial-robots-p",
     "title": "Robotic Arm Modern Industrial Technology Industrial Robots Production",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/robotic-arm-modern-industrial-technology-industrial-robots-production.jpg"
   },
   {
     "id": "legacy-robotics-engineer-maintenance-robotic-arm-1-1",
     "title": "Robotics Engineer Working On Maintenance Of Robotic Arm In Factory Warehouse ...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/robotics-engineer-working-on-maintenance-of-robotic-arm-in-factory-warehouse-business-technology-1-1.jpg"
   },
   {
     "id": "legacy-robotics-engineer-maintenance-robotic-arm-1-2",
     "title": "Robotics Engineer Working On Maintenance Of Robotic Arm In Factory Warehouse ...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/robotics-engineer-working-on-maintenance-of-robotic-arm-in-factory-warehouse-business-technology-1-2.jpg"
   },
   {
     "id": "legacy-smiling-businesswoman-shaking-hands-with-robot-sitting-at-de",
     "title": "Smiling Businesswoman Shaking Hands With Robot Sitting At Desk In Meeting Room",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/smiling-businesswoman-shaking-hands-with-robot-sitting-at-desk-in-meeting-room.jpg"
   },
   {
     "id": "legacy-start-up-business-team-in-the-office",
     "title": "Start Up Business Team In The Office",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/start-up-business-team-in-the-office.jpg"
   },
   {
     "id": "legacy-tech-industry-business-industry-technology-people-and-tech-e",
     "title": "Tech Industry Business Industry Technology People And Tech Engineer Working I...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/tech-industry-business-industry-technology-people-and-tech-engineer-working-in-factory-.jpg"
   },
   {
     "id": "legacy-technology-industry-innovation-people-with-tech-innovation-w",
     "title": "Technology Industry Innovation People With Tech Innovation With Technological...",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/technology-industry-innovation-people-with-tech-innovation-with-technological-progress-business-.jpg"
   },
   {
     "id": "legacy-two-business-men-celebrating-a-deal",
     "title": "Two Business Men Celebrating A Deal",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/two-business-men-celebrating-a-deal.jpg"
   },
   {
     "id": "legacy-untitled-1gg-1",
     "title": "Untitled 1gg 1",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/untitled-1gg_1.jpg"
   },
   {
     "id": "legacy-what-is",
     "title": "What Is",
-    "category": "Legacy Website Images",
+    "category": "Legacy Design",
     "media": "images/what-is.png"
+  },
+  {
+    "id": "home-hero-headline",
+    "title": "Homepage: Hero Headline & CTA",
+    "category": "Legacy Design",
+    "description": "Weather-related and flood damage losses are well over $50 billion annually.\nAnd cost insurance companies more than $16 billion per year.\nWhat if….water was no longer the enemy?\nWhat if … there is something that not only stands up to water but beats it?\nWhat would you pay for that?\nDiscover how we can conquer water.",
+    "link": "https://besustainabletechnologies.com"
+  },
+  {
+    "id": "home-water-enemy",
+    "title": "WATER >>> PUBLIC ENEMY #1",
+    "category": "Legacy Design",
+    "description": "WATER >>> PUBLIC ENEMY #1\n\nDamages Homes\nIt can warp floors and worse -- ruin electrical systems, corrode plumbing, destroy ceilings and walls, cause mold growth, and weaken structural integrity.\n\nMuch Worse For Recycling\nWet cardboard creates many problems. It's harder to sort and wets other recyclables, making for messy pickup and handling. Even when dry, the cardboard fibers become brittle and crumbly, making it much less valuable.\n\nFire - Another Public Adversary\nIt can take just 30 seconds for a small flame to turn into a major blaze. There's a yearly average of 358,300 home-based fires, causing an estimated at $15.9 billion in property damage.\n\nWater Destroys\nPaper loses strength when wet. Books suffer damage due to swelling. Mold begins to grow when objects left damp for 72 hours."
+  },
+  {
+    "id": "home-challenges",
+    "title": "Other Challenges to Address",
+    "category": "Legacy Design",
+    "description": "Biodegradability\nWe require products that naturally break down and are not toxic to our environment.\n\nRepulpability\nMaterials should break down after repeat use. For example, converting paper back to pulp to be used again.\n\nResistance to Insects\nOver time, we must ensure effectiveness and control over pest populations such as termites.\n\nStrength-to-weight ratio\nWe need materials that are as light as paper yet as strong as steel.\n\nThermal Insulation\nCups that can easily keep hot items hot and cold items cold with no condensation or \"sweating.\""
+  },
+  {
+    "id": "home-polymer-statement",
+    "title": "POLYMER FIBERS ARE NO LONGER THE BEST ANSWER",
+    "category": "Legacy Design",
+    "description": "Using chemicals and plastics when manufacturing paper or construction materials has limitations – the chemicals involved to treat products are toxic. And these products are not sustainable or recyclable. And natural fibers, though more desirable from a sustainability aspect, don't hold up well."
+  },
+  {
+    "id": "home-4rs",
+    "title": "The 4 R's",
+    "category": "Legacy Design",
+    "description": "It's time for products that meet the 4 R's:  Reusable, Recyclable, Reducible, and Remarkable\n\nReducible\nUsing less material to conserve natural resources.\n\nRecyclable\nIf unable to be put back into circulation, products can be broken down easily, cost-effectively, and efficiently recreated to be used again.\n\nReusable\nWith nominal effort, products can be put back into circulation with minimal treatment or maintenance.\n\nIt's Time for Remarkable\nWe need a broader class of materials that simultaneously solves a many challenges, including water/insect resistance and repellence, fire suppression, unprecedented power-to-weight ratio, repulpability, biodegradability, and viable thermal insulation."
+  },
+  {
+    "id": "home-industry-paper",
+    "title": "In Pulp/Paper Manufacturing",
+    "category": "Legacy Design",
+    "description": "Create cost-effective paper products made with:\n- Natural fibers that is water and mildew resistant.\n- With chemicals that are safe for humans and the environment.\n- No harmful chemical by-products.\n\nCreate treated paper products that:\n- Are completely recyclable.\n- Remain breathable.\n- Work with your existing process with little or no modifications.\n- Can include fire protection."
+  },
+  {
+    "id": "home-industry-construction",
+    "title": "Construction Materials",
+    "category": "Legacy Design",
+    "description": "Create cost-effective building products made with:\n- Natural fibers and can be made fire/water/mildew resistant.\n- Chemicals that are safe for humans and the environment.\n- No harmful chemical by-products.\n\nCreate products that:\n- Are 25% lighter than current materials yet remain strong and durable.\n- Are completely recyclable.\n- Remain breathable.\n- Work with your existing manufacturing processes with little or no modifications."
+  },
+  {
+    "id": "home-mission",
+    "title": "Our Mission",
+    "category": "Legacy Design",
+    "description": "BEST is implementing innovative chemistry to makes products manufactured from organic fibers more sustainable, more reusable, and more recyclable. This proprietary chemistry can make a wide range of products—from paper production to construction materials—water- and swell-resistant."
+  },
+  {
+    "id": "home-vision",
+    "title": "Our Vision",
+    "category": "Legacy Design",
+    "description": "Wherever organic fibers are used in manufacturing, BEST wants to integrate its innovative chemistry to make products better—for the environment and for the world."
+  },
+  {
+    "id": "home-purpose",
+    "title": "Our Purpose",
+    "category": "Legacy Design",
+    "description": "A Better, Sustainable Future Through Chemistry + Organic Fibers"
+  },
+  {
+    "id": "tech-intro",
+    "title": "What is Our Technology?",
+    "category": "Legacy Design",
+    "description": "Through a proprietary chemical process that molecularly binds with cellulose fibers, we have been able to \"lock the fibers,\" so they are no longer susceptible to moisture."
+  },
+  {
+    "id": "tech-promise",
+    "title": "What Is Promising About Our Technology?",
+    "category": "Legacy Design",
+    "description": "By preventing absorption, the material no longer weakens or swells when exposed to water, maintaining its structural integrity and strength.\n\nAnd along with this resistance to water absorption, our process alters natural fibers in such a manner as to allow air to pass through the material, making the material breathable, further removing the threat of water damage.\n\nThrough chemical and molecular innovations, we are developing new cellulosic fiber-based products that will allow for reduced consumption, while increasing reusability, as well as recyclability – all of this at a fraction of the cost of traditional products.\n\nThis new approach will allow us to be better stewards of our environment, while reducing cost and strain on our natural resources."
+  },
+  {
+    "id": "tech-benefits",
+    "title": "Technology Benefits",
+    "category": "Legacy Design",
+    "description": "Biodegradable\nLess harm to our environment\nNo emissions from toxins\nLess waste going into environment\nSustainable business model\n\nRecyclable\nAble to reuse and reduce waste\n\nRepulpable\nReduce waste by reusing materials in upcycled products again and again\n\nFire-resistant\nSafer products with less risk of loss and damage\n\nInsect/Mildew/Mold Resistant\nProducts withstand the elements of nature with less loss and damage\n\nHydrophobicity\nMaterials withstand water and rain exposure with little damage and loss and  maintain strength and structural integrity"
+  },
+  {
+    "id": "tech-cardboard-stats",
+    "title": "Time To Work Smarter To Save Our Environment",
+    "category": "Legacy Design",
+    "description": "The global production of cardboard was estimated to be 66 million tons in 2020. Cardboard output is forecast to increase to more than 72 million tons.\n\nTime For A New Approach\n\nWe must create products that are more sustainable as well as cost-effective."
+  },
+  {
+    "id": "tech-cellulose-primer",
+    "title": "A Primer About Cellulose Technology",
+    "category": "Legacy Design",
+    "description": "Cellulose is an organic compound and the most abundant biopolymer on Earth. It is an important structural component of green plants used in manufacturing paper and cardboard products. Around 90% of shipped products in the US are packaged in cardboard.\n\nVirgin pulp is made only by using cellulose, meaning it does not contain any recycled content and is made directly of the pulp of trees or cotton. Papers and tissue papers that are produced with virgin pulp is categorized as high-quality products.\n\nThe properties of cellulose make it attractive as a substitute for plastics. However, the challenge with cellulose is its water content and absorption, which can contribute to its degradation leading to poor mechanical properties and reduced product life.\n\nWhat is needed is a way to strengthen the cellulose at the molecular level, which historically has been a complex phenomenon."
+  },
+  {
+    "id": "tech-traditional-vs-best",
+    "title": "Traditional Cardboard Products vs. BEST's Treated Cellulose Technology",
+    "category": "Legacy Design",
+    "description": "Today's cardboard technology involves a combination of recycled material as well as new cellulose that comes from harvesting new wood. It is pulped (mixed with chemicals and water) and filtered to remove impurities (a waste product). Then it is blended with additional new material, placed on a conveyer belt, and blasted with heat. As it dries, it is pressed and glued together.\n\nCardboard takes approximately 12 months to completely decompose. While it can break down fairly quickly when exposed to the elements, stacks of cardboard can take years to decompose. When placed in landfills, it deteriorates and chemically breaks down, releasing methane as it decomposes. Methane can impact the environment 20 times more than carbon dioxide."
+  },
+  {
+    "id": "tech-solution",
+    "title": "Our Treated Cellulose Solution",
+    "category": "Legacy Design",
+    "description": "Our solution involves treating cellulose at the molecular level. It is not a surfactant, which is a contraction of the term \"Surface Active Agents.\" We developed a proprietary method that involves bonding with cellulose molecules at the chemical level. As a result of this process, we have developed technology that can meet a range of challenges that existing products are unable to meet.\n\nPossible Applications:\n- Paper and pallet manufacturing and reuse\n- Construction material that is fire retardant and lighter yet maintains significant strength"
+  },
+  {
+    "id": "product-pallet-intro",
+    "title": "BEST Solutions for Retail Transportation Pallets",
+    "category": "Legacy Design",
+    "description": "With roughly 2 billion pallets circulating in the United States, global retailers want to reduce their carbon footprint through sustainable and eco-friendly operations. Since these retailers carry vast inventories and depend on complex supply chain operations, they want sustainable solutions to transport goods. One efficient, cost-effective option? Recycled cardboard pallets for retail transportation.\n\nCardboard as a material is state-of-the-art and currently the preferred choice for pallets over wood.\n\nHowever ... cardboard has significant liabilities as well."
+  },
+  {
+    "id": "product-pallet-moisture",
+    "title": "Vulnerable to Moisture",
+    "category": "Legacy Design",
+    "description": "When compared to wooden pallets, cardboard can neither sustain nor resist moisture for long periods of time so they can't be stored outside. This makes them highly susceptible to water and humidity during transportation, which can severely weaken their structure."
+  },
+  {
+    "id": "product-pallet-reliability",
+    "title": "Not as Reliable as Wooden Pallets",
+    "category": "Legacy Design",
+    "description": "While the main advantage of cardboard is its low cost and lightweight nature, they are not particularly sturdy or reliable in comparison to wooden pallets. Cardboard pallets have a tendency to buckle or collapse under the weight of heavy cargo, which can lead to disastrous consequences—losses of both money and reputation for the retailer."
+  },
+  {
+    "id": "product-pallet-hygiene",
+    "title": "Not Particularly Hygienic",
+    "category": "Legacy Design",
+    "description": "This can cause issues for a supply chain that deals with perishable and consumable products. While wooden pallets are sanitized regularly, this is not a viable option for cardboard pallets due to their absorbent nature. This can result in product contamination during transportation, leading to costly recalls and negative publicity for the retailer."
+  },
+  {
+    "id": "product-pallet-legal",
+    "title": "Vulnerable to Legal Issues",
+    "category": "Legacy Design",
+    "description": "Using flimsy and unreliable pallets can result in safety incidents, workplace injuries, or even fatalities, leading to lawsuits and legal proceedings against the retailer."
+  },
+  {
+    "id": "product-pallet-solution",
+    "title": "The BEST Solution (Retail Pallets)",
+    "category": "Legacy Design",
+    "description": "Through a proprietary chemical process that molecularly binds with cellulose fibers, BEST can \"lock the fibers,\" making them resistant to moisture. By preventing absorption, the material no longer weakens when exposed to moisture, and can maintain structural integrity and strength.\n\nAlong with this resistance, BEST's process alters natural fibers in such a manner as to allow air to pass through the material, making material breathable and further removing threats of moisture damage.\n\nBEST is developing new cellulosic fiber-based products that allow for reduced consumption, while increasing strength, reusability and recyclability—at a fraction of the cost of traditional products.\n\nLogistical success can depend on the strength, integrity, and resilience of equipment used to move goods from one point to another. Global retailers need to explore alternative materials that are more durable, moisture-resistant, hygienic, and reliable. Partnering with BEST will allow these companies to become better stewards of our environment, reduce costs, and ease strains on natural resources. It also can allow for better worker protections, while increasing transport efficiencies."
+  },
+  {
+    "id": "product-railroad-intro",
+    "title": "BEST Solutions for Railroad Cargo Transport",
+    "category": "Legacy Design",
+    "description": "Railroad Transport: The Life Blood of American Commerce\n\nRail freight moves 10 billion+ tons of goods and products around the U.S. annually, making it vital to the United States economy. Boxcars carry anything—from cars, lumber, packaged goods, beverages, heavy equipment, and other palletized freight. While some commodities are packaged in heavy-duty plastic bags or steel drums, recycled cardboard is superior to protect and package goods to avoid damage during transport."
+  },
+  {
+    "id": "product-railroad-problems",
+    "title": "Railroad Cargo: Cardboard Problems",
+    "category": "Legacy Design",
+    "description": "While cardboard offers many benefits for logistics companies and the environment (i.e., being versatile, recyclable, biodegradable, and compostable), it holds hidden dangers overlooked during transport. In particular, cardboard is:\n\nVulnerable to moisture. Even slight moisture exposure can damage cardboard and, in turn, the goods inside. It also encourages mold growth, leading to contamination or damage.\n\nSusceptible to friction. It is prone to wear and tear, reducing sturdiness and making it prone to damage during handling. And collapse can cause huge damage and losses.\n\nOften discarded after only once. This can lead to disposal and environmental issues.\n\nA fire hazard. According to the Federal Railroad Administration, several incidents of fire originated from cardboard, causing catastrophic damage leading to huge losses."
+  },
+  {
+    "id": "product-railroad-solution",
+    "title": "The BEST Solution (Railroad Cargo)",
+    "category": "Legacy Design",
+    "description": "Through a proprietary chemical process that molecularly binds with cellulose fibers, BEST can \"lock the fibers,\" making them resistant to moisture. By preventing absorption, BEST treatment helps to maintain structural integrity and strength.\n\nAlong with this resistance, BEST's process alters natural fibers in such a manner as to allow air to pass through the material, making material breathable and further removing threats of moisture damage.\n\nBEST is developing new cellulosic fiber-based products that allow for reduced consumption, while increasing reusability and recyclability—at a fraction of the cost of traditional products.\n\nRail and logistics companies need to explore alternative materials that are more durable, moisture-resistant, and fire-resistant to ensure the cargo safety. Working with BEST will allow these companies to be better stewards of our environment, while reducing costs and strain on our natural resources."
+  },
+  {
+    "id": "about-intro",
+    "title": "About Us",
+    "category": "Legacy Design",
+    "description": "We are developing an innovative approach to the use of cellulosic fiber that makes the impossible possible – Stronger, lighter, reusable products that replace traditional ones at a fraction of the cost."
+  },
+  {
+    "id": "about-mission",
+    "title": "Mission",
+    "category": "Legacy Design",
+    "description": "To be better stewards of our environment by implementing innovative chemistry that can make products manufactured from organic fibers more sustainable, more reusable, and more recyclable."
+  },
+  {
+    "id": "home-team-thumb-lacour",
+    "title": "Homepage: Team Thumbnail - Richard Lacour",
+    "category": "Legacy Design",
+    "media": "images/mugshot-placeholder.jpg"
+  },
+  {
+    "id": "home-team-thumb-parrish",
+    "title": "Homepage: Team Thumbnail - Mark Parrish",
+    "category": "Legacy Design",
+    "media": "images/mark-1.jpg"
+  },
+  {
+    "id": "home-team-thumb-morton",
+    "title": "Homepage: Team Thumbnail - Robert Morton",
+    "category": "Legacy Design",
+    "media": "images/Robert-Morton.jpg"
+  },
+  {
+    "id": "home-team-thumb-lowder",
+    "title": "Homepage: Team Thumbnail - Fred Lowder",
+    "category": "Legacy Design",
+    "media": "images/lowder.jpg"
+  },
+  {
+    "id": "home-team-thumb-moffett",
+    "title": "Homepage: Team Thumbnail - Russell Moffett",
+    "category": "Legacy Design",
+    "media": "images/RDMoffett.jpg"
+  },
+  {
+    "id": "about-team-intro",
+    "title": "People Behind Us - Meet Our Team",
+    "category": "Legacy Design",
+    "description": "BEST has brought together senior leaders in the areas of industrial chemistry, chemical engineering, manufacturing, and emerging sustainability technologies to realize this mission."
+  },
+  {
+    "id": "team-photo-morton",
+    "title": "Team: Dr. Robert Morton - Headshot",
+    "category": "Legacy Design",
+    "media": "images/Robert-Morton-Picture.jpg"
+  },
+  {
+    "id": "team-photo-lowder",
+    "title": "Team: Fred D. Lowder - Headshot",
+    "category": "Legacy Design",
+    "media": "images/IMG_0907-1.jpg"
+  },
+  {
+    "id": "team-photo-parrish",
+    "title": "Team: Mark A. Parrish - Headshot",
+    "category": "Legacy Design",
+    "media": "images/mark.jpg"
+  },
+  {
+    "id": "team-photo-moffett",
+    "title": "Team: Russell Moffett - Headshot",
+    "category": "Legacy Design",
+    "media": "images/RDMoffett-bio-picture.jpg"
+  },
+  {
+    "id": "team-photo-mccalmont",
+    "title": "Team: Sam McCalmont - Headshot",
+    "category": "Legacy Design",
+    "media": "images/imewd.jpg"
+  },
+  {
+    "id": "about-lacour-bio",
+    "title": "Richard S. Lacour - Co-founder & Chairman of the Board",
+    "category": "Legacy Design",
+    "description": "Richard Lacour currently serves as Chairman of the Board of BE Sustainable Technologies, LLC (\"BEST\").  BEST has successfully pioneered an environmentally safe process to treat biomass delivering various degrees of hydrophobicity which, to-date, has never accomplished.\n\nMr. Lacour places a high degree of emphasis on the environment and sustainability projects as an owner of the two largest carbon credit projects in Brazil.   Mr. Lacour's projects will preserve millions of hectares of the Amazon rainforest while providing significant benefits (schools, running water, internet) to the indigenous people.\n\nMr. Lacour specializes in life settlement transactions.  Over the last twelve years, Mr. Lacour has amassed a portfolio of life insurance policies approaching half a billion dollars.\n\nMr. Lacour graduated from the Catholic University of America in Washington, D.C. with a Bachelor of Science degree in accounting in 1995.  After graduation, Mr. Lacour worked as a Certified Public Accountant for Arthur Anderson LLP in the tax consulting division of the New Orleans, LA office.  In 1999, Mr. Lacour formed his own public accounting practice which is still in existence today.\n\nMr. Lacour is also a Certified Public Insurance adjuster and has been an advocate for commercial and residential claimants for the past 18 years.  Mr. Lacour specializes in business interruption and property damage claims and directly advised the Governor of Louisiana in the two years immediately following the BP Oil Spill.\n\nProfessional designations include:  Certified Public Accountant (FL, LA); Certified Public Insurance Adjuster (FL, LA, TX)."
+  },
+  {
+    "id": "about-morton-bio",
+    "title": "Dr. Robert Morton - Chief Science Officer",
+    "category": "Legacy Design",
+    "description": "Dr. Robert Morton is the Chief Technology Officer for Be Sustainable Technologies (BEST), LLC, the leader in performance enhancing paper products. BEST promotes technologies that enhance the stewardship of the environment with products designed for sustainability.\n\nDr. Morton has worked in American industry for over 45 years. He was the chief materials scientist at Phillips 66 for 30 years. While at Phillips 66, Dr. Morton received 24 patents and discovered the chemistry that drives regenerable materials that remove sulfur from petroleum products. He is also responsible for the development of standard analytical methods that are used by the U.S. EPA and other agencies worldwide to determine the ultra-low levels of sulfur in fuels that protect our environment. His early research led to the development of new x-ray spectrometers and diffractometers used commercially worldwide. He was an early pioneer in elemental x-ray imaging (commonly referred to as XRF imaging) and contributed to the recovery of the lost works of Archimedes as well as imaging the Archaeopteryx. The use of elemental x-ray imaging showed that Archimedes had originated the idea of infinity and also proved that the Archaeopteryx was once a living animal that had barbed flight feathers. In addition, elemental x-ray imaging of fossils demonstrated for the first time that the biological chemistry of the past is directly related to the biological chemistry of today.\n\nDr. Morton has worked as an industrial chemist since 1977.  He received his B.S. degree in Chemistry from Missouri Western State College in 1979 and Ph.D. in Chemistry from the University of Missouri – Kansas City in 1987. His favorite area of Chemistry is formulation science which he was first exposed to while working for Hillyard Chemical Company in the 1970s. There are many areas of science one can specialize in but, formulation science has a direct impact on the quality of life for everyone worldwide."
+  },
+  {
+    "id": "about-lowder-bio",
+    "title": "Fred D. Lowder - Chief Commercial Officer",
+    "category": "Legacy Design",
+    "description": "Fred is responsible for developing and leading BEST's commercial and market development and initiatives that will drive adoption of its groundbreaking products. He has a unique background – he is an industrial chemist by training, and he has significant experience in leading technical groups and strategic sales management teams.\n\nFred has a 37-year career in the petroleum industry and is a leading expert in Pentane, Hexane, and Heptane solvents. He was instrumental in working with PIMA (Polyurethane Isocyanurate Manufacturers Association) to convert their foam blowing from freon to pentane to help protect the environment.\n\nBefore BEST, Fred was the Solvents Sales Manager at Phillips 66 Company, where he led the team to increase its net profit from $38 MM/yr to $64 MM/yr by finding novel uses for solvents and expanding to other markets. Through his efforts, Phillips 66 Solvents became one of the top-performing divisions within the Company.\n\nBefore his sales roles, Fred spent 30+ years working in a range of industrial chemistry roles, including working on special problems, quality assurance, and analytical work. He also led the Phillips 66 Research and Development Center, where he directed efforts to standardize testing methods and provide more accurate and dependable results for the refineries across the company.\n\nFred received his Bachelor of Science degree in Math and Chemistry Education from West Texas State University."
+  },
+  {
+    "id": "about-parrish-bio",
+    "title": "Mark A. Parrish - Managing Director and Chief Executive Officer",
+    "category": "Legacy Design",
+    "description": "Mark is responsible for the overall business, as well as creating a strong foundation for BEST's corporate culture and product commercialization. He is a proven leader in company transformation and delivering shareholder value – along with a deep knowledge of industrials and technology, and an intense focus on execution, organization, growth, and talent development.\n\nMark's senior leadership experience includes areas of sustainability, operational excellence, corporate strategy development, mergers, acquisitions and emerging technologies. He achieved significant organizational transformation and yielded tremendous value creation for well-known consumer brands including Igloo, Cool Gear, GE, Intel, Harley-Davidson, Goldman Sachs, and Simmons. He also led world-class manufacturers such as Ply Gem Windows, Interface, Inc., and Deceuninck North America – each known for rapid product innovation.\n\nMark co-founded Parrish Partners, a leadership and management consulting company offering business consulting, executive coaching, executive search, and leadership training for personal and business growth. He served as a fractional CEO in the specialty paper industry, Chairman/CEO/President in the food and beverage industry and has had many advisory roles in human augmentation and the marketing and distribution of alcohol products.\n\nMark holds two Masters of Sciences degrees – one in Mechanical Engineering and another in Operations Management – from the Massachusetts Institute of Technology. He also has a Bachelor of Science degree in Operations Research Studies from the United States Military Academy at West Point.\n\nAs a commissioned aviator for the U.S. Army, Marked served in five countries on three continents. This included time as an AH-64 Apache pilot in Operations Desert Shield/Storm during which time Mark received the Bronze Star and Air Medal for Valor."
+  },
+  {
+    "id": "about-moffett-bio",
+    "title": "Russell Moffett - Sales Manager",
+    "category": "Legacy Design",
+    "description": "Russell has 34 years of experience in the petroleum and chemical industries.  He was most recently the Mid-Continent Region Sales Manager for Phillips 66 Specialty Solvents, a position he held for over 17 years.  He was responsible for business development, sales, and distribution of specialty hydrocarbon solvents to a wide variety of industrial and oil & gas applications.\n\nHe began his career with Schlumberger in Morgan City, Louisiana.  Over a period of 15 years in a series of roles as a Field Engineer, Field Service Manager, Staff Engineer, and Sales Engineer, he lived and worked in various locations in South Louisiana and Texas, working on projects in formation evaluation, completions, well testing, drilling, and technical advisory roles throughout the Gulf of Mexico and the Permian Basin.\n\nHe then spent 19 years working in the refined products side of the industry, dealing with light hydrocarbons, primarily C5-C7 products and isoparaffins.  He also has experience in the calcined petroleum coke business, and has handled projects in diverse geographic regions, such as Canada, Venezuela, Trinidad, and other parts of the Caribbean.\n\nHe has been active in numerous professional associations throughout his career, including serving as Chapter President and on a national industry association Board of Directors.  Since 2017, he has been serving on the Mississippi State University Petroleum Engineering Advisory Board.\n\nRussell holds a B.S. degree in Petroleum Engineering (1984) from Mississippi State University.  He lives in Meridian, Mississippi with his wife, Tammi, and they have 3 adult children."
+  },
+  {
+    "id": "about-mccalmont-bio",
+    "title": "Sam McCalmont",
+    "category": "Legacy Design",
+    "description": "Sam has 37 years of experience in the specialty chemical business and specialty hydrocarbons. He started his career at Callery Chemical in 1981. Sam was in business development and in his final 10 years product development and sales management. He left Callery as Sales Manager in 2000, joining Phillips Petroleum Specialty Solvents as the Northeast Territory Manager. Ultimately his territory included Canada, Europe, and the Middle East. He retired from Phillips 66 Specialty Solvents at the end of May 2018.\n\nSam has Bachelor of Science Degree in Chemistry from Marshall University. He lives in Pittsburgh, Pa."
+  },
+  {
+    "id": "contact-page",
+    "title": "Contact Us",
+    "category": "Legacy Design",
+    "description": "Want to learn more about our solutions?\n\nFill out the form and a team member will be in touch with you.\n\ninfo@besustainabletechnologies.com",
+    "link": "https://besustainabletechnologies.com/contact/"
   }
 ]
