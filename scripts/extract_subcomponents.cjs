@@ -39,6 +39,12 @@ body, html {
   width: 100%;
   overflow-x: hidden;
 }
+/* Strip large section min-heights/paddings so isolated fragments fit tightly */
+section, .hero, .chemistry, .about, .products, .leadership, .ip, .data, .contact {
+  min-height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
 </style>
 `;
 
@@ -121,7 +127,7 @@ const componentMappings = [
   {
     name: 'hero-cta',
     extract: ($) => $.html($('.hero__actions')),
-    options: heroBg,
+    options: { ...heroBg, bodyStyle: 'background: #0A1628; color: #FFFFFF; padding: 20px;' },
   },
   {
     name: 'hero-stats',

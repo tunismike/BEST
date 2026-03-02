@@ -24,12 +24,6 @@
     "htmlFile": "sections/component-hero-stats.html"
   },
   {
-    "id": "component-hero-visual",
-    "title": "Hero: Background Visual",
-    "category": "New Design",
-    "htmlFile": "sections/component-hero-visual.html"
-  },
-  {
     "id": "component-about-copy",
     "title": "About: Heading & Body Copy",
     "category": "New Design",
@@ -468,66 +462,6 @@
     "media": "images/Layer-8.svg"
   },
   {
-    "id": "legacy-1-8",
-    "title": "1 8",
-    "category": "Legacy Design",
-    "media": "images/1-8.webp"
-  },
-  {
-    "id": "legacy-14-scaled",
-    "title": "14 Scaled",
-    "category": "Legacy Design",
-    "media": "images/14-scaled.jpg"
-  },
-  {
-    "id": "legacy-15-second-option-scaled",
-    "title": "15 Second Option Scaled",
-    "category": "Legacy Design",
-    "media": "images/15-second-option-scaled.jpg"
-  },
-  {
-    "id": "legacy-15276012-5570869",
-    "title": "15276012 5570869",
-    "category": "Legacy Design",
-    "media": "images/15276012_5570869.jpg"
-  },
-  {
-    "id": "legacy-16240137-rm309-aew-008-a-1",
-    "title": "16240137 Rm309 Aew 008 A 1",
-    "category": "Legacy Design",
-    "media": "images/16240137_rm309-aew-008-a-1.jpg"
-  },
-  {
-    "id": "legacy-16584743-abstract-white-background-of-circles-with-shadows-m",
-    "title": "16584743 Abstract White Background Of Circles With Shadows Material 3d Style ...",
-    "category": "Legacy Design",
-    "media": "images/16584743_Abstract_white_background_of_circles_with_shadows_material_3d_style-1-scaled-1.jpg"
-  },
-  {
-    "id": "legacy-3",
-    "title": "3",
-    "category": "Legacy Design",
-    "media": "images/3.jpg"
-  },
-  {
-    "id": "legacy-33780830-gpt4-1",
-    "title": "33780830 Gpt4 1",
-    "category": "Legacy Design",
-    "media": "images/33780830_gpt4-1.jpg"
-  },
-  {
-    "id": "legacy-bg1",
-    "title": "BG1",
-    "category": "Legacy Design",
-    "media": "images/BG1.jpg"
-  },
-  {
-    "id": "legacy-bg2-a",
-    "title": "BG2 A",
-    "category": "Legacy Design",
-    "media": "images/BG2-a.jpg"
-  },
-  {
     "id": "legacy-brand-1",
     "title": "Brand 1",
     "category": "Legacy Design",
@@ -570,12 +504,6 @@
     "media": "images/IMG_0695-e1695226785796.jpg"
   },
   {
-    "id": "legacy-kkj",
-    "title": "KKJ",
-    "category": "Legacy Design",
-    "media": "images/KKJ.jpeg"
-  },
-  {
     "id": "legacy-logo-aivonic-1",
     "title": "Logo Aivonic 1",
     "category": "Legacy Design",
@@ -594,58 +522,10 @@
     "media": "images/Pallets_main_0518.jpg"
   },
   {
-    "id": "legacy-t1",
-    "title": "T1",
-    "category": "Legacy Design",
-    "media": "images/T1.jpg"
-  },
-  {
-    "id": "legacy-t2",
-    "title": "T2",
-    "category": "Legacy Design",
-    "media": "images/T2.jpg"
-  },
-  {
-    "id": "legacy-t3",
-    "title": "T3",
-    "category": "Legacy Design",
-    "media": "images/T3.jpg"
-  },
-  {
-    "id": "legacy-t4",
-    "title": "T4",
-    "category": "Legacy Design",
-    "media": "images/T4.jpg"
-  },
-  {
-    "id": "legacy-t5",
-    "title": "T5",
-    "category": "Legacy Design",
-    "media": "images/T5.jpg"
-  },
-  {
-    "id": "legacy-t6",
-    "title": "T6",
-    "category": "Legacy Design",
-    "media": "images/T6.jpg"
-  },
-  {
     "id": "legacy-team-5",
     "title": "Team 5",
     "category": "Legacy Design",
     "media": "images/Team-5.jpg"
-  },
-  {
-    "id": "legacy-after-installing-a-program-on-the-robotic-arm-a-female-engin",
-    "title": "After Installing A Program On The Robotic Arm A Female Engineer With A Roboti...",
-    "category": "Legacy Design",
-    "media": "images/after-installing-a-program-on-the-robotic-arm-a-female-engineer-with-a-robotic-arm-1.jpg"
-  },
-  {
-    "id": "legacy-analysts-analyzing-financial-charts-in-office",
-    "title": "Analysts Analyzing Financial Charts In Office",
-    "category": "Legacy Design",
-    "media": "images/analysts-analyzing-financial-charts-in-office.jpg"
   },
   {
     "id": "legacy-benafits",
@@ -660,166 +540,10 @@
     "media": "images/best-logo.svg"
   },
   {
-    "id": "legacy-business-corporate-people-working-concept",
-    "title": "Business Corporate People Working Concept",
-    "category": "Legacy Design",
-    "media": "images/business-corporate-people-working-concept.jpg"
-  },
-  {
-    "id": "legacy-business-people-working-on-sustainable-renewable-energy-proj",
-    "title": "Business People Working On Sustainable Renewable Energy Project Inside Office...",
-    "category": "Legacy Design",
-    "media": "images/business-people-working-on-sustainable-renewable-energy-project-inside-office-windmill-industry.jpg"
-  },
-  {
-    "id": "legacy-businessman-working-on-tablet-using-ai-business-technology-i",
-    "title": "Businessman Working On Tablet Using Ai Business Technology Iot Internet Of Th...",
-    "category": "Legacy Design",
-    "media": "images/businessman-working-on-tablet-using-ai-business-technology-iot-internet-of-things-ai-concept.jpg"
-  },
-  {
-    "id": "legacy-circuit-board-and-ai-micro-processor-artificial-intelligence",
-    "title": "Circuit Board And Ai Micro Processor Artificial Intelligence Of Digital Human...",
-    "category": "Legacy Design",
-    "media": "images/circuit-board-and-ai-micro-processor-artificial-intelligence-of-digital-human-3d-render.jpg"
-  },
-  {
-    "id": "legacy-computer-tech-night-and-woman-with-tablet-working-on-databas",
-    "title": "Computer Tech Night And Woman With Tablet Working On Database Programming Cod...",
-    "category": "Legacy Design",
-    "media": "images/computer-tech-night-and-woman-with-tablet-working-on-database-programming-code-ai-development-des.jpg"
-  },
-  {
-    "id": "legacy-cyborg-hand-3d-background-technology-artificial-intelligence",
-    "title": "Cyborg Hand 3d Background Technology Artificial Intelligence 1",
-    "category": "Legacy Design",
-    "media": "images/cyborg-hand-3d-background-technology-artificial-intelligence-1.jpg"
-  },
-  {
-    "id": "legacy-engineer-check-and-control-automation-robot-arms-machine-in-",
-    "title": "Engineer Check And Control Automation Robot Arms Machine In Intelligent Facto...",
-    "category": "Legacy Design",
-    "media": "images/engineer-check-and-control-automation-robot-arms-machine-in-intelligent-factory-industrial-.jpg"
-  },
-  {
-    "id": "legacy-engineer-inspecting-automatic-ai-robot-arm-and-machines-in-f",
-    "title": "Engineer Inspecting Automatic Ai Robot Arm And Machines In Factory Engineer I...",
-    "category": "Legacy Design",
-    "media": "images/engineer-inspecting-automatic-ai-robot-arm-and-machines-in-factory-engineer-inspecting-automatic-ai.jpg"
-  },
-  {
-    "id": "legacy-engineer-working-in-container-storage-yard-stand-front-of-co",
-    "title": "Engineer Working In Container Storage Yard Stand Front Of Container Lift Truc...",
-    "category": "Legacy Design",
-    "media": "images/engineer-working-in-container-storage-yard-stand-front-of-container-lift-truck-ready-to-delivery.jpg"
-  },
-  {
-    "id": "legacy-factory-with-large-machine-middle",
-    "title": "Factory With Large Machine Middle",
-    "category": "Legacy Design",
-    "media": "images/factory-with-large-machine-middle.jpg"
-  },
-  {
-    "id": "legacy-futuristic-banner-with-robot-and-copy-space-for-your-text-ar",
-    "title": "Futuristic Banner With Robot And Copy Space For Your Text Artificial Intellig...",
-    "category": "Legacy Design",
-    "media": "images/futuristic-banner-with-robot-and-copy-space-for-your-text-artificial-intelligence.jpg"
-  },
-  {
-    "id": "legacy-girl-engineer-in-robot-industry-fabrication-research-room-si",
-    "title": "Girl Engineer In Robot Industry Fabrication Research Room Simulate Testing Ro...",
-    "category": "Legacy Design",
-    "media": "images/girl-engineer-in-robot-industry-fabrication-research-room-simulate-testing-robot-arm-on-operation.jpg"
-  },
-  {
-    "id": "legacy-green-recycle-symbol-icon-free-vector-removebg-preview",
-    "title": "Green Recycle Symbol Icon Free Vector Removebg Preview",
-    "category": "Legacy Design",
-    "media": "images/green-recycle-symbol-icon-free-vector-removebg-preview.png"
-  },
-  {
-    "id": "legacy-green-recycle-symbol-icon-free-vector",
-    "title": "Green Recycle Symbol Icon Free Vector",
-    "category": "Legacy Design",
-    "media": "images/green-recycle-symbol-icon-free-vector.jpeg"
-  },
-  {
-    "id": "legacy-grou-pof-three-young-intercultural-healthcare-workers-having",
-    "title": "Grou Pof Three Young Intercultural Healthcare Workers Having Discussion",
-    "category": "Legacy Design",
-    "media": "images/grou-pof-three-young-intercultural-healthcare-workers-having-discussion.jpg"
-  },
-  {
-    "id": "legacy-hgfdsa",
-    "title": "Hgfdsa",
-    "category": "Legacy Design",
-    "media": "images/hgfdsa.jpeg"
-  },
-  {
-    "id": "legacy-high-tech-robotic-arm-technician-check-1",
-    "title": "High Tech Robotic Arm With Artificial Intelligence Computer Processor Unit In...",
-    "category": "Legacy Design",
-    "media": "images/high-tech-robotic-arm-with-artificial-intelligence-computer-processor-unit-in-its-technician-check-1.jpg"
-  },
-  {
-    "id": "legacy-high-tech-robotic-arm-technician-check",
-    "title": "High Tech Robotic Arm With Artificial Intelligence Computer Processor Unit In...",
-    "category": "Legacy Design",
-    "media": "images/high-tech-robotic-arm-with-artificial-intelligence-computer-processor-unit-in-its-technician-check.jpg"
-  },
-  {
-    "id": "legacy-image-1",
-    "title": "Image 1",
-    "category": "Legacy Design",
-    "media": "images/image-1.jpg"
-  },
-  {
-    "id": "legacy-image-48",
-    "title": "Image 48",
-    "category": "Legacy Design",
-    "media": "images/image-48.webp"
-  },
-  {
-    "id": "legacy-imf32-1",
-    "title": "Imf32 1",
-    "category": "Legacy Design",
-    "media": "images/imf32-1.jpg"
-  },
-  {
-    "id": "legacy-imf32",
-    "title": "Imf32",
-    "category": "Legacy Design",
-    "media": "images/imf32.jpg"
-  },
-  {
-    "id": "legacy-kk",
-    "title": "Kk",
-    "category": "Legacy Design",
-    "media": "images/kk.jpeg"
-  },
-  {
-    "id": "legacy-male-engineer-using-remote-testing-and-control-ai-robot-mode",
-    "title": "Male Engineer Using Remote Testing And Control Ai Robot Model In Academy Robo...",
-    "category": "Legacy Design",
-    "media": "images/male-engineer-using-remote-testing-and-control-ai-robot-model-in-academy-robotics-laboratory-room.jpg"
-  },
-  {
     "id": "legacy-matrix",
     "title": "Matrix",
     "category": "Legacy Design",
     "media": "images/matrix.svg"
-  },
-  {
-    "id": "legacy-metal-workers-use-machinery-craft-steel-generated-by-ai",
-    "title": "Metal Workers Use Machinery Craft Steel Generated By Ai",
-    "category": "Legacy Design",
-    "media": "images/metal-workers-use-machinery-craft-steel-generated-by-ai.jpg"
-  },
-  {
-    "id": "legacy-modern-machinery-futuristic-laboratory-setting-generated-by-",
-    "title": "Modern Machinery Futuristic Laboratory Setting Generated By Ai",
-    "category": "Legacy Design",
-    "media": "images/modern-machinery-futuristic-laboratory-setting-generated-by-ai.jpg"
   },
   {
     "id": "legacy-open-hoppers",
@@ -832,144 +556,6 @@
     "title": "Palet",
     "category": "Legacy Design",
     "media": "images/palet.jpeg"
-  },
-  {
-    "id": "legacy-park-china-scaled",
-    "title": "Park China Scaled",
-    "category": "Legacy Design",
-    "media": "images/park-china-scaled.jpg"
-  },
-  {
-    "id": "legacy-pexels-magda-ehlers-2547565-1",
-    "title": "Pexels Magda Ehlers 2547565 1",
-    "category": "Legacy Design",
-    "media": "images/pexels-magda-ehlers-2547565-1.jpg"
-  },
-  {
-    "id": "legacy-pexels-pixabay-260367-1",
-    "title": "Pexels Pixabay 260367 1",
-    "category": "Legacy Design",
-    "media": "images/pexels-pixabay-260367-1.jpg"
-  },
-  {
-    "id": "legacy-pexels-pixabay-260367",
-    "title": "Pexels Pixabay 260367",
-    "category": "Legacy Design",
-    "media": "images/pexels-pixabay-260367.jpg"
-  },
-  {
-    "id": "legacy-pexels-pok-rie-6471926-1",
-    "title": "Pexels Pok Rie 6471926 1",
-    "category": "Legacy Design",
-    "media": "images/pexels-pok-rie-6471926-1.jpg"
-  },
-  {
-    "id": "legacy-placeholder-1",
-    "title": "Placeholder 1",
-    "category": "Legacy Design",
-    "media": "images/placeholder-1.png"
-  },
-  {
-    "id": "legacy-placeholder-2",
-    "title": "Placeholder 2",
-    "category": "Legacy Design",
-    "media": "images/placeholder-2.png"
-  },
-  {
-    "id": "legacy-placeholder",
-    "title": "Placeholder",
-    "category": "Legacy Design",
-    "media": "images/placeholder.png"
-  },
-  {
-    "id": "legacy-robot-ali-bom-ple",
-    "title": "Robot Ali Bom Ple",
-    "category": "Legacy Design",
-    "media": "images/robot-ali-bom-ple.jpg"
-  },
-  {
-    "id": "legacy-robot-ali",
-    "title": "Robot Ali",
-    "category": "Legacy Design",
-    "media": "images/robot-ali.jpg"
-  },
-  {
-    "id": "legacy-robot-bom-ple",
-    "title": "Robot Bom Ple",
-    "category": "Legacy Design",
-    "media": "images/robot-bom-ple.jpg"
-  },
-  {
-    "id": "legacy-robot-ple",
-    "title": "Robot Ple",
-    "category": "Legacy Design",
-    "media": "images/robot-ple.jpg"
-  },
-  {
-    "id": "legacy-robot-s-head-in-profile-2021-08-26-15-33-01-utc",
-    "title": "Robot S Head In Profile 2021 08 26 15 33 01 Utc",
-    "category": "Legacy Design",
-    "media": "images/robot-s-head-in-profile-2021-08-26-15-33-01-utc.png"
-  },
-  {
-    "id": "legacy-robotic-arm-holding-wrench-repairs-metal-machinery-generated",
-    "title": "Robotic Arm Holding Wrench Repairs Metal Machinery Generated By Ai 1",
-    "category": "Legacy Design",
-    "media": "images/robotic-arm-holding-wrench-repairs-metal-machinery-generated-by-ai-1.jpg"
-  },
-  {
-    "id": "legacy-robotic-arm-modern-industrial-technology-industrial-robots-p",
-    "title": "Robotic Arm Modern Industrial Technology Industrial Robots Production",
-    "category": "Legacy Design",
-    "media": "images/robotic-arm-modern-industrial-technology-industrial-robots-production.jpg"
-  },
-  {
-    "id": "legacy-robotics-engineer-maintenance-robotic-arm-1-1",
-    "title": "Robotics Engineer Working On Maintenance Of Robotic Arm In Factory Warehouse ...",
-    "category": "Legacy Design",
-    "media": "images/robotics-engineer-working-on-maintenance-of-robotic-arm-in-factory-warehouse-business-technology-1-1.jpg"
-  },
-  {
-    "id": "legacy-robotics-engineer-maintenance-robotic-arm-1-2",
-    "title": "Robotics Engineer Working On Maintenance Of Robotic Arm In Factory Warehouse ...",
-    "category": "Legacy Design",
-    "media": "images/robotics-engineer-working-on-maintenance-of-robotic-arm-in-factory-warehouse-business-technology-1-2.jpg"
-  },
-  {
-    "id": "legacy-smiling-businesswoman-shaking-hands-with-robot-sitting-at-de",
-    "title": "Smiling Businesswoman Shaking Hands With Robot Sitting At Desk In Meeting Room",
-    "category": "Legacy Design",
-    "media": "images/smiling-businesswoman-shaking-hands-with-robot-sitting-at-desk-in-meeting-room.jpg"
-  },
-  {
-    "id": "legacy-start-up-business-team-in-the-office",
-    "title": "Start Up Business Team In The Office",
-    "category": "Legacy Design",
-    "media": "images/start-up-business-team-in-the-office.jpg"
-  },
-  {
-    "id": "legacy-tech-industry-business-industry-technology-people-and-tech-e",
-    "title": "Tech Industry Business Industry Technology People And Tech Engineer Working I...",
-    "category": "Legacy Design",
-    "media": "images/tech-industry-business-industry-technology-people-and-tech-engineer-working-in-factory-.jpg"
-  },
-  {
-    "id": "legacy-technology-industry-innovation-people-with-tech-innovation-w",
-    "title": "Technology Industry Innovation People With Tech Innovation With Technological...",
-    "category": "Legacy Design",
-    "media": "images/technology-industry-innovation-people-with-tech-innovation-with-technological-progress-business-.jpg"
-  },
-  {
-    "id": "legacy-two-business-men-celebrating-a-deal",
-    "title": "Two Business Men Celebrating A Deal",
-    "category": "Legacy Design",
-    "media": "images/two-business-men-celebrating-a-deal.jpg"
-  },
-  {
-    "id": "legacy-untitled-1gg-1",
-    "title": "Untitled 1gg 1",
-    "category": "Legacy Design",
-    "media": "images/untitled-1gg_1.jpg"
   },
   {
     "id": "legacy-what-is",

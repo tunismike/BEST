@@ -35,13 +35,21 @@ export function AutoResizeIframe({ src, title, designWidth = 1440 }: AutoResizeI
         const measure = () => {
             try {
                 const doc = iframe.contentDocument;
-                if (doc?.body) {
-                    const h = Math.max(
-                        doc.body.scrollHeight,
-                        doc.documentElement?.scrollHeight ?? 0
-                    );
-                    if (h > 0) setContentHeight(h);
+                if (!doc?.body) return;
+
+                // Measure the actual bounding box of all child elements
+                // instead of scrollHeight, which includes CSS-driven whitespace
+                const children = doc.body.children;
+                let maxBottom = 0;
+                for (let i = 0; i < children.length; i++) {
+                    const rect = children[i].getBoundingClientRect();
+                    const bottom = rect.top + rect.height;
+                    if (bottom > maxBottom) maxBottom = bottom;
                 }
+
+                // Add a small padding buffer
+                const h = maxBottom > 0 ? Math.ceil(maxBottom + 20) : doc.body.scrollHeight;
+                if (h > 0) setContentHeight(h);
             } catch {
                 // Cross-origin — keep fallback
             }
