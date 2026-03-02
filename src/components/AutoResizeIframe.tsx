@@ -1,22 +1,38 @@
-import { useRef, useCallback } from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 
 interface AutoResizeIframeProps {
     src: string;
     title: string;
+    /** Design width the HTML was authored for (default 1440) */
+    designWidth?: number;
 }
 
 /**
- * An iframe that auto-resizes its height to match the loaded content,
- * so design mockups render at their full natural size.
+ * Renders an iframe at the original design width, then scales it down
+ * to fit the card so it looks exactly like it does on the real site.
  */
-export function AutoResizeIframe({ src, title }: AutoResizeIframeProps) {
+export function AutoResizeIframe({ src, title, designWidth = 1440 }: AutoResizeIframeProps) {
     const wrapperRef = useRef<HTMLDivElement>(null);
+    const [contentHeight, setContentHeight] = useState(400);
+    const [wrapperWidth, setWrapperWidth] = useState(700);
+
+    // Track wrapper width on mount and resize
+    useEffect(() => {
+        const update = () => {
+            if (wrapperRef.current) {
+                setWrapperWidth(wrapperRef.current.offsetWidth);
+            }
+        };
+        update();
+        window.addEventListener('resize', update);
+        return () => window.removeEventListener('resize', update);
+    }, []);
 
     const handleLoad = useCallback(() => {
         const iframe = wrapperRef.current?.querySelector('iframe');
         if (!iframe) return;
 
-        const resize = () => {
+        const measure = () => {
             try {
                 const doc = iframe.contentDocument;
                 if (doc?.body) {
@@ -24,20 +40,20 @@ export function AutoResizeIframe({ src, title }: AutoResizeIframeProps) {
                         doc.body.scrollHeight,
                         doc.documentElement?.scrollHeight ?? 0
                     );
-                    if (h > 0 && wrapperRef.current) {
-                        wrapperRef.current.style.height = `${h}px`;
-                    }
+                    if (h > 0) setContentHeight(h);
                 }
             } catch {
-                // Cross-origin — keep the fallback min-height
+                // Cross-origin — keep fallback
             }
         };
 
-        // Resize immediately, then again after images / fonts settle
-        resize();
-        setTimeout(resize, 300);
-        setTimeout(resize, 1000);
+        measure();
+        setTimeout(measure, 300);
+        setTimeout(measure, 1000);
     }, []);
+
+    const scale = Math.min(1, wrapperWidth / designWidth);
+    const scaledHeight = contentHeight * scale;
 
     return (
         <div
@@ -45,17 +61,27 @@ export function AutoResizeIframe({ src, title }: AutoResizeIframeProps) {
             className="card-html-wrapper"
             style={{
                 width: '100%',
-                minHeight: '200px',
+                height: `${scaledHeight}px`,
                 overflow: 'hidden',
                 borderBottom: '1px solid rgba(0,0,0,0.1)',
+                position: 'relative',
             }}
         >
             <iframe
                 src={src}
                 title={title}
                 onLoad={handleLoad}
-                style={{ width: '100%', height: '100%', border: 'none', background: '#fff' }}
                 scrolling="no"
+                style={{
+                    width: `${designWidth}px`,
+                    height: `${contentHeight}px`,
+                    border: 'none',
+                    transformOrigin: 'top left',
+                    transform: `scale(${scale})`,
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                }}
             />
         </div>
     );

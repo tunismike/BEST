@@ -43,13 +43,15 @@ body, html {
 `;
 
 // ── Helper: wrap a fragment in a full HTML document ─────────────────────────
-function wrapAndSave(fragmentHtml, fileName, { bodyClass = '', bodyStyle = '', sectionClass = '' } = {}) {
+function wrapAndSave(fragmentHtml, fileName, { bodyClass = '', bodyStyle = '', sectionClass = '', maxWidth = '' } = {}) {
   const classAttr = bodyClass ? ` class="${bodyClass}"` : '';
   const styleAttr = bodyStyle ? ` style="${bodyStyle}"` : '';
+  // Constrain card-type components to their natural width from the design
+  const mwStyle = maxWidth ? `max-width:${maxWidth}; margin:0 auto;` : '';
   // Wrap in a parent section element so CSS selectors like `.chemistry .section-heading` match
   const inner = sectionClass
-    ? `<div class="${sectionClass}" style="padding:0;">${fragmentHtml}</div>`
-    : fragmentHtml;
+    ? `<div class="${sectionClass}" style="padding:0;${mwStyle}">${fragmentHtml}</div>`
+    : (mwStyle ? `<div style="${mwStyle}">${fragmentHtml}</div>` : fragmentHtml);
   const doc = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -164,22 +166,22 @@ const componentMappings = [
   {
     name: 'chemistry-stage-1',
     extract: ($) => $.html($('.chemistry__pillars article.pillar').eq(0)),
-    options: chemBg,
+    options: { ...chemBg, maxWidth: '600px' },
   },
   {
     name: 'chemistry-stage-2',
     extract: ($) => $.html($('.chemistry__pillars article.pillar').eq(1)),
-    options: chemBg,
+    options: { ...chemBg, maxWidth: '600px' },
   },
   {
     name: 'chemistry-stage-3',
     extract: ($) => $.html($('.chemistry__pillars article.pillar').eq(2)),
-    options: chemBg,
+    options: { ...chemBg, maxWidth: '600px' },
   },
   {
     name: 'chemistry-stage-4',
     extract: ($) => $.html($('.chemistry__pillars article.pillar').eq(3)),
-    options: chemBg,
+    options: { ...chemBg, maxWidth: '600px' },
   },
   {
     name: 'chemistry-video',
@@ -205,7 +207,7 @@ const componentMappings = [
       const card = $('.product-card').filter((i, el) => $(el).find('h3').text().includes('Solution, Paper'));
       return $.html(card);
     },
-    options: creamBg,
+    options: { ...creamBg, maxWidth: '600px' },
   },
   {
     name: 'products-pallet',
@@ -213,7 +215,7 @@ const componentMappings = [
       const card = $('.product-card').filter((i, el) => $(el).find('h3').text().includes('Pallet'));
       return $.html(card);
     },
-    options: creamBg,
+    options: { ...creamBg, maxWidth: '600px' },
   },
   {
     name: 'products-cork',
@@ -221,7 +223,7 @@ const componentMappings = [
       const card = $('.product-card').filter((i, el) => $(el).find('h3').text().includes('Cork'));
       return $.html(card);
     },
-    options: creamBg,
+    options: { ...creamBg, maxWidth: '600px' },
   },
   {
     name: 'products-flowerpot',
@@ -229,7 +231,7 @@ const componentMappings = [
       const card = $('.product-card').filter((i, el) => $(el).find('h3').text().includes('Flowerpot'));
       return $.html(card);
     },
-    options: creamBg,
+    options: { ...creamBg, maxWidth: '600px' },
   },
   {
     name: 'products-agriculture',
@@ -237,7 +239,7 @@ const componentMappings = [
       const card = $('.product-card').filter((i, el) => $(el).find('h3').text().includes('Agricultural'));
       return $.html(card);
     },
-    options: creamBg,
+    options: { ...creamBg, maxWidth: '600px' },
   },
 
   // ── Leadership (4) — white background ─────────────────────────────────────
@@ -257,7 +259,7 @@ const componentMappings = [
       const card = $('.leader').filter((i, el) => $(el).text().includes('Rich'));
       return $.html(card);
     },
-    options: whiteBg,
+    options: { ...whiteBg, maxWidth: '400px' },
   },
   {
     name: 'leadership-bob',
@@ -265,7 +267,7 @@ const componentMappings = [
       const card = $('.leader').filter((i, el) => $(el).text().includes('Bob'));
       return $.html(card);
     },
-    options: whiteBg,
+    options: { ...whiteBg, maxWidth: '400px' },
   },
   {
     name: 'leadership-fred',
@@ -273,7 +275,7 @@ const componentMappings = [
       const card = $('.leader').filter((i, el) => $(el).text().includes('Fred'));
       return $.html(card);
     },
-    options: whiteBg,
+    options: { ...whiteBg, maxWidth: '400px' },
   },
 
   // ── IP (4) — navy background ──────────────────────────────────────────────
@@ -292,32 +294,32 @@ const componentMappings = [
   {
     name: 'ip-prior-art',
     extract: ($) => $.html($('.ip__narrative-col--prior')),
-    options: ipBg,
+    options: { ...ipBg, maxWidth: '600px' },
   },
   {
     name: 'ip-solution',
     extract: ($) => $.html($('.ip__narrative-col--solution')),
-    options: ipBg,
+    options: { ...ipBg, maxWidth: '600px' },
   },
   {
     name: 'ip-comparison-shelf-life',
     extract: ($) => $.html($('.ip__comparison').eq(0)),
-    options: ipBg,
+    options: { ...ipBg, maxWidth: '600px' },
   },
   {
     name: 'ip-comparison-processing-temp',
     extract: ($) => $.html($('.ip__comparison').eq(1)),
-    options: ipBg,
+    options: { ...ipBg, maxWidth: '600px' },
   },
   {
     name: 'ip-comparison-volume',
     extract: ($) => $.html($('.ip__comparison').eq(2)),
-    options: ipBg,
+    options: { ...ipBg, maxWidth: '600px' },
   },
   {
     name: 'ip-comparison-oligomer',
     extract: ($) => $.html($('.ip__comparison').eq(3)),
-    options: ipBg,
+    options: { ...ipBg, maxWidth: '600px' },
   },
 
   // ── Data (7) — navy background ────────────────────────────────────────────
@@ -336,32 +338,32 @@ const componentMappings = [
   {
     name: 'data-tile-tensile',
     extract: ($) => $.html($('.data-tile').eq(0)),
-    options: dataBg,
+    options: { ...dataBg, maxWidth: '420px' },
   },
   {
     name: 'data-tile-contact-angle',
     extract: ($) => $.html($('.data-tile').eq(1)),
-    options: dataBg,
+    options: { ...dataBg, maxWidth: '420px' },
   },
   {
     name: 'data-tile-repulpability',
     extract: ($) => $.html($('.data-tile').eq(2)),
-    options: dataBg,
+    options: { ...dataBg, maxWidth: '420px' },
   },
   {
     name: 'data-tile-recyclability',
     extract: ($) => $.html($('.data-tile').eq(3)),
-    options: dataBg,
+    options: { ...dataBg, maxWidth: '420px' },
   },
   {
     name: 'data-tile-food-safe',
     extract: ($) => $.html($('.data-tile').eq(4)),
-    options: dataBg,
+    options: { ...dataBg, maxWidth: '420px' },
   },
   {
     name: 'data-tile-acoustic',
     extract: ($) => $.html($('.data-tile').eq(5)),
-    options: dataBg,
+    options: { ...dataBg, maxWidth: '420px' },
   },
 
   // ── Contact (3) — cream background ────────────────────────────────────────
