@@ -311,9 +311,8 @@
         .nav {
             position: fixed;
             top: 0; left: 0; right: 0;
-            z-index: 100;
-            background: rgba(14, 26, 20, 0.92);
-            backdrop-filter: blur(16px) saturate(1.5);
+            z-index: 9999;
+            background: #0E1A14;
             border-bottom: 1px solid rgba(255,255,255,0.06);
             transition: all 0.3s var(--ease-out);
         }
@@ -334,6 +333,12 @@
             font-family: var(--font-display);
             font-size: 1.35rem;
             text-decoration: none;
+            overflow: visible;
+        }
+        .nav__logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
         }
         .nav__brand-icon {
             width: 36px;
@@ -405,9 +410,10 @@
                 padding: 2rem;
                 gap: 1.5rem;
                 transform: translateY(-110%);
-                transition: transform 0.4s var(--ease-out);
+                visibility: hidden;
+                transition: transform 0.4s var(--ease-out), visibility 0s 0.4s;
             }
-            .nav__links.open { transform: translateY(0); }
+            .nav__links.open { transform: translateY(0); visibility: visible; transition: transform 0.4s var(--ease-out), visibility 0s; }
             .nav__cta { margin-left: 0; margin-top: 0.5rem; }
         }
 
@@ -532,6 +538,8 @@
         }
         @media (max-width: 900px) {
             .hero__diamond { display: none; }
+            .hero__eyebrow::before { width: 1.5rem; }
+            .hero__eyebrow { gap: 0.5rem; }
         }
 
         /* ================================================================
@@ -1812,7 +1820,7 @@
     <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="nav__inner">
             <a href="#hero" class="nav__brand" aria-label="BEST - Home">
-                <img src="images/best-logo.svg" alt="BEST logo" style="height: 48px; width: auto;">
+                <img src="images/best-logo.svg" alt="BEST logo" class="nav__logo">
             </a>
 
             <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="document.querySelector('.nav__links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');">
