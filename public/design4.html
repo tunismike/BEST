@@ -704,6 +704,203 @@
         }
 
         /* ================================================================
+           HYDROPHOBIC SIMULATION MODULE
+           ================================================================ */
+        .sim-module {
+            width: 100%;
+            margin-top: 3.5rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 4px;
+            box-shadow: 0 4px 16px rgba(14,26,20,0.08);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+        }
+        .sim-module .panel-info {
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--gray-200);
+            background: var(--white);
+        }
+        .sim-module .spec-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .sim-module .spec-label::before {
+            content: '';
+            display: block;
+            width: 1.5rem;
+            height: 1px;
+            background: var(--teal);
+        }
+        .sim-module .sim-title {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            color: var(--navy);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .sim-module .sim-desc {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            margin-bottom: 2.5rem;
+        }
+        .sim-module .control-group { margin-bottom: 2.5rem; position: relative; }
+        .sim-module .auto-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 10px;
+            border-radius: 2px;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: var(--teal-dim);
+            color: var(--teal);
+            border: 1px solid var(--teal);
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
+            margin-bottom: 0.5rem;
+        }
+        .sim-module .auto-badge.visible { opacity: 1; }
+        .sim-module .auto-badge .pulse-dot {
+            width: 5px; height: 5px; border-radius: 50%;
+            background: var(--teal);
+            animation: sim-pulse 1.5s ease-in-out infinite;
+        }
+        @keyframes sim-pulse {
+            0%, 100% { opacity: 0.4; box-shadow: 0 0 0 0 rgba(45,122,79,0.3); }
+            50% { opacity: 1; box-shadow: 0 0 6px 2px rgba(45,122,79,0.5); }
+        }
+        .sim-module .control-header {
+            display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.75rem;
+        }
+        .sim-module .control-label {
+            font-family: var(--font-mono); font-size: 0.85rem; font-weight: 500;
+            color: var(--navy); text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .sim-module .control-value {
+            font-family: var(--font-mono); font-size: 1.125rem; font-weight: 500; color: var(--teal);
+        }
+        .sim-module .slider-wrapper {
+            position: relative; height: 32px; display: flex; align-items: center; width: 100%;
+        }
+        .sim-module .slider-track {
+            position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+            width: 100%; height: 2px; background: var(--gray-200); z-index: 1;
+        }
+        .sim-module .slider-fill {
+            position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+            height: 2px; background: var(--teal); z-index: 2; transition: width 0.1s linear;
+        }
+        .sim-module input[type=range] {
+            -webkit-appearance: none; width: 100%; background: transparent;
+            z-index: 3; position: relative; cursor: pointer; height: 100%;
+        }
+        .sim-module input[type=range]:focus { outline: none; }
+        .sim-module input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none;
+            height: 18px; width: 8px; background: var(--white);
+            border: 2px solid var(--navy); border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: border-color 0.2s, transform 0.1s;
+        }
+        .sim-module input[type=range]::-webkit-slider-thumb:hover {
+            border-color: var(--teal); transform: scaleY(1.2);
+        }
+        .sim-module .data-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+            margin-top: auto; border-top: 1px solid var(--gray-200); padding-top: 2rem;
+        }
+        .sim-module .data-item { display: flex; flex-direction: column; height: 100%; }
+        .sim-module .data-item-label {
+            font-family: var(--font-body); font-size: 0.8rem; color: var(--gray-500);
+            margin-bottom: auto; text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .sim-module .data-item-value-input {
+            font-family: var(--font-mono); font-size: 1.75rem; color: var(--navy); font-weight: 400;
+            line-height: 1.2; border: none; border-bottom: 2px solid transparent; outline: none;
+            background: transparent; width: 100%; transition: border-color 0.2s;
+            -moz-appearance: textfield; appearance: textfield; padding: 0; margin: 0; margin-top: 0.25rem;
+        }
+        .sim-module .data-item-value-input:focus { border-bottom: 2px solid var(--teal); }
+        .sim-module .data-item-value-input::-webkit-outer-spin-button,
+        .sim-module .data-item-value-input::-webkit-inner-spin-button {
+            -webkit-appearance: none; appearance: none; margin: 0;
+        }
+        .sim-module .status-container {
+            margin-top: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+            padding: 0.75rem 1rem; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 2px;
+        }
+        .sim-module .status-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: var(--gray-400); box-shadow: 0 0 0 3px var(--gray-200); transition: background 0.3s, box-shadow 0.3s;
+        }
+        .sim-module .status-dot.active-hydrophobic { background: var(--teal); box-shadow: 0 0 0 3px var(--teal-dim); }
+        .sim-module .status-dot.active-super { background: var(--gold); box-shadow: 0 0 0 3px var(--gold-dim); }
+        .sim-module .status-text {
+            font-family: var(--font-mono); font-size: 0.8rem; color: var(--navy); font-weight: 500;
+        }
+        .sim-module .panel-viz {
+            background: var(--cream-warm); position: relative;
+            display: flex; justify-content: center; align-items: center; padding: 2rem;
+        }
+        .sim-module .canvas-wrapper {
+            position: relative; width: 100%; max-width: 480px; aspect-ratio: 1/1;
+            background: var(--white); border: 1px solid var(--gray-300); box-shadow: 0 2px 8px rgba(14,26,20,0.05);
+        }
+        .sim-module .canvas-wrapper::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background-image: linear-gradient(var(--gray-100) 1px, transparent 1px),
+                              linear-gradient(90deg, var(--gray-100) 1px, transparent 1px);
+            background-size: 20px 20px; background-position: center bottom; z-index: 0; opacity: 0.7;
+        }
+        .sim-module .canvas-wrapper::after {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            border: 1px solid var(--teal-dim); pointer-events: none; z-index: 2;
+        }
+        .sim-module canvas { position: relative; z-index: 1; width: 100%; height: 100%; display: block; }
+        .sim-module .viz-label {
+            position: absolute; font-family: var(--font-mono); font-size: 0.7rem;
+            color: var(--gray-500); letter-spacing: 0.05em; z-index: 2;
+        }
+        .sim-module .viz-label.top-left { top: 1rem; left: 1rem; }
+        .sim-module .viz-label.bottom-right { bottom: 1rem; right: 1rem; }
+        .sim-module .mobile-slider-target,
+        .sim-module .mobile-data-target { display: none; }
+
+        @media (max-width: 800px) {
+            .sim-module { display: flex; flex-direction: column-reverse; }
+            .sim-module .panel-info {
+                border-right: none; border-top: 1px solid var(--gray-200); padding: 1.5rem;
+            }
+            .sim-module .sim-title { font-size: 2rem; margin-bottom: 0.5rem; }
+            .sim-module .sim-desc { margin-bottom: 1.5rem; }
+            .sim-module .status-container { margin-top: 0; margin-bottom: 0.75rem; }
+            .sim-module .data-grid { padding-top: 1.5rem; }
+            .sim-module .panel-viz {
+                padding: 1.5rem; flex-direction: column; gap: 0.75rem;
+            }
+            .sim-module .control-group { margin-bottom: 0; }
+            .sim-module .canvas-wrapper { width: 100%; }
+            .sim-module .mobile-slider-target,
+            .sim-module .mobile-data-target { display: block; width: 100%; }
+        }
+
+        /* ================================================================
            DIAMOND MOTIF SVG
            ================================================================ */
         .diamond-section {
@@ -1280,13 +1477,13 @@
         .data-tile__unit {
             font-family: var(--font-mono);
             font-size: 0.75rem;
-            color: rgba(255,255,255,0.35);
+            color: rgba(255,255,255,0.65);
             margin-bottom: 1rem;
         }
         .data-tile__source {
             font-family: var(--font-mono);
             font-size: 0.75rem;
-            color: rgba(255,255,255,0.25);
+            color: rgba(255,255,255,0.55);
             border-top: 1px solid rgba(255,255,255,0.06);
             padding-top: 0.75rem;
         }
@@ -1551,11 +1748,13 @@
             width: 100%;
             aspect-ratio: 16/9;
             background: var(--gray-50);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
         }
-        .modal__image i { font-size: 3rem; color: var(--gray-200); }
+        .modal__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         .modal__body {
             padding: 2rem 2.5rem 2.5rem;
         }
@@ -1624,8 +1823,8 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#chemistry">Chemistry</a></li>
                 <li><a href="#products">Products</a></li>
-                <li><a href="#leadership">Leadership</a></li>
                 <li><a href="#ip">IP</a></li>
+                <li><a href="#leadership">Leadership</a></li>
                 <li><a href="#data">Data</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li class="nav__cta"><a href="#contact" class="btn btn--primary btn--sm"><i class="fa-solid fa-flask-vial"></i> Request Technical Data</a></li>
@@ -1753,7 +1952,7 @@
                 <article class="pillar reveal">
                     <div class="pillar__number">STAGE 01</div>
                     <div class="pillar__image">
-                        <img src="assets/design2-img-3.png" alt="Molecular visualization of hydrolysis reaction on cellulose fibers">
+                        <img src="assets/design2-img-3.png" alt="Hydration: cellulose fibers treated with silane emulsion">
                     </div>
                     <h3 class="pillar__title">Hydration</h3>
                     <p class="pillar__text">
@@ -1771,7 +1970,7 @@
                 <article class="pillar reveal">
                     <div class="pillar__number">STAGE 02</div>
                     <div class="pillar__image">
-                        <img src="assets/design2-img-4.png" alt="Visualization of molecular physisorption onto cellulose fiber surface">
+                        <img src="assets/design2-img-4.png" alt="Physisorption: treatment molecules adsorbing onto fiber surface">
                     </div>
                     <h3 class="pillar__title">Physisorption</h3>
                     <p class="pillar__text">
@@ -1789,7 +1988,7 @@
                 <article class="pillar reveal">
                     <div class="pillar__number">STAGE 03</div>
                     <div class="pillar__image">
-                        <img src="assets/design2-img-5.png" alt="Scientific visualization of covalent bonds forming between treatment molecules and cellulose">
+                        <img src="assets/design2-img-5.png" alt="Covalent bonding: Si-O-C bond formation between silane and cellulose">
                     </div>
                     <h3 class="pillar__title">Covalent Bonding</h3>
                     <p class="pillar__text">
@@ -1807,7 +2006,7 @@
                 <article class="pillar reveal">
                     <div class="pillar__number">STAGE 04</div>
                     <div class="pillar__image">
-                        <img src="assets/design2-img-6.png" alt="SEM-style microscopy of cured hydrophobic treatment on cellulose fibers">
+                        <img src="assets/design2-img-6.png" alt="Curing: cross-linked hydrophobic network with water repulsion">
                     </div>
                     <h3 class="pillar__title">Curing</h3>
                     <p class="pillar__text">
@@ -1822,14 +2021,57 @@
                 </article>
             </div>
 
-            <!-- Video placeholder -->
-            <div class="chemistry__video reveal">
-                <div class="chemistry__video-placeholder">
-                    <i class="fa-solid fa-circle-play"></i>
+            <!-- Hydrophobic Simulation Module -->
+            <div class="sim-module reveal">
+                <div class="panel-info">
+                    <div class="spec-label">Simulation</div>
+                    <h2 class="sim-title">Surface Wettability</h2>
+                    <p class="sim-desc">
+                        Adjust the concentration of our advanced cellulose additive (C<sub>h</sub>) to observe the transition
+                        from a hydrophilic baseline to a stable superhydrophobic state.
+                    </p>
+                    <div id="desktopSliderContainer">
+                        <div class="control-group" id="sliderGroup">
+                            <div class="control-header">
+                                <div class="auto-badge" id="autoBadge"><span class="pulse-dot"></span>AUTO</div>
+                                <span class="control-label">Additive Conc.</span>
+                                <span class="control-value" id="concVal">0.00%</span>
+                            </div>
+                            <div class="slider-wrapper">
+                                <div class="slider-track"></div>
+                                <div class="slider-fill" id="sliderFill" style="width: 0%;"></div>
+                                <input type="range" id="concSlider" min="0" max="100" step="any" value="0.00" aria-label="Concentration">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="desktopDataContainer">
+                        <div id="dataGroup">
+                            <div class="data-grid">
+                                <div class="data-item">
+                                    <span class="data-item-label">Contact Angle (&theta;) (deg)</span>
+                                    <input type="number" class="data-item-value-input" id="angleVal" value="70.0" step="0.1" min="70" max="165">
+                                </div>
+                                <div class="data-item">
+                                    <span class="data-item-label">Est. Cost / m&sup2; ($)</span>
+                                    <input type="number" class="data-item-value-input" id="costVal" value="2.50" step="0.1" min="2.50" max="45.00">
+                                </div>
+                            </div>
+                            <div class="status-container">
+                                <div class="status-dot" id="statusIndicator"></div>
+                                <span class="status-text" id="statusText">State: Hydrophilic (Wetting)</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="chemistry__video-caption">
-                    <i class="fa-solid fa-video"></i> &nbsp; Explainer video placeholder &mdash; Technical overview of BEST molecular modification chemistry
-                </p>
+                <div class="panel-viz">
+                    <div class="canvas-wrapper">
+                        <span class="viz-label top-left">FIG 1. DROPLET PROFILE</span>
+                        <span class="viz-label bottom-right">SCALE: 10&mu;m : 1px</span>
+                        <canvas id="dropletCanvas" width="480" height="480"></canvas>
+                    </div>
+                    <div id="mobileDataContainer" class="mobile-data-target"></div>
+                    <div id="mobileSliderContainer" class="mobile-slider-target"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -1950,6 +2192,117 @@
     </section>
 
     <!-- ================================================================
+         INTELLECTUAL PROPERTY
+         ================================================================ -->
+    <section id="ip" class="ip">
+        <div class="container">
+            <div class="section-label reveal">Intellectual Property</div>
+            <h2 class="section-heading reveal">Patent Portfolio</h2>
+            <p class="ip__intro reveal">
+                BEST&rsquo;s technology platform is protected by issued U.S. patents covering both
+                our core hydrophobic cellulose treatment process and our proprietary product designs.
+            </p>
+
+            <div class="ip__portfolio">
+                <!-- Patent 1: Utility — Hydrophobic Chemistry -->
+                <div class="ip__patent ip__patent--utility reveal">
+                    <div class="ip__patent-accent"></div>
+                    <i class="fa-solid fa-flask-vial ip__patent-icon"></i>
+                    <div class="ip__patent-body">
+                        <div class="ip__patent-type">
+                            <i class="fa-solid fa-shield-halved"></i> Utility Patent
+                        </div>
+                        <div class="ip__patent-number">US 9,605,384 B2</div>
+                        <h3 class="ip__patent-title">Hydrophobic Paper, Cardboard, and Packaging</h3>
+                        <div class="ip__patent-meta">
+                            <div class="ip__patent-meta-item">
+                                <strong>Granted</strong>
+                                March 28, 2017
+                            </div>
+                            <div class="ip__patent-meta-item">
+                                <strong>Priority</strong>
+                                February 22, 2010
+                            </div>
+                        </div>
+                        <p class="ip__patent-desc">
+                            Covers the manufacturing process for producing inherently water-resistant paper
+                            by incorporating alkoxysilane compounds directly into cellulose pulp. The silane
+                            residue bonds uniformly throughout the sheet via Si&ndash;O bonds during standard
+                            papermaking&mdash;no surface coatings or PFAS required.
+                        </p>
+                        <div class="ip__patent-claims-label">Key Claims</div>
+                        <ul class="ip__patent-claims">
+                            <li><span class="ip__patent-claim-marker"></span>Process for manufacturing hydrophobic paper from alkoxysilane-treated cellulose pulp through sheet forming, compression, and drying</li>
+                            <li><span class="ip__patent-claim-marker"></span>Silane residue substantially uniformly distributed and bonded to cellulosic fibers predominantly through Si&ndash;O bonds</li>
+                            <li><span class="ip__patent-claim-marker"></span>Aqueous-medium formulation compatible with existing paper mill equipment at standard processing conditions</li>
+                        </ul>
+                        <a href="https://patents.google.com/patent/US9605384B2/en" target="_blank" rel="noopener" class="ip__patent-link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> View on Google Patents
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Patent 2: Design — Flowerpot -->
+                <div class="ip__patent ip__patent--design reveal">
+                    <div class="ip__patent-accent"></div>
+                    <i class="fa-solid fa-seedling ip__patent-icon"></i>
+                    <div class="ip__patent-body">
+                        <div class="ip__patent-type">
+                            <i class="fa-solid fa-shield-halved"></i> Design Patent
+                        </div>
+                        <div class="ip__patent-number">US 11,304,381 B2</div>
+                        <h3 class="ip__patent-title">Decomposable Plant Container with Rings and Related Methods</h3>
+                        <div class="ip__patent-meta">
+                            <div class="ip__patent-meta-item">
+                                <strong>Granted</strong>
+                                April 19, 2022
+                            </div>
+                            <div class="ip__patent-meta-item">
+                                <strong>Filed</strong>
+                                November 4, 2019
+                            </div>
+                        </div>
+                        <p class="ip__patent-desc">
+                            Patented modular plant container constructed from decomposable cellulose-based
+                            materials. Interlocking slot-and-tab design allows flat shipping and on-site assembly.
+                            The entire container biodegrades in soil&mdash;no pot removal required at planting.
+                        </p>
+                        <div class="ip__patent-claims-label">Key Claims</div>
+                        <ul class="ip__patent-claims">
+                            <li><span class="ip__patent-claim-marker"></span>Vertical wall with vertically aligned slot sets, panel bottom with tabs, and structural support rings</li>
+                            <li><span class="ip__patent-claim-marker"></span>Flat-pack components assembled via opposing coplanar tab sets into slot sets</li>
+                            <li><span class="ip__patent-claim-marker"></span>Constructed entirely from decomposable material for in-soil biodegradation</li>
+                        </ul>
+                        <a href="https://patents.google.com/patent/US11304381B2/en" target="_blank" rel="noopener" class="ip__patent-link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> View on Google Patents
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Summary -->
+            <div class="ip__summary">
+                <div class="ip__summary-item reveal">
+                    <div class="ip__summary-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="ip__summary-value">2</div>
+                    <div class="ip__summary-label">Issued U.S. Patents</div>
+                </div>
+                <div class="ip__summary-item reveal">
+                    <div class="ip__summary-icon"><i class="fa-solid fa-flask-vial"></i></div>
+                    <div class="ip__summary-value">Process &amp; Product</div>
+                    <div class="ip__summary-label">Coverage Scope</div>
+                </div>
+                <div class="ip__summary-item reveal">
+                    <div class="ip__summary-icon"><i class="fa-solid fa-ban"></i></div>
+                    <div class="ip__summary-value">PFAS-Free</div>
+                    <div class="ip__summary-label">Regulatory Advantage</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================================================================
          LEADERSHIP
          ================================================================ -->
     <section id="leadership" class="leadership">
@@ -2015,125 +2368,6 @@
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ================================================================
-         INTELLECTUAL PROPERTY
-         ================================================================ -->
-    <section id="ip" class="ip">
-        <div class="container">
-            <div class="section-label reveal">Intellectual Property</div>
-            <h2 class="section-heading reveal">Patent Portfolio</h2>
-            <p class="ip__intro reveal">
-                BEST&rsquo;s technology platform is protected by issued U.S. patents covering both
-                our core hydrophobic cellulose treatment process and our proprietary product designs.
-            </p>
-
-            <div class="ip__portfolio">
-                <!-- Patent 1: Utility — Hydrophobic Chemistry -->
-                <div class="ip__patent ip__patent--utility reveal">
-                    <div class="ip__patent-accent"></div>
-                    <i class="fa-solid fa-flask-vial ip__patent-icon"></i>
-                    <div class="ip__patent-body">
-                        <div class="ip__patent-type">
-                            <i class="fa-solid fa-shield-halved"></i> Utility Patent
-                        </div>
-                        <div class="ip__patent-number">US 9,605,384 B2</div>
-                        <h3 class="ip__patent-title">Hydrophobic Paper, Cardboard, and Packaging</h3>
-                        <div class="ip__patent-meta">
-                            <div class="ip__patent-meta-item">
-                                <strong>Granted</strong>
-                                March 28, 2017
-                            </div>
-                            <div class="ip__patent-meta-item">
-                                <strong>Priority</strong>
-                                February 22, 2010
-                            </div>
-                            <div class="ip__patent-meta-item">
-                                <strong>Assignee</strong>
-                                STL Sustainable Technologies
-                            </div>
-                        </div>
-                        <p class="ip__patent-desc">
-                            Covers the manufacturing process for producing inherently water-resistant paper
-                            by incorporating alkoxysilane compounds directly into cellulose pulp. The silane
-                            residue bonds uniformly throughout the sheet via Si&ndash;O bonds during standard
-                            papermaking&mdash;no surface coatings or PFAS required.
-                        </p>
-                        <div class="ip__patent-claims-label">Key Claims</div>
-                        <ul class="ip__patent-claims">
-                            <li><span class="ip__patent-claim-marker"></span>Process for manufacturing hydrophobic paper from alkoxysilane-treated cellulose pulp through sheet forming, compression, and drying</li>
-                            <li><span class="ip__patent-claim-marker"></span>Silane residue substantially uniformly distributed and bonded to cellulosic fibers predominantly through Si&ndash;O bonds</li>
-                            <li><span class="ip__patent-claim-marker"></span>Aqueous-medium formulation compatible with existing paper mill equipment at standard processing conditions</li>
-                        </ul>
-                        <a href="https://patents.google.com/patent/US9605384B2/en" target="_blank" rel="noopener" class="ip__patent-link">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i> View on Google Patents
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Patent 2: Design — Flowerpot -->
-                <div class="ip__patent ip__patent--design reveal">
-                    <div class="ip__patent-accent"></div>
-                    <i class="fa-solid fa-seedling ip__patent-icon"></i>
-                    <div class="ip__patent-body">
-                        <div class="ip__patent-type">
-                            <i class="fa-solid fa-shield-halved"></i> Design Patent
-                        </div>
-                        <div class="ip__patent-number">US 11,304,381 B2</div>
-                        <h3 class="ip__patent-title">Decomposable Plant Container with Rings and Related Methods</h3>
-                        <div class="ip__patent-meta">
-                            <div class="ip__patent-meta-item">
-                                <strong>Granted</strong>
-                                April 19, 2022
-                            </div>
-                            <div class="ip__patent-meta-item">
-                                <strong>Filed</strong>
-                                November 4, 2019
-                            </div>
-                            <div class="ip__patent-meta-item">
-                                <strong>Assignee</strong>
-                                Be Sustainable Technologies
-                            </div>
-                        </div>
-                        <p class="ip__patent-desc">
-                            Patented modular plant container constructed from decomposable cellulose-based
-                            materials. Interlocking slot-and-tab design allows flat shipping and on-site assembly.
-                            The entire container biodegrades in soil&mdash;no pot removal required at planting.
-                        </p>
-                        <div class="ip__patent-claims-label">Key Claims</div>
-                        <ul class="ip__patent-claims">
-                            <li><span class="ip__patent-claim-marker"></span>Vertical wall with vertically aligned slot sets, panel bottom with tabs, and structural support rings</li>
-                            <li><span class="ip__patent-claim-marker"></span>Flat-pack components assembled via opposing coplanar tab sets into slot sets</li>
-                            <li><span class="ip__patent-claim-marker"></span>Constructed entirely from decomposable material for in-soil biodegradation</li>
-                        </ul>
-                        <a href="https://patents.google.com/patent/US11304381B2/en" target="_blank" rel="noopener" class="ip__patent-link">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i> View on Google Patents
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Portfolio Summary -->
-            <div class="ip__summary">
-                <div class="ip__summary-item reveal">
-                    <div class="ip__summary-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div class="ip__summary-value">2</div>
-                    <div class="ip__summary-label">Issued U.S. Patents</div>
-                </div>
-                <div class="ip__summary-item reveal">
-                    <div class="ip__summary-icon"><i class="fa-solid fa-flask-vial"></i></div>
-                    <div class="ip__summary-value">Process &amp; Product</div>
-                    <div class="ip__summary-label">Coverage Scope</div>
-                </div>
-                <div class="ip__summary-item reveal">
-                    <div class="ip__summary-icon"><i class="fa-solid fa-ban"></i></div>
-                    <div class="ip__summary-value">PFAS-Free</div>
-                    <div class="ip__summary-label">Regulatory Advantage</div>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -2408,7 +2642,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div class="modal__image">
-                <i class="fa-solid fa-image"></i>
+                <img id="modal-img" src="" alt="">
             </div>
             <div class="modal__body">
                 <h3 class="modal__title" id="modal-title">Product Name</h3>
@@ -2464,7 +2698,7 @@
             paper: {
                 title: 'The BEST Solution\u2122, Paper',
                 text: 'Our flagship hydrophobic paper treatment delivers increased strength and Cobb value reductions exceeding 70% while maintaining full repulpability per TAPPI T-205 standards. The PFAS-free formulation is compatible with existing paper machine wet-end and size-press application equipment, requiring no additional capital expenditures. Contact our technical team for substrate-specific formulation recommendations and trial scheduling.',
-                image: 'assets/product-paper.png'
+                image: 'assets/coated-vs-uncoated.png'
             },
             pallet: {
                 title: 'The BEST Pallet\u2122',
@@ -2492,6 +2726,9 @@
             if (!data) return;
             document.getElementById('modal-title').textContent = data.title;
             document.getElementById('modal-text').textContent = data.text;
+            const img = document.getElementById('modal-img');
+            img.src = data.image;
+            img.alt = data.title;
             document.getElementById('product-modal').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -2517,6 +2754,240 @@
                 document.querySelector('.nav__links').classList.remove('open');
             });
         });
+    </script>
+
+    <!-- Hydrophobic Simulation -->
+    <script>
+    (function() {
+        const slider = document.getElementById('concSlider');
+        const sliderFill = document.getElementById('sliderFill');
+        const concVal = document.getElementById('concVal');
+        const angleVal = document.getElementById('angleVal');
+        const costVal = document.getElementById('costVal');
+        const statusIndicator = document.getElementById('statusIndicator');
+        const statusText = document.getElementById('statusText');
+        const canvas = document.getElementById('dropletCanvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+
+        const colors = {
+            navy: '#0E1A14', teal: '#2D7A4F', tealDim: 'rgba(45,122,79,0.1)',
+            gold: '#C9A040', goldDim: 'rgba(201,160,64,0.15)',
+            gray200: '#C4CAB8', gray400: '#828A72', gray500: '#636B58'
+        };
+
+        function updateVisuals(conc, currentAngle) {
+            const percentage = conc / 100;
+            const offset = 4 - (percentage * 8);
+            sliderFill.style.width = 'calc(' + conc + '% + ' + offset + 'px)';
+            concVal.innerText = conc.toFixed(2) + '%';
+            updateStatus(currentAngle);
+            drawCanvas(currentAngle);
+        }
+
+        function updateFromSlider() {
+            const conc = parseFloat(slider.value) || 0;
+            const p = conc / 100;
+            const currentAngle = 70 + Math.sin(p * Math.PI / 2) * 95;
+            const cost = 2.50 + Math.pow(p, 1.8) * 42.50;
+            angleVal.value = currentAngle.toFixed(1);
+            costVal.value = cost.toFixed(2);
+            updateVisuals(conc, currentAngle);
+        }
+
+        function updateFromAngle() {
+            let angle = parseFloat(angleVal.value);
+            if (isNaN(angle)) return;
+            const renderAngle = Math.max(70, Math.min(165, angle));
+            const sinVal = (renderAngle - 70) / 95;
+            const p = Math.asin(Math.max(0, Math.min(1, sinVal))) * 2 / Math.PI;
+            const exactConc = p * 100;
+            const cost = 2.50 + Math.pow(p, 1.8) * 42.50;
+            slider.value = exactConc;
+            costVal.value = cost.toFixed(2);
+            updateVisuals(exactConc, renderAngle);
+        }
+
+        function updateFromCost() {
+            let cost = parseFloat(costVal.value);
+            if (isNaN(cost)) return;
+            const renderCost = Math.max(2.5, Math.min(45, cost));
+            const powVal = (renderCost - 2.50) / 42.50;
+            const p = Math.pow(Math.max(0, Math.min(1, powVal)), 1 / 1.8);
+            const exactConc = p * 100;
+            const angle = 70 + Math.sin(p * Math.PI / 2) * 95;
+            slider.value = exactConc;
+            angleVal.value = angle.toFixed(1);
+            updateVisuals(exactConc, angle);
+        }
+
+        function updateStatus(angle) {
+            statusIndicator.className = 'status-dot';
+            if (angle < 90) {
+                statusText.innerText = 'State: Hydrophilic (Wetting)';
+            } else if (angle < 150) {
+                statusText.innerText = 'State: Hydrophobic';
+                statusIndicator.classList.add('active-hydrophobic');
+            } else {
+                statusText.innerText = 'State: Superhydrophobic';
+                statusIndicator.classList.add('active-super');
+            }
+        }
+
+        function drawCanvas(thetaDeg) {
+            const w = parseFloat(canvas.style.width) || canvas.parentElement.clientWidth;
+            const h = parseFloat(canvas.style.height) || canvas.parentElement.clientHeight;
+            ctx.clearRect(0, 0, w, h);
+            const centerX = w / 2;
+            const baseY = h * 0.75;
+            const thetaRad = thetaDeg * Math.PI / 180;
+            const baseArea = 22000;
+            const areaRatio = Math.max(0.1, thetaRad - Math.sin(thetaRad) * Math.cos(thetaRad));
+            const R = Math.sqrt(baseArea / areaRatio);
+            const cy = baseY + R * Math.cos(thetaRad);
+            const leftAngle = Math.atan2(-Math.cos(thetaRad), -Math.sin(thetaRad));
+            const rightAngle = Math.atan2(-Math.cos(thetaRad), Math.sin(thetaRad));
+            const contactRadius = R * Math.sin(thetaRad);
+
+            ctx.beginPath(); ctx.moveTo(40, baseY); ctx.lineTo(w - 40, baseY);
+            ctx.strokeStyle = colors.gray400; ctx.lineWidth = 2; ctx.stroke();
+
+            ctx.beginPath();
+            for (let i = 40; i < w - 40; i += 15) { ctx.moveTo(i, baseY); ctx.lineTo(i - 10, baseY + 15); }
+            ctx.strokeStyle = colors.gray200; ctx.lineWidth = 1; ctx.stroke();
+
+            const stateColors = thetaDeg >= 150
+                ? { fill: 'rgba(201,160,64,0.25)', stroke: '#B8860B', accent: '#C9A040' }
+                : thetaDeg >= 90
+                    ? { fill: 'rgba(45,122,79,0.2)', stroke: '#1E5A38', accent: '#2D7A4F' }
+                    : { fill: 'rgba(100,140,120,0.15)', stroke: '#4A6A5A', accent: '#5B7E6A' };
+
+            ctx.beginPath(); ctx.arc(centerX, cy, R, leftAngle, rightAngle, false); ctx.closePath();
+            ctx.fillStyle = stateColors.fill; ctx.fill();
+            ctx.strokeStyle = stateColors.stroke; ctx.lineWidth = 2.5; ctx.setLineDash([]); ctx.stroke();
+
+            ctx.beginPath(); ctx.moveTo(centerX, baseY + 20); ctx.lineTo(centerX, cy - R - 30);
+            ctx.strokeStyle = colors.gray400; ctx.lineWidth = 1; ctx.setLineDash([5, 5]); ctx.stroke();
+
+            const CPx = centerX + contactRadius; const CPy = baseY;
+            const tanLength = 80;
+            const endX = CPx - Math.cos(thetaRad) * tanLength;
+            const endY = CPy - Math.sin(thetaRad) * tanLength;
+            ctx.beginPath(); ctx.moveTo(CPx, CPy); ctx.lineTo(endX, endY);
+            ctx.strokeStyle = stateColors.accent; ctx.lineWidth = 1.5; ctx.setLineDash([4, 2]); ctx.stroke();
+
+            ctx.beginPath(); const arcRadius = 40;
+            ctx.arc(CPx, CPy, arcRadius, Math.PI, Math.PI + thetaRad, false);
+            ctx.strokeStyle = stateColors.accent; ctx.lineWidth = 1.5; ctx.setLineDash([]); ctx.stroke();
+
+            ctx.fillStyle = colors.navy; ctx.font = '13px "IBM Plex Mono"';
+            ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+            const txtAngle = thetaRad / 2;
+            const txtX = CPx + Math.cos(Math.PI + txtAngle) * (arcRadius + 15);
+            const txtY = CPy + Math.sin(Math.PI + txtAngle) * (arcRadius + 15);
+            ctx.fillText('\u03B8 = ' + thetaDeg.toFixed(1) + '\u00B0', txtX, txtY);
+
+            const dimY = baseY + 30;
+            ctx.beginPath();
+            ctx.moveTo(centerX - contactRadius, baseY + 10); ctx.lineTo(centerX - contactRadius, dimY + 5);
+            ctx.moveTo(centerX + contactRadius, baseY + 10); ctx.lineTo(centerX + contactRadius, dimY + 5);
+            ctx.moveTo(centerX - contactRadius, dimY); ctx.lineTo(centerX + contactRadius, dimY);
+            ctx.strokeStyle = colors.gray500; ctx.lineWidth = 1; ctx.stroke();
+            ctx.fillStyle = colors.gray500; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+            ctx.fillText('d = ' + (contactRadius * 2).toFixed(1) + ' \u03BCm', centerX, dimY + 8);
+        }
+
+        function setupCanvas() {
+            if (!canvas.parentElement) return;
+            const rect = canvas.parentElement.getBoundingClientRect();
+            const dpr = window.devicePixelRatio || 1;
+            const size = rect.width;
+            canvas.width = size * dpr; canvas.height = size * dpr;
+            ctx.scale(dpr, dpr);
+            canvas.style.width = size + 'px'; canvas.style.height = size + 'px';
+            updateFromSlider();
+        }
+
+        function handleLayoutChange(e) {
+            const sliderGroup = document.getElementById('sliderGroup');
+            const mobileSliderTarget = document.getElementById('mobileSliderContainer');
+            const desktopSliderTarget = document.getElementById('desktopSliderContainer');
+            const dataGroup = document.getElementById('dataGroup');
+            const mobileDataTarget = document.getElementById('mobileDataContainer');
+            const desktopDataTarget = document.getElementById('desktopDataContainer');
+            if (e.matches) {
+                mobileSliderTarget.appendChild(sliderGroup);
+                mobileDataTarget.appendChild(dataGroup);
+            } else {
+                desktopSliderTarget.appendChild(sliderGroup);
+                desktopDataTarget.appendChild(dataGroup);
+            }
+        }
+
+        const mediaQuery = window.matchMedia('(max-width: 800px)');
+        mediaQuery.addEventListener('change', handleLayoutChange);
+        handleLayoutChange(mediaQuery);
+
+        window.addEventListener('resize', setupCanvas);
+        window.addEventListener('load', setupCanvas);
+        slider.addEventListener('input', updateFromSlider);
+        angleVal.addEventListener('input', updateFromAngle);
+        costVal.addEventListener('input', updateFromCost);
+
+        angleVal.addEventListener('change', function() {
+            let val = parseFloat(angleVal.value);
+            if (isNaN(val)) val = 70;
+            if (val < 70) { angleVal.value = '70.0'; updateFromAngle(); }
+            else if (val > 165) { angleVal.value = '165.0'; updateFromAngle(); }
+        });
+        costVal.addEventListener('change', function() {
+            let val = parseFloat(costVal.value);
+            if (isNaN(val)) val = 2.5;
+            if (val < 2.5) { costVal.value = '2.50'; updateFromCost(); }
+            else if (val > 45) { costVal.value = '45.00'; updateFromCost(); }
+        });
+
+        let autoAnimId = null, autoStartTime = null;
+        const autoBadge = document.getElementById('autoBadge');
+
+        function startAutoDemo() {
+            autoStartTime = performance.now();
+            autoBadge.classList.add('visible');
+            function animate(now) {
+                const elapsed = (now - autoStartTime) / 1000;
+                const sineVal = (Math.sin(elapsed * Math.PI / 5 - Math.PI / 2) + 1) / 2;
+                slider.value = sineVal * 100;
+                updateFromSlider();
+                autoAnimId = requestAnimationFrame(animate);
+            }
+            autoAnimId = requestAnimationFrame(animate);
+        }
+
+        function stopAutoDemo() {
+            if (autoAnimId !== null) {
+                cancelAnimationFrame(autoAnimId); autoAnimId = null;
+                autoBadge.classList.remove('visible');
+            }
+        }
+
+        slider.addEventListener('input', stopAutoDemo);
+        slider.addEventListener('mousedown', stopAutoDemo);
+        slider.addEventListener('touchstart', stopAutoDemo);
+        angleVal.addEventListener('focus', stopAutoDemo);
+        costVal.addEventListener('focus', stopAutoDemo);
+
+        // Start auto-demo when module scrolls into view
+        const simModule = document.querySelector('.sim-module');
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting && autoAnimId === null) {
+                    setupCanvas();
+                    setTimeout(startAutoDemo, 500);
+                }
+            });
+        }, { threshold: 0.3 });
+        observer.observe(simModule);
+    })();
     </script>
 </body>
 </html>
