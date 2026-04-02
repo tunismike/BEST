@@ -114,6 +114,20 @@
             --gold:       #C9A040;
             --gold-light: #DABA55;
             --gold-dim:   rgba(201, 160, 64, 0.12);
+            --terra:        #B85C38;
+            --terra-light:  #D4825F;
+            --terra-dim:    rgba(184,92,56,0.12);
+            --terra-dark:   #2C1F17;
+            --terra-cream:  #F2EBE0;
+            --terra-cream-warm: #E8DFD0;
+            --terra-white:  #FAF7F2;
+            --terra-gray-50:  #F0EAE1;
+            --terra-gray-100: #E5DDD2;
+            --terra-gray-200: #CFC5B5;
+            --terra-gray-400: #8E826F;
+            --terra-gray-500: #6E6355;
+            --terra-gray-600: #4D443A;
+            --terra-gray-700: #352E27;
             --cream:      #EEF0EA;
             --cream-warm: #E2E6DC;
             --white:      #F6F8F4;
@@ -456,9 +470,9 @@
         }
         .hero__eyebrow {
             font-family: var(--font-mono);
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.2em;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--teal-light);
             margin-bottom: 1.5rem;
@@ -1784,6 +1798,53 @@
         }
 
         /* ================================================================
+           TERRACOTTA OVERRIDES — LIGHT SECTIONS
+           ================================================================ */
+        .about { background: var(--terra-cream); }
+        .about .section-label { color: var(--terra); }
+        .about .section-label::before { background: var(--terra); }
+        .about .section-heading { color: var(--terra-dark); }
+        .about__text p { color: var(--terra-gray-500); }
+        .about__text p:first-of-type { color: var(--terra-gray-600); }
+        .about__image-overlay { background: linear-gradient(transparent, rgba(44,31,23,0.85)); }
+
+        .diamond-section { background: var(--terra-cream-warm); }
+        .diamond-tagline { color: var(--terra-dark); }
+
+        .products { background: var(--terra-cream); }
+        .products .section-label { color: var(--terra); }
+        .products .section-label::before { background: var(--terra); }
+        .products .section-heading { color: var(--terra-dark); }
+        .product-card { background: var(--terra-white); border-color: var(--terra-gray-100); }
+        .product-card:hover { border-color: var(--terra); box-shadow: 0 8px 32px rgba(184,92,56,0.10); }
+        .product-card__image { background: var(--terra-gray-50); }
+        .product-card__title { color: var(--terra-dark); }
+        .product-card__bullets li { color: var(--terra-gray-500); }
+        .product-card__bullets li::before { color: var(--terra); }
+        .product-card__sub { color: var(--terra-gray-400); }
+        .product-card__sub-list li { color: var(--terra-gray-600); background: var(--terra-gray-50); }
+        .products .btn.btn--outline { color: var(--terra); border-color: var(--terra); background: transparent !important; }
+        .products .btn.btn--outline:hover { background: var(--terra) !important; color: var(--terra-white); }
+
+        .leadership { background: var(--terra-white); }
+        .leadership .section-label { color: var(--terra); }
+        .leadership .section-label::before { background: var(--terra); }
+        .leadership .section-heading { color: var(--terra-dark); }
+        .leader__name { color: var(--terra-dark); }
+        .leader__role { color: var(--terra); }
+        .leader__bio { color: var(--terra-gray-500); }
+        .leader__avatar { background: linear-gradient(135deg, var(--terra-dark), #3A2A1F); border-color: var(--terra-gray-100); }
+
+        .footer { background: var(--terra-dark); border-top-color: var(--terra); }
+
+        .modal { background: var(--terra-white); }
+        .modal__image { background: var(--terra-gray-50); }
+        .modal__title { color: var(--terra-dark); }
+        .modal__text { color: var(--terra-gray-500); }
+        .modal__close { color: var(--terra-gray-400); }
+        .modal__close:hover { background: var(--terra-gray-100); color: var(--terra-gray-700); }
+
+        /* ================================================================
            ANIMATIONS
            ================================================================ */
         @keyframes fadeInUp {
@@ -1996,7 +2057,7 @@
                 <article class="pillar reveal">
                     <div class="pillar__number">STAGE 03</div>
                     <div class="pillar__image">
-                        <img src="assets/design2-img-5.png" alt="Covalent bonding: Si-O-C bond formation between silane and cellulose">
+                        <img src="assets/stage3-condensation.png" alt="Covalent bonding: condensation reaction forming Si-O-C bonds between treatment molecule and cellulose fiber">
                     </div>
                     <h3 class="pillar__title">Covalent Bonding</h3>
                     <p class="pillar__text">
