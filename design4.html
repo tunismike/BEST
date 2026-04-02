@@ -311,9 +311,8 @@
         .nav {
             position: fixed;
             top: 0; left: 0; right: 0;
-            z-index: 100;
-            background: rgba(14, 26, 20, 0.92);
-            backdrop-filter: blur(16px) saturate(1.5);
+            z-index: 9999;
+            background: #0E1A14;
             border-bottom: 1px solid rgba(255,255,255,0.06);
             transition: all 0.3s var(--ease-out);
         }
@@ -334,6 +333,12 @@
             font-family: var(--font-display);
             font-size: 1.35rem;
             text-decoration: none;
+            overflow: visible;
+        }
+        .nav__logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
         }
         .nav__brand-icon {
             width: 36px;
@@ -405,9 +410,10 @@
                 padding: 2rem;
                 gap: 1.5rem;
                 transform: translateY(-110%);
-                transition: transform 0.4s var(--ease-out);
+                visibility: hidden;
+                transition: transform 0.4s var(--ease-out), visibility 0s 0.4s;
             }
-            .nav__links.open { transform: translateY(0); }
+            .nav__links.open { transform: translateY(0); visibility: visible; transition: transform 0.4s var(--ease-out), visibility 0s; }
             .nav__cta { margin-left: 0; margin-top: 0.5rem; }
         }
 
@@ -532,6 +538,8 @@
         }
         @media (max-width: 900px) {
             .hero__diamond { display: none; }
+            .hero__eyebrow::before { width: 1.5rem; }
+            .hero__eyebrow { gap: 0.5rem; }
         }
 
         /* ================================================================
@@ -1812,7 +1820,7 @@
     <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="nav__inner">
             <a href="#hero" class="nav__brand" aria-label="BEST - Home">
-                <img src="images/best-logo.svg" alt="BEST logo" style="height: 48px; width: auto;">
+                <img src="images/best-logo.svg" alt="BEST logo" class="nav__logo">
             </a>
 
             <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="document.querySelector('.nav__links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');">
@@ -1860,7 +1868,7 @@
             </div>
             <div class="hero__credibility animate-in animate-in--d4">
                 <div class="hero__stat">
-                    <div class="hero__stat-value">130&deg;</div>
+                    <div class="hero__stat-value">&gt;120&deg;</div>
                     <div class="hero__stat-label">Contact Angle</div>
                 </div>
                 <div class="hero__stat">
@@ -2015,7 +2023,7 @@
                         Controlled heating at process-compatible temperatures (compatible with
                         existing paper machine dryer sections) promotes full network densification.
                         The resulting surface exhibits stable hydrophobic character with contact
-                        angles of 130&deg;, maintained through accelerated aging protocols.
+                        angles exceeding 120&deg;, maintained through accelerated aging protocols.
                         Cured substrates retain full repulpability per TAPPI T-205 standard.
                     </p>
                 </article>
@@ -2411,24 +2419,16 @@
 
                 <!-- Tile 2: Contact Angle -->
                 <div class="data-tile reveal">
-                    <span class="data-tile__badge data-tile__badge--restricted">Restricted</span>
                     <div class="data-tile__icon data-tile__icon--gold">
                         <i class="fa-solid fa-droplet"></i>
                     </div>
                     <div class="data-tile__title">Contact Angle</div>
-                    <div class="data-tile__value">130&deg;</div>
+                    <div class="data-tile__value">&gt;120&deg;</div>
                     <div class="data-tile__unit">Static water contact angle (goniometer)</div>
-                    <div class="data-tile__chart">
-                        <div class="data-tile__bar" style="height:30%; background:var(--gold)"></div>
-                        <div class="data-tile__bar" style="height:50%; background:var(--gold)"></div>
-                        <div class="data-tile__bar" style="height:75%; background:var(--gold)"></div>
-                        <div class="data-tile__bar" style="height:100%; background:var(--gold)"></div>
-                        <div class="data-tile__bar" style="height:100%; background:var(--gold)"></div>
-                        <div class="data-tile__bar" style="height:100%; background:var(--gold)"></div>
-                        <div class="data-tile__bar" style="height:100%; background:var(--gold)"></div>
-                        <div class="data-tile__bar" style="height:100%; background:var(--gold)"></div>
+                    <div style="margin-top: 1rem;">
+                        <svg id="contactAngleSVG" viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;"></svg>
                     </div>
-                    <div class="data-tile__source">Source: Smurfit [placeholder] &mdash; Do not share externally</div>
+                    <div class="data-tile__source">Source: Smurfit</div>
                 </div>
 
                 <!-- Tile 3: Repulpability -->
@@ -2987,6 +2987,85 @@
             });
         }, { threshold: 0.3 });
         observer.observe(simModule);
+    })();
+
+    // Contact Angle static droplet at 120° (SVG)
+    (function() {
+        const svg = document.getElementById('contactAngleSVG');
+        if (!svg) return;
+        const ns = 'http://www.w3.org/2000/svg';
+        const w = 280, h = 120;
+        const thetaDeg = 120, thetaRad = thetaDeg * Math.PI / 180;
+        const centerX = w / 2, baseY = h * 0.85;
+        const baseArea = 8000;
+        const areaRatio = Math.max(0.1, thetaRad - Math.sin(thetaRad) * Math.cos(thetaRad));
+        const R = Math.sqrt(baseArea / areaRatio);
+        const cy = baseY + R * Math.cos(thetaRad);
+        const contactRadius = R * Math.sin(thetaRad);
+
+        function el(tag, attrs) {
+            var e = document.createElementNS(ns, tag);
+            for (var k in attrs) e.setAttribute(k, attrs[k]);
+            return e;
+        }
+
+        // Hatch marks
+        var hatchD = '';
+        for (var i = 20; i < w - 20; i += 12) hatchD += 'M' + i + ',' + baseY + 'l-8,12';
+        svg.appendChild(el('path', { d: hatchD, stroke: '#636B58', 'stroke-width': '0.7', fill: 'none' }));
+
+        // Surface line
+        svg.appendChild(el('line', { x1: 20, y1: baseY, x2: w - 20, y2: baseY, stroke: '#828A72', 'stroke-width': '2' }));
+
+        // Droplet arc
+        var lx = centerX - contactRadius, ly = baseY;
+        var rx = centerX + contactRadius, ry = baseY;
+        svg.appendChild(el('path', {
+            d: 'M' + lx + ',' + ly + ' A' + R + ',' + R + ' 0 1,1 ' + rx + ',' + ry + ' Z',
+            fill: 'rgba(45,122,79,0.3)', stroke: '#1E5A38', 'stroke-width': '2'
+        }));
+
+        // Center axis (dashed)
+        svg.appendChild(el('line', { x1: centerX, y1: baseY + 10, x2: centerX, y2: cy - R - 10,
+            stroke: '#636B58', 'stroke-width': '0.8', 'stroke-dasharray': '4,4' }));
+
+        // Tangent line (goes up-left from right contact point)
+        var CPx = centerX + contactRadius, CPy = baseY, tanLen = 55;
+        var tanAngle = Math.PI - thetaRad; // angle from horizontal
+        var tx = CPx + Math.cos(tanAngle) * tanLen, ty = CPy - Math.sin(tanAngle) * tanLen;
+        svg.appendChild(el('line', { x1: CPx, y1: CPy, x2: tx, y2: ty,
+            stroke: '#C9A040', 'stroke-width': '1.2', 'stroke-dasharray': '3,2' }));
+
+        // Surface extension past contact point
+        svg.appendChild(el('line', { x1: CPx, y1: CPy, x2: CPx + 40, y2: CPy,
+            stroke: '#828A72', 'stroke-width': '1', 'stroke-dasharray': '2,2' }));
+
+        // Angle arc (from surface extension to tangent)
+        var arcR = 28;
+        var arcStartX = CPx + arcR, arcStartY = CPy;
+        var arcEndX = CPx + Math.cos(tanAngle) * arcR, arcEndY = CPy - Math.sin(tanAngle) * arcR;
+        svg.appendChild(el('path', {
+            d: 'M' + arcStartX + ',' + arcStartY + ' A' + arcR + ',' + arcR + ' 0 0,0 ' + arcEndX + ',' + arcEndY,
+            fill: 'none', stroke: '#C9A040', 'stroke-width': '1.5'
+        }));
+
+        // Label
+        var txtA = tanAngle / 2;
+        var labelX = CPx + Math.cos(txtA) * 40;
+        var labelY = CPy - Math.sin(txtA) * 40;
+        var txt = el('text', { x: labelX, y: labelY, fill: '#C9A040',
+            'font-family': 'IBM Plex Mono, monospace', 'font-size': '11', 'font-weight': '600', 'text-anchor': 'start', 'dominant-baseline': 'middle' });
+        txt.textContent = '\u03B8 = 120\u00B0';
+        svg.appendChild(txt);
+
+        // Dimension line
+        var dimY = baseY + 18;
+        svg.appendChild(el('path', {
+            d: 'M' + (centerX - contactRadius) + ',' + (baseY + 5) + 'V' + (dimY + 3) +
+               'M' + (centerX + contactRadius) + ',' + (baseY + 5) + 'V' + (dimY + 3) +
+               'M' + (centerX - contactRadius) + ',' + dimY + 'H' + (centerX + contactRadius),
+            stroke: '#828A72', 'stroke-width': '0.8', fill: 'none'
+        }));
     })();
     </script>
 </body>
