@@ -864,7 +864,7 @@
             border-color: var(--teal); transform: scaleY(1.2);
         }
         .sim-module .data-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+            display: grid; grid-template-columns: 1fr; gap: 1.5rem;
             margin-top: auto; border-top: 1px solid var(--gray-200); padding-top: 2rem;
         }
         .sim-module .data-item { display: flex; flex-direction: column; height: 100%; align-items: center; }
@@ -973,11 +973,27 @@
         }
         .diamond-motif svg { width: 100%; height: auto; }
         .diamond-tagline {
-            font-family: var(--font-display);
-            font-size: clamp(1.25rem, 3vw, 1.75rem);
             color: var(--ink);
             margin-top: 1.5rem;
+            line-height: 1.5;
+        }
+        .diamond-tagline__lead {
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 300;
             font-style: italic;
+            color: inherit;
+            opacity: 0.70;
+            letter-spacing: 0.02em;
+        }
+        .diamond-tagline__strong {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+            font-style: italic;
+            font-weight: 700;
+            color: inherit;
+            display: inline-block;
+            margin-top: 0.35rem;
         }
 
         /* ================================================================
@@ -2454,7 +2470,7 @@
         <div class="container">
             <div class="diamond-motif reveal">
                 <img src="assets/squarecycle.svg" alt="BEST diamond motif: Reduce, Reuse, Recycle, Remarkable" style="width: 100%; height: auto;">
-                <div class="diamond-tagline">Reduce, Reuse, Recycle&hellip;<br>Remarkable</div>
+                <div class="diamond-tagline"><span class="diamond-tagline__lead">Reduce, Reuse, Recycle&hellip;</span><br><span class="diamond-tagline__strong">Remarkable</span></div>
             </div>
         </div>
     </section>
