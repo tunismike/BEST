@@ -1084,6 +1084,14 @@
             padding: 0.25rem 0.75rem;
             border-radius: 2px;
         }
+        .product-card__sub-list li[onclick] {
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .product-card__sub-list li[onclick]:hover {
+            background: var(--gray-100);
+            color: var(--ink);
+        }
 
         @media (max-width: 900px) {
             .products__grid { grid-template-columns: repeat(2, 1fr); }
@@ -2370,8 +2378,7 @@
             </p>
             <div class="hero__actions animate-in animate-in--d3">
                 <a href="#contact" class="btn btn--primary"><i class="fa-solid fa-flask-vial"></i> Request Technical Data</a>
-                <a href="mailto:info@besustainabletechnologies.com?subject=Schedule%20Technical%20Call" class="btn btn--light"><i class="fa-regular fa-calendar"></i> Schedule Technical Call</a>
-                <a href="#chemistry" class="btn btn--light"><i class="fa-solid fa-atom"></i> View Chemistry</a>
+                <a href="#chemistry" class="btn btn--light"><i class="fa-solid fa-atom"></i> Explore Chemistry</a>
             </div>
             <div class="hero__credibility animate-in animate-in--d4">
                 <div class="hero__stat">
@@ -2412,14 +2419,14 @@
                     <p>
                         Unlike conventional barrier coatings that rely on PFAS, wax, or polyethylene
                         lamination, BEST chemistry provides increased strength and creates durable hydrophobic performance while
-                        maintaining full repulpability and recyclability. Our formulations are
-                        applied at existing paper mill wet-end or size-press stations with no
+                        increasing repulpability and recyclability. Our formulations are
+                        applied at existing paper mill wet-end stations with no
                         additional capital expenditures required.
                     </p>
                     <p>
                         We partner directly with paper mills, specialty chemical distributors,
-                        and product manufacturers to deliver performance-enhanced substrates
-                        for packaging, warehousing, transportation of goods, construction, horticulture, and agricultural applications.
+                        and product manufacturers to deliver enhanced, molecularly modified materials
+                        for packaging, warehousing, transportation of goods, construction, horticulture, agricultural products and myriad other applications.
                     </p>
                     <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
                         <a href="#chemistry" class="btn btn--outline btn--sm"><i class="fa-solid fa-microscope"></i> Explore Chemistry</a>
@@ -2445,7 +2452,7 @@
         <div class="container">
             <div class="diamond-motif reveal">
                 <img src="assets/squarecycle.svg" alt="BEST diamond motif: Reduce, Reuse, Recycle, Remarkable" style="width: 100%; height: auto;">
-                <div class="diamond-tagline">"Reduce &middot; Reuse &middot; Recycle &middot; Remarkable"</div>
+                <div class="diamond-tagline">Reduce, Reuse, Recycle<br>Remarkable</div>
             </div>
         </div>
     </section>
@@ -2529,9 +2536,8 @@
                         condensation and optimizing the cross-linked polysiloxane network architecture.
                         Controlled heating at process-compatible temperatures (compatible with
                         existing paper machine dryer sections) promotes full network densification.
-                        The resulting surface exhibits stable hydrophobic character with contact
-                        angles exceeding 120&deg;, maintained through accelerated aging protocols.
-                        Cured substrates retain full repulpability per TAPPI T-205 standard.
+                        The resulting repulpable material exhibits stable hydrophobic characteristics with contact
+                        angles exceeding 120&deg;.
                     </p>
                 </article>
             </div>
@@ -2550,7 +2556,6 @@
                             <div class="control-header">
                                 <div class="auto-badge" id="autoBadge"><span class="pulse-dot"></span>AUTO</div>
                                 <span class="control-label">Additive Conc.</span>
-                                <span class="control-value" id="concVal">0.00%</span>
                             </div>
                             <div class="slider-wrapper">
                                 <div class="slider-track"></div>
@@ -2566,10 +2571,6 @@
                                     <span class="data-item-label">Contact Angle (&theta;) (deg)</span>
                                     <input type="number" class="data-item-value-input" id="angleVal" value="70.0" step="0.1" min="70" max="165">
                                 </div>
-                                <div class="data-item">
-                                    <span class="data-item-label">Est. Cost / m&sup2; ($)</span>
-                                    <input type="number" class="data-item-value-input" id="costVal" value="2.50" step="0.1" min="2.50" max="45.00">
-                                </div>
                             </div>
                             <div class="status-container">
                                 <div class="status-dot" id="statusIndicator"></div>
@@ -2581,7 +2582,6 @@
                 <div class="panel-viz">
                     <div class="canvas-wrapper">
                         <span class="viz-label top-left">FIG 1. DROPLET PROFILE</span>
-                        <span class="viz-label bottom-right">SCALE: 10&mu;m : 1px</span>
                         <canvas id="dropletCanvas" width="480" height="480"></canvas>
                     </div>
                     <div id="mobileDataContainer" class="mobile-data-target"></div>
@@ -2599,7 +2599,7 @@
             <div class="section-label reveal">Product Portfolio</div>
             <h2 class="section-heading reveal">Performance-Enhanced Cellulose Products</h2>
             <p class="section-subhead reveal">
-                Each product leverages our core chemistry platform, optimized for substrate-specific
+                Each product leverages our core chemistry platform, optimized for application-specific
                 performance requirements and manufacturing compatibility.
             </p>
 
@@ -2613,9 +2613,9 @@
                         <h3 class="product-card__title">The BEST Solution&trade;, Paper</h3>
                         <ul class="product-card__bullets">
                             <li>Increased strength and Cobb value reduction &gt;70% vs. untreated control</li>
-                            <li>Full repulpability maintained (TAPPI T-205)</li>
+                            <li>Full repulpability maintained</li>
                             <li>PFAS-free barrier chemistry</li>
-                            <li>Compatible with wet-end and size-press application</li>
+                            <li>Compatible with wet-end application</li>
                             <li>No additional capital expenditures required</li>
                             <li>Applications: rail dunnage, tubes, corner boards, moldings &mdash; pre-load, load, and post-load protection</li>
                             <li>Resists mold, mildew, and moisture-driven breakdown</li>
@@ -2635,7 +2635,7 @@
                             <li>Enhanced acoustic insulation properties</li>
                             <li>Mold resistance</li>
                             <li>Thick compressible network of treated fibers that feels like natural cork</li>
-                            <li>Patent-pending substrate treatment</li>
+                            <li>Buoyant in water for marine and aquatic applications</li>
                         </ul>
                     </div>
                 </article>
@@ -2652,7 +2652,8 @@
                             <li>Biodegradable in soil after useful service life</li>
                             <li>Available in multiple sizes for diverse applications</li>
                             <li>4-color printing available for custom branding</li>
-                            <li>Biodegradable in soil &mdash; replaces plastic nursery containers. Design patented</li>
+                            <li>Replaces plastic nursery containers</li>
+                            <li>Design Patented</li>
                         </ul>
                     </div>
                 </article>
@@ -2666,9 +2667,9 @@
                         <h3 class="product-card__title">The BEST Pallet&trade;</h3>
                         <div class="product-card__sub">Product Line Includes:</div>
                         <ul class="product-card__sub-list">
-                            <li><i class="fa-solid fa-arrows-left-right" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Nestable 2-way Pallet</li>
-                            <li><i class="fa-solid fa-up-down-left-right" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Nestable 6-way Pallet</li>
-                            <li><i class="fa-solid fa-grip-lines" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> BEST Pallet Deck</li>
+                            <li onclick="event.stopPropagation(); openModal('pallet-6leg')"><i class="fa-solid fa-arrows-left-right" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Nestable 6-leg Pallet</li>
+                            <li onclick="event.stopPropagation(); openModal('pallet-3leg')"><i class="fa-solid fa-up-down-left-right" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Nestable 3-leg Pallet</li>
+                            <li onclick="event.stopPropagation(); openModal('pallet-deck')"><i class="fa-solid fa-grip-lines" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> BEST Pallet Deck</li>
                         </ul>
                         <ul class="product-card__bullets">
                             <li>Paper-based pallet with hydrophobic reinforcement</li>
@@ -3111,9 +3112,8 @@
                         <h4><i class="fa-solid fa-lock"></i> Confidential Data Access</h4>
                         <p>
                             Certain performance data (contact angle measurements, proprietary formulation
-                            details) is available under NDA. Submit a request to initiate the process.
+                            details) are available under NDA. Submit a request to initiate the process.
                         </p>
-                        <a href="mailto:info@besustainabletechnologies.com?subject=NDA%20Request" class="btn btn--gold btn--sm"><i class="fa-solid fa-file-shield"></i> Submit NDA Request</a>
                     </div>
                 </div>
 
@@ -3151,6 +3151,7 @@
                             <option value="agriculture">Agricultural Products</option>
                             <option value="custom">Custom Formulation</option>
                             <option value="partnership">Distribution / Partnership</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -3159,7 +3160,6 @@
                     </div>
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                         <button type="submit" class="btn btn--primary"><i class="fa-solid fa-paper-plane"></i> Send Inquiry</button>
-                        <a href="mailto:info@besustainabletechnologies.com?subject=Schedule%20Technical%20Call" class="btn btn--outline"><i class="fa-regular fa-calendar"></i> Schedule Technical Call</a>
                     </div>
                 </form>
             </div>
@@ -3200,7 +3200,6 @@
                 <p class="modal__text" id="modal-text">Product details will appear here.</p>
                 <div class="modal__actions">
                     <a href="#contact" class="btn btn--primary btn--sm" onclick="closeModal()"><i class="fa-solid fa-flask-vial"></i> Request Technical Data</a>
-                    <a href="mailto:info@besustainabletechnologies.com?subject=Schedule%20Technical%20Call" class="btn btn--ghost btn--sm" onclick="closeModal()"><i class="fa-regular fa-calendar"></i> Schedule Call</a>
                 </div>
             </div>
         </div>
@@ -3247,12 +3246,27 @@
         const modalData = {
             paper: {
                 title: 'The BEST Solution\u2122, Paper',
-                text: 'Our flagship hydrophobic paper treatment delivers increased strength and Cobb value reductions exceeding 70% while maintaining full repulpability per TAPPI T-205 standards. The PFAS-free formulation is compatible with existing paper machine wet-end and size-press application equipment, requiring no additional capital expenditures. Contact our technical team for substrate-specific formulation recommendations and trial scheduling.',
+                text: 'Our flagship hydrophobic paper treatment delivers increased strength and Cobb value reductions exceeding 70% while maintaining full repulpability. The PFAS-free formulation is compatible with existing paper machine wet-end application equipment, requiring no additional capital expenditures. Contact our technical team for substrate-specific formulation recommendations and trial scheduling.',
                 image: 'assets/coated-vs-uncoated.png'
             },
             pallet: {
                 title: 'The BEST Pallet\u2122',
                 text: 'BEST-treated paper pallets offer a sustainable, high-performance alternative to wood and plastic. Hydrophobic reinforcement provides moisture resistance for cold-chain logistics and humid storage environments. Our pallet was crushed at 21,000 lbs and fully tested at the Center for Packaging and Unit Load Design at Virginia Tech University. The nestable design provides significant shipping and storage cost savings. Fully recyclable in standard paper waste streams with no contamination.',
+                image: 'assets/product-pallet.png'
+            },
+            'pallet-6leg': {
+                title: 'Nestable 6-leg Pallet',
+                text: 'Heavy-duty paper-based pallet with six structural legs for maximum load distribution and stability. Optimized for high-weight static storage, racking, and demanding logistics applications. Hydrophobic reinforcement maintains performance through cold-chain and humid storage environments. Nestable for reduced empty-pallet return shipping. Fully recyclable in standard paper streams.',
+                image: 'assets/product-pallet.png'
+            },
+            'pallet-3leg': {
+                title: 'Nestable 3-leg Pallet',
+                text: 'Three-leg paper pallet engineered for lighter loads and high-throughput logistics. Lower base weight and material cost than the 6-leg variant while retaining the nestable design and moisture resistance of the BEST Pallet platform. Ideal for one-way shipping, light retail distribution, and applications where empty-pallet return economics matter most.',
+                image: 'assets/product-pallet.png'
+            },
+            'pallet-deck': {
+                title: 'BEST Pallet Deck',
+                text: 'Standalone hydrophobic-treated paper deck for use atop existing pallet bases or in stacked-deck configurations. Compatible with standard pallet jacks, forklifts, and automated warehouse systems. Hydrophobic treatment provides moisture resistance for repeated cycling. Stackable, recyclable, and a drop-in alternative to plastic or composite deck overlays.',
                 image: 'assets/product-pallet.png'
             },
             cork: {
@@ -3311,9 +3325,7 @@
     (function() {
         const slider = document.getElementById('concSlider');
         const sliderFill = document.getElementById('sliderFill');
-        const concVal = document.getElementById('concVal');
         const angleVal = document.getElementById('angleVal');
-        const costVal = document.getElementById('costVal');
         const statusIndicator = document.getElementById('statusIndicator');
         const statusText = document.getElementById('statusText');
         const canvas = document.getElementById('dropletCanvas');
@@ -3330,7 +3342,6 @@
             const percentage = conc / 100;
             const offset = 4 - (percentage * 8);
             sliderFill.style.width = 'calc(' + conc + '% + ' + offset + 'px)';
-            concVal.innerText = conc.toFixed(2) + '%';
             updateStatus(currentAngle);
             drawCanvas(currentAngle);
         }
@@ -3339,9 +3350,7 @@
             const conc = parseFloat(slider.value) || 0;
             const p = conc / 100;
             const currentAngle = 70 + Math.sin(p * Math.PI / 2) * 95;
-            const cost = 2.50 + Math.pow(p, 1.8) * 42.50;
             angleVal.value = currentAngle.toFixed(1);
-            costVal.value = cost.toFixed(2);
             updateVisuals(conc, currentAngle);
         }
 
@@ -3352,23 +3361,8 @@
             const sinVal = (renderAngle - 70) / 95;
             const p = Math.asin(Math.max(0, Math.min(1, sinVal))) * 2 / Math.PI;
             const exactConc = p * 100;
-            const cost = 2.50 + Math.pow(p, 1.8) * 42.50;
             slider.value = exactConc;
-            costVal.value = cost.toFixed(2);
             updateVisuals(exactConc, renderAngle);
-        }
-
-        function updateFromCost() {
-            let cost = parseFloat(costVal.value);
-            if (isNaN(cost)) return;
-            const renderCost = Math.max(2.5, Math.min(45, cost));
-            const powVal = (renderCost - 2.50) / 42.50;
-            const p = Math.pow(Math.max(0, Math.min(1, powVal)), 1 / 1.8);
-            const exactConc = p * 100;
-            const angle = 70 + Math.sin(p * Math.PI / 2) * 95;
-            slider.value = exactConc;
-            angleVal.value = angle.toFixed(1);
-            updateVisuals(exactConc, angle);
         }
 
         function updateStatus(angle) {
@@ -3436,15 +3430,6 @@
             const txtX = CPx + Math.cos(Math.PI + txtAngle) * (arcRadius + 15);
             const txtY = CPy + Math.sin(Math.PI + txtAngle) * (arcRadius + 15);
             ctx.fillText('\u03B8 = ' + thetaDeg.toFixed(1) + '\u00B0', txtX, txtY);
-
-            const dimY = baseY + 30;
-            ctx.beginPath();
-            ctx.moveTo(centerX - contactRadius, baseY + 10); ctx.lineTo(centerX - contactRadius, dimY + 5);
-            ctx.moveTo(centerX + contactRadius, baseY + 10); ctx.lineTo(centerX + contactRadius, dimY + 5);
-            ctx.moveTo(centerX - contactRadius, dimY); ctx.lineTo(centerX + contactRadius, dimY);
-            ctx.strokeStyle = colors.gray500; ctx.lineWidth = 1; ctx.stroke();
-            ctx.fillStyle = colors.gray500; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
-            ctx.fillText('d = ' + (contactRadius * 2).toFixed(1) + ' \u03BCm', centerX, dimY + 8);
         }
 
         function setupCanvas() {
@@ -3482,19 +3467,12 @@
         window.addEventListener('load', setupCanvas);
         slider.addEventListener('input', updateFromSlider);
         angleVal.addEventListener('input', updateFromAngle);
-        costVal.addEventListener('input', updateFromCost);
 
         angleVal.addEventListener('change', function() {
             let val = parseFloat(angleVal.value);
             if (isNaN(val)) val = 70;
             if (val < 70) { angleVal.value = '70.0'; updateFromAngle(); }
             else if (val > 165) { angleVal.value = '165.0'; updateFromAngle(); }
-        });
-        costVal.addEventListener('change', function() {
-            let val = parseFloat(costVal.value);
-            if (isNaN(val)) val = 2.5;
-            if (val < 2.5) { costVal.value = '2.50'; updateFromCost(); }
-            else if (val > 45) { costVal.value = '45.00'; updateFromCost(); }
         });
 
         let autoAnimId = null, autoStartTime = null;
@@ -3524,7 +3502,6 @@
         slider.addEventListener('mousedown', stopAutoDemo);
         slider.addEventListener('touchstart', stopAutoDemo);
         angleVal.addEventListener('focus', stopAutoDemo);
-        costVal.addEventListener('focus', stopAutoDemo);
 
         // Start auto-demo when module scrolls into view
         const simModule = document.querySelector('.sim-module');
