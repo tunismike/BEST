@@ -2709,9 +2709,9 @@
                         <h3 class="product-card__title">The BEST Agricultural Products&trade;</h3>
                         <div class="product-card__sub">Product Line Includes:</div>
                         <ul class="product-card__sub-list">
-                            <li><i class="fa-solid fa-seedling" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Weed Block</li>
-                            <li><i class="fa-solid fa-tree" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Tree Skirts</li>
-                            <li><i class="fa-solid fa-arrows-up-down" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Garden Stakes</li>
+                            <li onclick="event.stopPropagation(); openModal('ag-weedblock')"><i class="fa-solid fa-seedling" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Weed Block</li>
+                            <li onclick="event.stopPropagation(); openModal('ag-treeskirt')"><i class="fa-solid fa-tree" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Tree Skirts</li>
+                            <li onclick="event.stopPropagation(); openModal('ag-stakes')"><i class="fa-solid fa-arrows-up-down" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Garden Stakes</li>
                         </ul>
                         <ul class="product-card__bullets">
                             <li>Paper-based alternatives to plastic agricultural films</li>
@@ -3301,6 +3301,21 @@
                 title: 'The BEST Agricultural Products\u2122',
                 text: 'Our agricultural product line includes weed block, tree skirts, and garden stakes—all made from BEST-treated cellulose materials. These products provide comparable performance to polyethylene agricultural films while eliminating microplastic residue at end of life. UV-stabilized treatments ensure outdoor durability through the growing season. ',
                 image: 'assets/product-agricultural.png'
+            },
+            'ag-weedblock': {
+                title: 'Weed Block',
+                text: 'Cellulose-based weed suppression mat with hydrophobic treatment. Blocks light transmission while allowing water vapor exchange. Biodegrades at end of growing season \u2014 no removal required. Replaces plastic landscape fabric in seasonal applications.',
+                image: 'assets/product-weedblock.png'
+            },
+            'ag-treeskirt': {
+                title: 'Tree Skirts',
+                text: 'Pre-cut fiber rings for weed suppression around tree bases. Features an optional insect-repellent treatment to deter bark-damaging pests, and maintains moisture in the root zone while blocking surface weeds.',
+                image: 'assets/product-treeskirt.png'
+            },
+            'ag-stakes': {
+                title: 'Garden Stakes',
+                text: 'Treated cellulose stakes for garden and agricultural support. Resists soil moisture, rot, and ground-contact degradation. Provides sturdy plant support throughout the growing season, then naturally decomposes in soil after use, leaving zero waste.',
+                image: 'assets/product-stakes.png'
             }
         };
         function openModal(product) {
