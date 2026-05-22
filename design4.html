@@ -2783,6 +2783,19 @@
             const img = document.getElementById('modal-img');
             img.src = data.image;
             img.alt = data.title;
+            
+            // Prevent cropping for vertical/square images by using object-fit contain and custom background
+            if (product === 'ag-stakes') {
+                img.style.objectFit = 'contain';
+                img.parentElement.style.backgroundColor = '#cabba1'; // Matches the beige stone background
+            } else if (product === 'flowerpot' || product === 'pallet') {
+                img.style.objectFit = 'contain';
+                img.parentElement.style.backgroundColor = '#f3f4f6'; // Neutral light grey
+            } else {
+                img.style.objectFit = 'cover';
+                img.parentElement.style.backgroundColor = '';
+            }
+            
             document.getElementById('product-modal').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
