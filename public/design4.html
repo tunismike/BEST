@@ -1777,6 +1777,20 @@
             height: 100%;
             object-fit: cover;
         }
+        .modal__image--portrait {
+            aspect-ratio: auto !important;
+            height: 380px !important;
+            max-height: 45vh !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        .modal__image--portrait img {
+            width: auto !important;
+            height: 100% !important;
+            max-width: 100% !important;
+            object-fit: contain !important;
+        }
         .modal__body {
             padding: 2rem 2.5rem 2.5rem;
         }
@@ -2242,9 +2256,9 @@
                         <h3 class="product-card__title">The BEST Agricultural Products&trade;</h3>
                         <div class="product-card__sub">Product Line Includes:</div>
                         <ul class="product-card__sub-list">
-                            <li><i class="fa-solid fa-seedling" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Weed Block</li>
-                            <li><i class="fa-solid fa-tree" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Tree Skirts</li>
-                            <li><i class="fa-solid fa-arrows-up-down" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Garden Stakes</li>
+                            <li onclick="event.stopPropagation(); openModal('ag-weedblock')"><i class="fa-solid fa-seedling" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Weed Block</li>
+                            <li onclick="event.stopPropagation(); openModal('ag-treeskirt')"><i class="fa-solid fa-tree" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Tree Skirts</li>
+                            <li onclick="event.stopPropagation(); openModal('ag-stakes')"><i class="fa-solid fa-arrows-up-down" style="margin-right:4px; font-size:0.7rem; color:var(--teal);"></i> Garden Stakes</li>
                         </ul>
                         <ul class="product-card__bullets">
                             <li>Paper-based alternatives to plastic agricultural films</li>
@@ -2759,6 +2773,21 @@
                 text: 'BEST-treated paper pallets offer a sustainable, high-performance alternative to wood and plastic. Hydrophobic reinforcement provides moisture resistance for cold-chain logistics and humid storage environments. Our pallet was crushed at 21,000 lbs and fully tested at the Center for Packaging and Unit Load Design at Virginia Tech University. The nestable design provides significant shipping and storage cost savings. Fully recyclable in standard paper waste streams with no contamination.',
                 image: 'assets/product-pallet.webp'
             },
+            'pallet-6leg': {
+                title: 'Nestable 6-leg Pallet',
+                text: 'Heavy-duty paper-based pallet with six structural legs for maximum load distribution and stability. Optimized for high-weight static storage, racking, and demanding logistics applications. Hydrophobic reinforcement maintains performance through cold-chain and humid storage environments. Nestable for reduced empty-pallet return shipping. Fully recyclable in standard paper streams.',
+                image: 'assets/product-pallet.webp'
+            },
+            'pallet-3leg': {
+                title: 'Nestable 3-leg Pallet',
+                text: 'Three-leg paper pallet engineered for lighter loads and high-throughput logistics. Lower base weight and material cost than the 6-leg variant while retaining the nestable design and moisture resistance of the BEST Pallet platform. Ideal for one-way shipping, light retail distribution, and applications where empty-pallet return economics matter most.',
+                image: 'assets/product-pallet-3leg.webp'
+            },
+            'pallet-deck': {
+                title: 'BEST Pallet Deck',
+                text: 'Standalone hydrophobic-treated paper deck for use atop existing pallet bases or in stacked-deck configurations. Compatible with standard pallet jacks, forklifts, and automated warehouse systems. Hydrophobic treatment provides moisture resistance for repeated cycling. Stackable, recyclable, and a drop-in alternative to plastic or composite deck overlays.',
+                image: 'assets/product-pallet-deck.webp'
+            },
             cork: {
                 title: 'The BEST Cork\u2122',
                 text: 'Our treated corkboard combines natural acoustic and thermal insulation properties with enhanced hydrophobic performance. Ideal for construction, architectural, and specialty insulation applications. Patent-pending treatment maintains cork\'s natural breathability while preventing moisture-driven degradation. Contact us for acoustic testing data.',
@@ -2773,6 +2802,21 @@
                 title: 'The BEST Agricultural Products\u2122',
                 text: 'Our agricultural product line includes weed block, tree skirts, and garden stakes—all made from BEST-treated cellulose materials. These products provide comparable performance to polyethylene agricultural films while eliminating microplastic residue at end of life. UV-stabilized treatments ensure outdoor durability through the growing season. ',
                 image: 'assets/product-agricultural.webp'
+            },
+            'ag-weedblock': {
+                title: 'Weed Block',
+                text: 'Cellulose-based weed suppression mat with hydrophobic treatment. Blocks light transmission while allowing water vapor exchange. Biodegrades at end of growing season \u2014 no removal required. Replaces plastic landscape fabric in seasonal applications.',
+                image: 'assets/product-weedblock.webp'
+            },
+            'ag-treeskirt': {
+                title: 'Tree Skirts',
+                text: 'Pre-cut fiber rings for weed suppression around tree bases. Features an optional insect-repellent treatment to deter bark-damaging pests, and maintains moisture in the root zone while blocking surface weeds.',
+                image: 'assets/product-treeskirt.webp'
+            },
+            'ag-stakes': {
+                title: 'Garden Stakes',
+                text: 'Treated cellulose stakes for garden and agricultural support. Resists soil moisture, rot, and ground-contact degradation. Provides sturdy plant support throughout the growing season, then naturally decomposes in soil after use, leaving zero waste.',
+                image: 'assets/product-stakes.webp'
             }
         };
         function openModal(product) {
@@ -2784,16 +2828,21 @@
             img.src = data.image;
             img.alt = data.title;
             
-            // Prevent cropping for vertical/square images by using object-fit contain and custom background
+            // Dynamic portrait/square layout configuration
+            const container = img.parentElement;
+            container.className = 'modal__image'; // Reset classes
+            
             if (product === 'ag-stakes') {
-                img.style.objectFit = 'contain';
-                img.parentElement.style.backgroundColor = '#cabba1'; // Matches the beige stone background
-            } else if (product === 'flowerpot' || product === 'pallet') {
-                img.style.objectFit = 'contain';
-                img.parentElement.style.backgroundColor = '#f3f4f6'; // Neutral light grey
+                container.classList.add('modal__image--portrait');
+                container.style.backgroundColor = '#cabba1'; // Matches the beige stone background
+            } else if (product === 'pallet-deck') {
+                container.classList.add('modal__image--portrait');
+                container.style.backgroundColor = '#f3f4f6';
+            } else if (product === 'flowerpot' || product === 'pallet' || product === 'pallet-6leg') {
+                container.classList.add('modal__image--portrait');
+                container.style.backgroundColor = '#f3f4f6';
             } else {
-                img.style.objectFit = 'cover';
-                img.parentElement.style.backgroundColor = '';
+                container.style.backgroundColor = '';
             }
             
             document.getElementById('product-modal').classList.add('active');

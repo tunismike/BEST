@@ -2249,6 +2249,20 @@
             height: 100%;
             object-fit: cover;
         }
+        .modal__image--portrait {
+            aspect-ratio: auto !important;
+            height: 380px !important;
+            max-height: 45vh !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        .modal__image--portrait img {
+            width: auto !important;
+            height: 100% !important;
+            max-width: 100% !important;
+            object-fit: contain !important;
+        }
         .modal__body {
             padding: 2rem 2.5rem 2.5rem;
         }
@@ -3327,16 +3341,21 @@
             img.src = data.image;
             img.alt = data.title;
             
-            // Prevent cropping for vertical/square images by using object-fit contain and custom background
+            // Dynamic portrait/square layout configuration
+            const container = img.parentElement;
+            container.className = 'modal__image'; // Reset classes
+            
             if (product === 'ag-stakes') {
-                img.style.objectFit = 'contain';
-                img.parentElement.style.backgroundColor = '#cabba1'; // Matches the beige stone background
-            } else if (product === 'flowerpot' || product === 'pallet') {
-                img.style.objectFit = 'contain';
-                img.parentElement.style.backgroundColor = '#f3f4f6'; // Neutral light grey
+                container.classList.add('modal__image--portrait');
+                container.style.backgroundColor = '#cabba1'; // Matches the beige stone background
+            } else if (product === 'pallet-deck') {
+                container.classList.add('modal__image--portrait');
+                container.style.backgroundColor = '#f3f4f6';
+            } else if (product === 'flowerpot' || product === 'pallet' || product === 'pallet-6leg') {
+                container.classList.add('modal__image--portrait');
+                container.style.backgroundColor = '#f3f4f6';
             } else {
-                img.style.objectFit = 'cover';
-                img.parentElement.style.backgroundColor = '';
+                container.style.backgroundColor = '';
             }
             
             document.getElementById('product-modal').classList.add('active');
